@@ -19,15 +19,14 @@ import motherboard from '../assets/motherboard.svg';
 		</div>
 	</section>
 
-	<!-- AI Section -->
+	<!-- About div -->
 	<div id="about">
-		<section class="py-32">
+		<section id="engineering" class="py-32">
 			<div class="max-w-7xl mx-auto px-6">
 				<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 					<div>
 						<h2 class="font-serif text-4xl font-bold mb-6 tracking-tight leading-tight">Yapay Zeka Mühendisliği</h2>
 						<p class="text-lg mb-8 text-luxury-muted leading-relaxed">Since 1839, Patek Philippe has relied on its own leverage to expand its footprint in Geneva - a historically rich watchmaking soil.</p>
-						<!-- <a href="/manufacture/geneva" class="text-luxury-gold font-semibold text-sm tracking-widest uppercase transition-colors duration-300 hover:text-white">Discover our heritage</a> -->
 					</div>
 					<div class="relative">
 						<img src={motherboard.src} alt="Motherboard" class="w-full h-96 object-cover rounded-lg" />
@@ -36,7 +35,7 @@ import motherboard from '../assets/motherboard.svg';
 			</div>
 		</section>
 
-		<!-- Rare Handcrafts Section -->
+		<!-- Reliability -->
 		<section class="py-32">
 			<div class="max-w-7xl mx-auto px-6">
 				<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -55,16 +54,6 @@ import motherboard from '../assets/motherboard.svg';
 				</div>
 			</div>
 		</section>
-
-		<!--  
-		<section class="py-16">
-			<div class="max-w-7xl mx-auto px-6">
-				<div class="w-full h-96 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center text-luxury-muted text-lg">
-					Manufacture Building
-				</div>
-			</div>
-		</section>
-		-->
 	</div>
 	<div id="services">
 		<section class="pt-48 pb-16 text-center">
@@ -76,33 +65,51 @@ import motherboard from '../assets/motherboard.svg';
 			</div>
 		</section>
 
-		<!-- Images Grid -->
+		<!-- Services Grid -->
 		<section class="pb-32">
 			<div class="max-w-7xl mx-auto px-6">
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-					<div class="text-center">
-						<div class="w-full h-72 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center text-luxury-muted mb-6">
-							Yapay Zeka Mühendisliği
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+					<div class="text-center border-2 border-black p-6 rounded-lg">
+						<div class="w-16 h-16 bg-red-800 rounded-lg flex items-center justify-center mx-auto mb-6">
+							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 5h12c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2z"></path>
+								<circle cx="9" cy="10" r="1.2" fill="currentColor"></circle>
+								<circle cx="15" cy="10" r="1.2" fill="currentColor"></circle>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 15h6"></path>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v2"></path>
+								<circle cx="12" cy="2" r="0.8" fill="currentColor"></circle>
+							</svg>
 						</div>
-						<p class="text-sm text-luxury-muted leading-relaxed">Makine öğrenmesi, derin öğrenme ve yapay zeka teknolojileri ile işletmenizin verimliliğini artıran akıllı çözümler geliştiriyoruz.</p>
+						<h3 class="text-xl font-semibold mb-4 text-gray-900">Yapay Zeka Mühendisliği</h3>
+						<p class="text-sm text-gray-600 leading-relaxed">Makine öğrenmesi, derin öğrenme ve yapay zeka teknolojileri ile işletmenizin verimliliğini artıran akıllı çözümler geliştiriyoruz.</p>
 					</div>
-					<div class="text-center">
-						<div class="w-full h-72 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center text-luxury-muted mb-6">
-							Yazılım Mühendisliği
+					<div class="text-center border-2 border-black p-6 rounded-lg">
+						<div class="w-16 h-16 bg-red-800 rounded-lg flex items-center justify-center mx-auto mb-6">
+							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+							</svg>
 						</div>
-						<p class="text-sm text-luxury-muted leading-relaxed">Modern yazılım geliştirme metodolojileri ve teknolojileri kullanarak ölçeklenebilir, güvenli ve performanslı uygulamalar geliştiriyoruz.</p>
+						<h3 class="text-xl font-semibold mb-4 text-gray-900">Yazılım Mühendisliği</h3>
+						<p class="text-sm text-gray-600 leading-relaxed">Modern yazılım geliştirme metodolojileri ve teknolojileri kullanarak ölçeklenebilir, güvenli ve performanslı uygulamalar geliştiriyoruz.</p>
 					</div>
-					<div class="text-center">
-						<div class="w-full h-72 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center text-luxury-muted mb-6">
-							Danışmanlık
+					<div class="text-center border-2 border-black p-6 rounded-lg">
+						<div class="w-16 h-16 bg-red-800 rounded-lg flex items-center justify-center mx-auto mb-6">
+							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+							</svg>
 						</div>
-						<p class="text-sm text-luxury-muted leading-relaxed">Teknoloji stratejisi, dijital dönüşüm ve sistem mimarisi konularında uzman danışmanlık hizmetleri sunuyoruz.</p>
+						<h3 class="text-xl font-semibold mb-4 text-gray-900">Danışmanlık</h3>
+						<p class="text-sm text-gray-600 leading-relaxed">Yapay zeka veya yazılım konusunda nereden başlayacağınızdan emin değil misiniz? Yardımcı olabiliriz. Teknoloji stratejisi, dijital dönüşüm ve sistem mimarisi konularında uzman danışmanlık hizmetleri sunuyoruz.</p>
 					</div>
-					<div class="text-center">
-						<div class="w-full h-72 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center text-luxury-muted mb-6">
-							Araçlar ve Destek
+					<div class="text-center border-2 border-black p-6 rounded-lg">
+						<div class="w-16 h-16 bg-red-800 rounded-lg flex items-center justify-center mx-auto mb-6">
+							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+							</svg>
 						</div>
-						<p class="text-sm text-luxury-muted leading-relaxed">Geliştirme araçları, kütüphaneler ve teknik destek ile projelerinizin başarıyla tamamlanmasını sağlıyoruz.</p>
+						<h3 class="text-xl font-semibold mb-4 text-gray-900">Araçlar ve Destek</h3>
+						<p class="text-sm text-gray-600 leading-relaxed">Geliştirme araçları, kütüphaneler ve teknik destek ile projelerinizin başarıyla tamamlanmasını sağlıyoruz.</p>
 					</div>
 				</div>
 			</div>
