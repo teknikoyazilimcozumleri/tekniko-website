@@ -1,0 +1,119 @@
+---
+import '../styles/global.css';
+import tekniko_white from '../assets/tekniko_white.svg';
+---
+
+<!doctype html>
+<html lang="en" class="h-full">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Tekniko Yazılım Çözümleri</title>
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+	</head>
+	<body class="h-full bg-white text-black font-sans leading-relaxed">
+		<header class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-xl border-b border-luxury-border">
+			<div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
+				<a class="flex items-center -ml-8" href="/">
+					<img src={tekniko_white.src} alt="Tekniko Yazılım Çözümleri" class="h-35 w-auto brightness-0 invert transition-all duration-300 hover:brightness-0 hover:invert hover:sepia hover:saturate-[5] hover:hue-rotate-45" />
+				</a>
+				<nav class="hidden lg:flex gap-10 items -center">
+                	<div class="relative group">
+						<a href="/#about" class="text-white text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-red-800">Hakkımızda</a>
+					</div>
+					<div class="relative group">
+						<a href="/#services" class="text-white text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-red-800">Hizmetlerimiz</a>
+					</div>
+					<div class="relative group">
+						<a href="/#contact" class="text-white text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-red-800">Kontakt</a>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<main class="pt-20 min-h-screen">
+			<slot />
+		</main>
+		<footer class="bg-luxury-gray border-t border-luxury-border mt-20">
+			<div class="max-w-7xl mx-auto px-6 grid grid-cols-6 gap-10 py-16">
+				<div>
+					<h4 class="font-serif text-sm font-bold tracking-widest mb-5 text-white uppercase">Manufacture</h4>
+					<ul class="space-y-2">
+						<li><a href="/manufacture/values" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Our values</a></li>
+						<li><a href="/manufacture/founders" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">The founders</a></li>
+						<li><a href="/manufacture/patek-philippe" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Patek Philippe</a></li>
+						<li><a href="/manufacture/stern-family" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">The Stern family</a></li>
+						<li><a href="/manufacture/geneva" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Anchored in Geneva</a></li>
+						<li><a href="/manufacture/finest" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">The finest timepieces</a></li>
+						<li><a href="/manufacture/sound" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">The Patek Philippe Sound</a></li>
+						<li><a href="/manufacture/calendar" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Calendar watches</a></li>
+						<li><a href="/manufacture/dials" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Our dials</a></li>
+						<li><a href="/manufacture/rare-handcrafts" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Rare Handcrafts</a></li>
+						<li><a href="/manufacture/advanced-research" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Advanced Research</a></li>
+					</ul>
+				</div>
+				<div>
+					<h4 class="font-serif text-sm font-bold tracking-widest mb-5 text-white uppercase">Collection</h4>
+					<ul class="space-y-2">
+						<li><a href="/collection/find" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Find your timepiece</a></li>
+						<li><a href="/collection/grand-complications" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Grand Complications</a></li>
+						<li><a href="/collection/complications" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Complications</a></li>
+						<li><a href="/collection/calatrava" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Calatrava</a></li>
+						<li><a href="/collection/gondolo" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Gondolo</a></li>
+						<li><a href="/collection/golden-ellipse" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Golden Ellipse</a></li>
+						<li><a href="/collection/cubitus" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Cubitus</a></li>
+						<li><a href="/collection/nautilus" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Nautilus</a></li>
+						<li><a href="/collection/aquanaut" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Aquanaut</a></li>
+						<li><a href="/collection/twenty-4" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Twenty~4</a></li>
+						<li><a href="/collection/pocket-watches" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Pocket Watches</a></li>
+						<li><a href="/collection/movements" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Movements</a></li>
+						<li><a href="/collection/jewelry" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Jewelry & Accessories</a></li>
+					</ul>
+				</div>
+				<div>
+					<h4 class="font-serif text-sm font-bold tracking-widest mb-5 text-white uppercase">Service</h4>
+					<ul class="space-y-2">
+						<li><a href="/service/commitment" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Our commitment to service</a></li>
+						<li><a href="/service/care" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Taking care of your watch</a></li>
+						<li><a href="/service/instructions" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Instructions for use</a></li>
+						<li><a href="/service/settings" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Settings</a></li>
+						<li><a href="/service/centers" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Service Centers</a></li>
+						<li><a href="/service/archives" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Order an Archives Extract</a></li>
+						<li><a href="/service/register" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Register your watch</a></li>
+						<li><a href="/service/theft" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Report a watch theft</a></li>
+					</ul>
+				</div>
+				<div>
+					<h4 class="font-serif text-sm font-bold tracking-widest mb-5 text-white uppercase">Museum</h4>
+					<ul class="space-y-2">
+						<li><a href="/museum" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">The Patek Philippe Museum</a></li>
+						<li><a href="/museum/visit" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Plan your visit</a></li>
+					</ul>
+				</div>
+				<div>
+					<h4 class="font-serif text-sm font-bold tracking-widest mb-5 text-white uppercase">Points of Sale</h4>
+					<ul class="space-y-2">
+						<li><a href="/points-of-sale/salons" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Salons and Maisons</a></li>
+						<li><a href="/points-of-sale/boutiques" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Boutiques and Retailers</a></li>
+					</ul>
+				</div>
+				<div>
+					<h4 class="font-serif text-sm font-bold tracking-widest mb-5 text-white uppercase">Contact</h4>
+					<ul class="space-y-2">
+						<li><a href="/contact/faq" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Frequently Asked Questions</a></li>
+						<li><a href="/contact/careers" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Careers - join us!</a></li>
+						<li><a href="/contact/press" class="text-luxury-muted text-xs transition-colors duration-200 hover:text-luxury-gold">Press</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="border-t border-luxury-border py-5">
+				<div class="max-w-7xl mx-auto px-6">
+					<p class="text-luxury-muted text-xs text-center m-0">© Patek Philippe — Unofficial clone for educational purposes.</p>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

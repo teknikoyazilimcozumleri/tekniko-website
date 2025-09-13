@@ -1,26 +1,43 @@
-# Tekniko Website
+# Astro Starter Kit: Minimal
 
-## Features
+```sh
+npm create astro@latest -- --template minimal
+```
 
-- 💨 Tailwind CSS for styling
-- 🎨 Themeable
-  - CSS variables are defined in `src/styles/theme.css` and mapped to Tailwind classes (`tailwind.config.cjs`)
-- 🌙 Dark mode (disabled)
-- 📱 Responsive (layout, images, typography)
-- ♿ Accessible (as measured by https://web.dev/measure/)
-- 🔎 SEO-enabled (as measured by https://web.dev/measure/)
-- 🔗 Open Graph tags for social media sharing
-- 💅 [Prettier](https://prettier.io/) setup for both [Astro](https://github.com/withastro/prettier-plugin-astro) and [Tailwind](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-## Commands
+## 🚀 Project Structure
 
-| Command                | Action                                            |
-| :--------------------- | :------------------------------------------------ |
-| `npm install`          | Install dependencies                              |
-| `npm run dev`          | Start local dev server at `localhost:4321`        |
-| `npm run build`        | Build your production site to `./dist/`           |
-| `npm run preview`      | Preview your build locally, before deploying      |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check`  |
-| `npm run astro --help` | Get help using the Astro CLI                      |
-| `npm run format`       | Format code with [Prettier](https://prettier.io/) |
-| `npm run clean`        | Remove `node_modules` and build output            |
+Inside of your Astro project, you'll see the following folders and files:
+
+```text
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
+
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+
+Any static assets, like images, can be placed in the `public/` directory.
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

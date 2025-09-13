@@ -1,76 +1,170 @@
 ---
-import "@fontsource-variable/inter";
-import Compatibility from "~/components/compatibility.astro";
-import Features from "~/components/features.astro";
-import Footer from "~/components/footer.astro";
-import Header from "~/components/header.astro";
-import Intro from "~/components/intro.astro";
-import Showcase from "~/components/showcase.astro";
-import Splash from "~/components/splash.astro";
-import "~/styles/index.css";
-
-const { generator, site } = Astro;
-const image = new URL("social.jpg", site);
-const description =
-  "Build fast websites, faster. Astro is a new kind of site builder for the modern web. Lightning-fast performance meets powerful developer experience.";
+import Layout from '../layouts/Layout.astro';
+import idea2 from '../assets/idea2.jpg';
 ---
 
-<!doctype html>
-<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="light">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <meta name="generator" content={generator} />
+<Layout>
+	<!-- Hero Section -->
+	<section class="relative h-screen flex items-center justify-center overflow-hidden">
+		<div class="absolute inset-0 z-10">
+			<div class="w-full h-full bg-cover bg-center bg-no-repeat" style={`background-image: url(${idea2.src})`}>
+				<div class="absolute inset-0 "></div>
+			</div>
+		</div>
+		<div class="relative z-20 text-center max-w-4xl">
+			<h1 class="font-serif text-4xl font-bold mb-6 tracking-tight leading-tight">Yapay Zeka ile <strong class="text-red-800">geleceğe</strong> adım <strong class="text-red-800">atın</strong></h1>
+			<!-- <p class="text-xl mb-8 text-luxury-muted leading-relaxed">At Watches & Wonders 2025, we presented fifteen new models brimming with creativity and <em class="italic text-luxury-gold">savoir-faire</em>.</p> -->
+			<a href="/#services" class="inline-block px-8 py-4 bg-black text-white font-semibold text-sm tracking-widest uppercase rounded-full transition-all duration-300 hover:bg-red-800 hover:-translate-y-0.5">Hizmetlerimiz</a>
+		</div>
+	</section>
 
-    <title>Astro Landing Page</title>
-    <meta name="description" content={description} />
+	<!-- Anchored in Geneva Section -->
+	<section class="py-32">
+		<div class="max-w-7xl mx-auto px-6">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+				<div>
+					<h2 class="font-serif text-5xl font-bold mb-6 tracking-tight leading-tight">Anchored in Geneva</h2>
+					<p class="text-lg mb-8 text-luxury-muted leading-relaxed">Since 1839, Patek Philippe has relied on its own leverage to expand its footprint in Geneva - a historically rich watchmaking soil.</p>
+					<a href="/manufacture/geneva" class="text-luxury-gold font-semibold text-sm tracking-widest uppercase transition-colors duration-300 hover:text-white">Discover our heritage</a>
+				</div>
+				<div class="relative">
+					<div class="w-full h-96 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center relative overflow-hidden">
+						<div class="w-16 h-16 rounded-full bg-white/90 text-black flex items-center justify-center text-xl cursor-pointer transition-all duration-300 hover:bg-luxury-gold hover:scale-110">
+							▶
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-    <!-- social media -->
-    <meta property="og:title" content="Astro" />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
-    <meta property="og:url" content={site} />
-    <meta name="twitter:card" content="summary_large_image" />
+	<!-- Rare Handcrafts Section -->
+	<section class="py-32">
+		<div class="max-w-7xl mx-auto px-6">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+				<div class="lg:order-2">
+					<h2 class="font-serif text-5xl font-bold mb-6 tracking-tight leading-tight">Rare Handcrafts</h2>
+					<p class="text-lg mb-8 text-luxury-muted leading-relaxed">As heir to the grand Geneva tradition, we have been safeguarding centuries-old Rare Handcrafts since 1839.</p>
+					<a href="/manufacture/rare-handcrafts" class="text-luxury-gold font-semibold text-sm tracking-widest uppercase transition-colors duration-300 hover:text-white">Discover our Rare Handcrafts</a>
+				</div>
+				<div class="lg:order-1 relative">
+					<div class="w-full h-96 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center relative overflow-hidden">
+						<div class="w-16 h-16 rounded-full bg-white/90 text-black flex items-center justify-center text-xl cursor-pointer transition-all duration-300 hover:bg-luxury-gold hover:scale-110">
+							▶
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-    <!-- initialize theme -->
-    <!-- 
-    <script is:inline>
-      const themeSaved = localStorage.getItem("theme");
+	<!-- Manufacturing Building Image -->
+	<section class="py-16">
+		<div class="max-w-7xl mx-auto px-6">
+			<div class="w-full h-96 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center text-luxury-muted text-lg">
+				Manufacture Building
+			</div>
+		</div>
+	</section>
 
-      if (themeSaved) {
-        document.documentElement.dataset.theme = themeSaved;
-      } else {
-        const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)",
-        ).matches;
-        document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
-      }
+	<!-- The Power of Independence -->
+	<section id="novelties" class="py-32 text-center">
+		<div class="max-w-7xl mx-auto px-6">
+			<h2 class="font-serif text-5xl font-bold mb-4 tracking-tight">The power of independence</h2>
+			<p class="text-base text-luxury-muted mb-8 uppercase tracking-widest">The last family-owned Genevan manufacture</p>
+			<p class="text-lg mb-8 text-luxury-muted leading-relaxed max-w-4xl mx-auto">Owned by the Stern family since 1932, our Manufacture benefits from full creative freedom, which allows us to design, develop and craft watches that connoisseurs consider to be the world's finest - as pledged by our founders Antoine Norbert de Patek and Jean Adrien Philippe.</p>
+			<a href="/manufacture/values" class="inline-block px-8 py-4 bg-luxury-gold text-black font-semibold text-sm tracking-widest uppercase rounded-sm transition-all duration-300 hover:bg-white hover:-translate-y-0.5">Our Values</a>
+		</div>
+	</section>
 
-      window
-        .matchMedia("(prefers-color-scheme: dark)")
-        .addEventListener("change", (event) => {
-          if (!localStorage.getItem("theme")) {
-            document.documentElement.dataset.theme = event.matches
-              ? "dark"
-              : "light";
-          }
-        });
-    </script>
-    -->
-  </head>
-  <body
-    class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
-  >
-    <Header />
-    <!-- <Splash /> --> 
-    <div class="space-y-24 px-8 py-32">
-      <Intro />
-      <Features />
-      <Compatibility />
-      <Showcase />
-    </div>
-    <Footer />
-  </body>
-</html>
+	<!-- Manufacturing Images Grid -->
+	<section class="py-32">
+		<div class="max-w-7xl mx-auto px-6">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+				<div class="text-center">
+					<div class="w-full h-72 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center text-luxury-muted mb-6">
+						CNC Machinery
+					</div>
+					<p class="text-sm text-luxury-muted leading-relaxed">Spanning over 133,650 square meters, our ultra-modern production facility based in Geneva features state-of-the-art CNC machinery.</p>
+				</div>
+				<div class="text-center">
+					<div class="w-full h-72 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center text-luxury-muted mb-6">
+						Hand Finishing
+					</div>
+					<p class="text-sm text-luxury-muted leading-relaxed">All the watch parts we produce are hand finished, not only for aesthetic purposes but also to increase the performance and durability of our watches.</p>
+				</div>
+				<div class="text-center">
+					<div class="w-full h-72 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center text-luxury-muted mb-6">
+						Silinvar Technology
+					</div>
+					<p class="text-sm text-luxury-muted leading-relaxed">While some of our employees work with Silinvar®, a silicon derivative with revolutionary watchmaking characteristics that we first pioneered...</p>
+				</div>
+				<div class="text-center">
+					<div class="w-full h-72 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center text-luxury-muted mb-6">
+						Miniature Painting
+					</div>
+					<p class="text-sm text-luxury-muted leading-relaxed">... others perpetuate the timeless gestures and deftness of touch that have always distinguished Genevan watchmaking artistry, for example with miniature painting on enamel.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Innovation and Tradition -->
+	<section class="py-32 text-center">
+		<div class="max-w-7xl mx-auto px-6">
+			<h2 class="font-serif text-5xl font-bold mb-4 tracking-tight">A long-term vision</h2>
+			<p class="text-base text-luxury-muted mb-8 uppercase tracking-widest">Innovation and Tradition</p>
+			<p class="text-lg mb-8 text-luxury-muted leading-relaxed max-w-4xl mx-auto">We have been pursuing traditional Genevan watchmaking artistry without interruption since 1839, safeguarding rare handcrafts, such as enameling and <em class="italic text-luxury-gold">guillochage</em> that would have otherwise disappeared. At the same time, we nurture a tradition of innovation, relying on the latest technologies to further push the boundaries of watchmaking.</p>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+				<a href="/manufacture/advanced-research" class="inline-block px-8 py-4 bg-luxury-gold text-black font-semibold text-sm tracking-widest uppercase rounded-sm transition-all duration-300 hover:bg-white hover:-translate-y-0.5">Advanced Research</a>
+				<a href="/manufacture/rare-handcrafts" class="inline-block px-8 py-4 bg-transparent text-white border border-luxury-border font-semibold text-sm tracking-widest uppercase rounded-sm transition-all duration-300 hover:bg-white hover:text-black">Rare Handcrafts</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Museum Section -->
+	<section class="py-32">
+		<div class="max-w-7xl mx-auto px-6">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+				<div>
+					<h2 class="font-serif text-5xl font-bold mb-4 tracking-tight leading-tight">Preserving for the Future</h2>
+					<p class="text-base text-luxury-muted mb-8 uppercase tracking-widest">the patek philippe museum</p>
+					<p class="text-lg mb-8 text-luxury-muted leading-relaxed">Assembling one of the world's most extraordinary watch collections, our Museum showcases our legacy and represents an inexhaustible source of inspiration for our designers and artists.</p>
+					<a href="/museum" class="text-luxury-gold font-semibold text-sm tracking-widest uppercase transition-colors duration-300 hover:text-white">The Museum</a>
+				</div>
+				<div class="relative">
+					<div class="w-full h-96 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center text-luxury-muted text-lg">
+						Museum Collection
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Collections Section -->
+	<section class="py-32 text-center">
+		<div class="max-w-7xl mx-auto px-6">
+			<h2 class="font-serif text-5xl font-bold mb-8 tracking-tight">Our collections</h2>
+			<p class="text-lg mb-8 text-luxury-muted leading-relaxed max-w-4xl mx-auto">We have over 150 references in regular production, manufactured in limited quantity to ensure they respect the extremely high quality standards of the Patek Philippe Seal.</p>
+			<a href="/collection" class="inline-block px-8 py-4 bg-luxury-gold text-black font-semibold text-sm tracking-widest uppercase rounded-sm transition-all duration-300 hover:bg-white hover:-translate-y-0.5">Discover our collections</a>
+		</div>
+	</section>
+
+	<!-- Service Commitment -->
+	<section class="py-32 text-center">
+		<div class="max-w-7xl mx-auto px-6">
+			<h2 class="font-serif text-5xl font-bold mb-8 tracking-tight">Our commitment to service</h2>
+			<p class="text-lg mb-8 text-luxury-muted leading-relaxed max-w-4xl mx-auto">At Patek Philippe, we pledge to service, repair, or restore any timepiece produced by our manufacture since 1839, regardless of its age.</p>
+			<a href="/service" class="inline-block px-8 py-4 bg-luxury-gold text-black font-semibold text-sm tracking-widest uppercase rounded-sm transition-all duration-300 hover:bg-white hover:-translate-y-0.5">Discover more</a>
+		</div>
+	</section>
+
+	<!-- Points of Sale -->
+	<section class="py-32 text-center">
+		<div class="max-w-7xl mx-auto px-6">
+			<h2 class="font-serif text-5xl font-bold mb-8 tracking-tight">Points of Sale</h2>
+			<p class="text-lg mb-8 text-luxury-muted leading-relaxed max-w-4xl mx-auto">Visit our international network of authorized points of sales and benefit from expert guidance on the purchase and care of your Patek Philippe timepiece.</p>
+			<a href="/points-of-sale" class="inline-block px-8 py-4 bg-luxury-gold text-black font-semibold text-sm tracking-widest uppercase rounded-sm transition-all duration-300 hover:bg-white hover:-translate-y-0.5">Find stores nearby</a>
+		</div>
+	</section>
+</Layout>

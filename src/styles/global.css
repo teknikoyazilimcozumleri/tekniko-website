@@ -1,12 +1,24 @@
-/* TODO: consider creating <Button> and <GradientText> components */
-a,
-.btn {
-  @apply transition-colors duration-200;
-  @apply hover:text-secondary;
-  @apply focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-transparent;
+@import "tailwindcss";
+
+@theme {
+  --color-luxury-gold: #d4af37;
+  --color-luxury-black: #000000;
+  --color-luxury-gray: #111111;
+  --color-luxury-muted: #cccccc;
+  --color-luxury-border: rgba(255, 255, 255, 0.1);
+  
+  --font-family-serif: "Libre Baskerville", serif;
+  --font-family-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-.gradient-text {
-  @apply bg-clip-text text-transparent;
-  @apply bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-pink-500;
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: var(--font-family-sans);
+  line-height: 1.6;
 }
