@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import idea2 from '../assets/idea2.jpg';
 import motherboard from '../assets/motherboard.svg';
+import desk from '../assets/desk.svg';
 ---
 
 <Layout>
@@ -25,8 +26,14 @@ import motherboard from '../assets/motherboard.svg';
 			<div class="max-w-7xl mx-auto px-6">
 				<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 					<div>
-						<h2 class="font-serif text-4xl font-bold mb-6 tracking-tight leading-tight">Yapay Zeka Mühendisliği</h2>
-						<p class="text-lg mb-8 text-luxury-muted leading-relaxed">Since 1839, Patek Philippe has relied on its own leverage to expand its footprint in Geneva - a historically rich watchmaking soil.</p>
+						<h2 class="font-serif text-4xl font-bold mb-6 tracking-tight leading-tight">Mühendisliği ezici olabilir</h2>
+						<p class="text-lg mb-8 text-gray-400 leading-relaxed">
+							Yapay zeka ve yazılımın bunaltıcı olabileceğinin farkındayız. 
+							Tekniko Yazılım Çözümleri, işletmenizi büyütmenize yardımcı olacak çeşitli çözümler sunar. 
+							İşletmeniz için yapay zeka ve verilerin gücünden yararlanmak istiyor ama nasıl yapacağınızı bilmiyor musunuz? 
+							Yoksa böyle bir proje için zamanınız ve ekibiniz mi yok? Öyleyse biz buradayız. 
+							İhtiyaçlarınıza özel bir çözüm oluşturacağız.
+						</p>
 					</div>
 					<div class="relative">
 						<img src={motherboard.src} alt="Motherboard" class="w-full h-96 object-cover rounded-lg" />
@@ -35,21 +42,16 @@ import motherboard from '../assets/motherboard.svg';
 			</div>
 		</section>
 
-		<!-- Reliability -->
+		<!-- Customer Experience -->
 		<section class="py-32">
 			<div class="max-w-7xl mx-auto px-6">
 				<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 					<div class="lg:order-2">
-						<h2 class="font-serif text-5xl font-bold mb-6 tracking-tight leading-tight">Rare Handcrafts</h2>
-						<p class="text-lg mb-8 text-luxury-muted leading-relaxed">As heir to the grand Geneva tradition, we have been safeguarding centuries-old Rare Handcrafts since 1839.</p>
-						<a href="/manufacture/rare-handcrafts" class="text-luxury-gold font-semibold text-sm tracking-widest uppercase transition-colors duration-300 hover:text-white">Discover our Rare Handcrafts</a>
+						<h2 class="font-serif text-4xl font-bold mb-6 tracking-tight leading-tight">Olağanüstü Müşteri Deneyimi</h2>
+						<p class="text-lg mb-8 text-gray-400 leading-relaxed">As heir to the grand Geneva tradition, we have been safeguarding centuries-old Rare Handcrafts since 1839.</p>
 					</div>
-					<div class="lg:order-1 relative">
-						<div class="w-full h-96 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center relative overflow-hidden">
-							<div class="w-16 h-16 rounded-full bg-white/90 text-black flex items-center justify-center text-xl cursor-pointer transition-all duration-300 hover:bg-luxury-gold hover:scale-110">
-								▶
-							</div>
-						</div>
+					<div class="relative">
+						<img src={desk.src} alt="Olağanüstü Müşteri Deneyimi" class="w-full h-96 object-cover rounded-lg" />
 					</div>
 				</div>
 			</div>
@@ -59,9 +61,7 @@ import motherboard from '../assets/motherboard.svg';
 		<section class="pt-36 pb-8 text-center">
 			<div class="max-w-7xl mx-auto px-6">
 				<h2 class="font-serif text-5xl text-white font-bold mb-4 tracking-tight">İşletmeniz için en iyi <strong class="text-white">mühendislik çözümü</strong></h2>
-				<!-- <p class="text-base text-luxury-muted mb-8 uppercase tracking-widest">The last family-owned Genevan manufacture</p>-->
-				<p class="text-lg mb-4 text-luxury-muted leading-relaxed max-w-4xl mx-auto">İhtiyacınız olduğunda kendi mühendislik ekibiniz. Yazılımın, verilerin ve yapay zekanın gücünü işinize hızla entegre edin ve büyüyün.</p>
-				<!--  <a href="/manufacture/values" class="inline-block px-8 py-4 bg-luxury-gold text-black font-semibold text-sm tracking-widest uppercase rounded-sm transition-all duration-300 hover:bg-white hover:-translate-y-0.5">Our Values</a> -->
+				<p class="text-lg mb-4 text-gray-400 leading-relaxed max-w-4xl mx-auto">İhtiyacınız olduğunda kendi mühendislik ekibiniz. Yazılımın, verilerin ve yapay zekanın gücünü işinize hızla entegre edin ve büyüyün.</p>
 			</div>
 		</section>
 
@@ -170,7 +170,7 @@ import motherboard from '../assets/motherboard.svg';
 		<div class="max-w-7xl mx-auto px-6">
 			<div class="text-center mb-16">
 				<h2 class="font-serif text-5xl font-bold mb-8 tracking-tight">Kontakt</h2>
-				<p class="text-lg mb-8 text-luxury-muted leading-relaxed max-w-4xl mx-auto">Projeniz için yapay zeka çözümleri hakkında bilgi almak istiyorsanız bizimle iletişime geçin. Size en uygun mühendislik çözümünü sunmak için buradayız.</p>
+				<p class="text-lg mb-8 text-gray-400 leading-relaxed max-w-4xl mx-auto">Projeniz için yapay zeka çözümleri hakkında bilgi almak istiyorsanız bizimle iletişime geçin. Size en uygun mühendislik çözümünü sunmak için buradayız.</p>
 			</div>
 			
 			<div class="max-w-4xl mx-auto">
