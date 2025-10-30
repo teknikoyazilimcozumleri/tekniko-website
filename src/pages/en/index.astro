@@ -1,0 +1,230 @@
+---
+import Layout from '../../layouts/en/Layout.astro';
+import idea2 from '../../assets/idea2.jpg';
+import motherboard from '../../assets/motherboard.svg';
+import desk from '../../assets/desk.svg';
+---
+
+<Layout>
+	<!-- Hero Section -->
+	<section id="hero"class="relative h-screen flex items-center justify-center overflow-hidden">
+		<div class="absolute inset-0 z-10">
+			<div class="w-full h-full bg-cover bg-center bg-no-repeat" style={`background-image: url(${idea2.src})`}>
+				<div class="absolute inset-0 "></div>
+			</div>
+		</div>
+		<div class="relative z-20 text-center max-w-4xl">
+			<h1 class="font-serif text-4xl font-bold mb-6 tracking-tight leading-tight">Step into the <strong class="text-red-800">future</strong> with AI</h1>
+			<!-- <p class="text-xl mb-8 text-luxury-muted leading-relaxed">At Watches & Wonders 2025, we presented fifteen new models brimming with creativity and <em class="italic text-luxury-gold">savoir-faire</em>.</p> -->
+			<a href="/#services" class="inline-block px-8 py-4 bg-black text-white font-semibold text-sm tracking-widest uppercase rounded-full transition-all duration-300 hover:bg-red-800 hover:-translate-y-0.5">Our Services</a>
+		</div>
+	</section>
+
+	<!-- About div -->
+	<div id="about">
+		<section id="engineering" class="py-32">
+			<div class="max-w-7xl mx-auto px-6">
+				<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+					<div>
+						<h2 class="font-serif text-3xl font-bold mb-6 tracking-tight leading-tight">Engineering can be overwhelming</h2>
+						<p class="text-lg mb-8 text-gray-400 leading-relaxed">
+							We understand that AI and software can be overwhelming.
+							Tekniko Software Solutions offers a variety of solutions to help you grow your business. 
+							Do you want to harness the power of AI and data for your business but don't know how? 
+							Or do you lack the time and team for such a project? Then we're here. 
+							We'll create a solution specifically for your needs.
+						</p>
+					</div>
+					<div class="relative">
+						<img src={motherboard.src} alt="Motherboard" class="w-full h-96 object-cover rounded-lg" />
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Customer Experience -->
+		<section class="py-32">
+			<div class="max-w-7xl mx-auto px-6">
+				<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+					<div class="lg:order-2">
+						<h2 class="font-serif text-4xl font-bold mb-6 tracking-tight leading-tight">Exceptional Customer Service</h2>
+						<p class="text-lg mb-8 text-gray-400 leading-relaxed">
+							We work with our customers to ensure they get the best experience and satisfaction from our services.
+						</p>
+					</div>
+					<div class="relative">
+						<img src={desk.src} alt="Olağanüstü Müşteri Deneyimi" class="w-full h-96 object-cover rounded-lg" />
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<div id="services" class="bg-black">
+		<section class="pt-36 pb-8 text-center">
+			<div class="max-w-7xl mx-auto px-6">
+				<h2 class="font-serif text-5xl text-white font-bold mb-4 tracking-tight">The best<strong class="text-white"> engineering solution</strong>  for your business</h2>
+				<p class="text-lg mb-4 text-gray-400 leading-relaxed max-w-4xl mx-auto">Your own engineering team when you need it. Quickly integrate the power of software, data, and AI into your business and grow.</p>
+			</div>
+		</section>
+
+		<!-- Services Cards -->
+		<section class="pb-32">
+			<div class="max-w-7xl mx-auto px-6">
+				<div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-8">
+					<div class="text-center p-6 rounded-lg">
+						<div class="w-16 h-16 bg-red-800 rounded-lg flex items-center justify-center mx-auto mb-6">
+							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 5h12c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2z"></path>
+								<circle cx="9" cy="10" r="1.2" fill="currentColor"></circle>
+								<circle cx="15" cy="10" r="1.2" fill="currentColor"></circle>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 15h6"></path>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v2"></path>
+								<circle cx="12" cy="2" r="0.8" fill="currentColor"></circle>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold mb-4 text-white">Artificial Intelligence Engineering</h3>
+						<p class="text-medium text-gray-400 leading-relaxed">We develop smart solutions that increase the efficiency of your business with artificial intelligence technologies.</p>
+					</div>
+					<div class="text-center p-6 rounded-lg">
+						<div class="w-16 h-16 bg-red-800 rounded-lg flex items-center justify-center mx-auto mb-6">
+							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold mb-4 text-white">Software Engineering</h3>
+						<p class="text-medium text-gray-400 leading-relaxed">We develop scalable, secure and high-performance applications using modern software development methodologies and technologies.</p>
+					</div>
+					<div class="text-center p-6 rounded-lg">
+						<div class="w-16 h-16 bg-red-800 rounded-lg flex items-center justify-center mx-auto mb-6">
+							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold mb-4 text-white">Consulting</h3>
+						<p class="text-medium text-gray-400 leading-relaxed">Not sure where to start with AI or software? We can help. We offer expert consulting services on technology strategy, digital transformation, and system architecture.</p>
+					</div>
+					<div class="text-center p-6 rounded-lg">
+						<div class="w-16 h-16 bg-red-800 rounded-lg flex items-center justify-center mx-auto mb-6">
+							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold mb-4 text-white">Tools and Support</h3>
+						<p class="text-medium text-gray-400 leading-relaxed">We provide development tools and technical support to help you successfully complete your projects.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<!-- Contact Form Section -->
+	<section id="contact" class="pt-36">
+		<div class="max-w-7xl mx-auto px-6">
+			<div class="text-center mb-16">
+				<h2 class="font-serif text-5xl font-bold mb-8 tracking-tight">Contact Us</h2>
+				<p class="text-lg mb-8 text-gray-400 leading-relaxed max-w-4xl mx-auto">If you have any questions about our engineering solutions, please contact us. We're here to help you find the best engineering solution for your project.</p>
+			</div>
+			
+			<div class="max-w-4xl mx-auto">
+				<form class="space-y-4" action="https://api.web3forms.com/submit" method="POST" id="form">
+					    <!-- Your Access key here. Don't worry this can be public -->
+						<input type="hidden" name="access_key" value="63935025-60ac-487b-8967-09aa7520c119">
+
+						<!-- Optional: Can be type="hidden" or type="text" for subject -->
+						<input type="hidden" name="subject" value="New Tekniko Website Submission">
+
+						<!-- Optional: From Name you want to see in the email
+							Default is "Notifications". you can overwrite here -->
+						<input type="hidden" name="from_name" value="Notifications">
+
+						<!-- Optional: Redirect URL after form submission -->
+						<input type="hidden" name="redirect" value="www.teknikoyazilimcozumleri.com">
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						<div>
+							<label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name *</label>
+							<input 
+								type="text" 
+								id="name" 
+								name="name" 
+								required 
+								class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent transition-all duration-200"
+								placeholder="Name and Surname"
+							/>
+						</div>
+						<div>
+							<label for="email" class="block text-sm font-medium text-gray-700 mb-2">E-mail *</label>
+							<input 
+								type="email" 
+								id="email" 
+								name="email" 
+								required 
+								class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent transition-all duration-200"
+								placeholder="example@email.com"
+							/>
+						</div>
+					</div>
+					
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						<div>
+							<label for="company" class="block text-sm font-medium text-gray-700 mb-2">Business</label>
+							<input 
+								type="text" 
+								id="company" 
+								name="company" 
+								class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent transition-all duration-200"
+								placeholder="Your business name"
+							/>
+						</div>
+						<div>
+							<label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+							<input 
+								type="tel" 
+								id="phone" 
+								name="phone" 
+								class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent transition-all duration-200"
+								placeholder="+1XXXXXXXXXX" 
+							/>
+						</div>
+					</div>
+					
+					<div>
+						<label for="service" class="block text-sm font-medium text-gray-700 mb-2">Service Type</label>
+						<select 
+							id="service" 
+							name="service" 
+							class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent transition-all duration-200"
+						>
+							<option value="">Select Service Type</option>
+							<option value="ai-engineering">Artificial Intelligence Engineering</option>
+							<option value="software-development">Software Engineering</option>
+							<option value="data-analysis">Data Analysis</option>
+							<option value="consulting">Consulting</option>
+							<option value="other">Other</option>
+						</select>
+					</div>
+					
+					<div>
+						<label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+						<textarea 
+							id="message" 
+							name="message" 
+							rows="6" 
+							required 
+							class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent transition-all duration-200 resize-none"
+							placeholder="Enter some details about your project..."
+						></textarea>
+					</div>
+					
+					<div class="text-center">
+						<button 
+							type="submit" 
+							class="inline-block px-12 py-4 bg-red-800 text-white font-semibold text-sm tracking-widest uppercase rounded-lg transition-all duration-300 hover:bg-red-900 hover:-translate-y-0.5 focus:ring-2 focus:ring-red-800 focus:ring-offset-2"
+						>
+							Send Message
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+</Layout>
