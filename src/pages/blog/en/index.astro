@@ -1,0 +1,19 @@
+---
+import Layout from '../../../layouts/en/Layout.astro';
+import post1 from '../../../assets/post1.svg';
+---
+<Layout>
+	<div class="max-w-7xl mx-auto px-6 py-12 pb-20">
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+			<a href="/blog/posts/en/strategy" class="group block rounded-xl overflow-hidden bg-white shadow-sm transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5">
+				<div class="aspect-[16/9]">
+					<img src={post1.src} alt="Strategy" class="w-full h-full object-cover object-top" />
+				</div>
+				<div class="p-5">
+					<h2 class="text-lg font-semibold m-0 group-hover:text-red-800 transition-colors duration-200">Strategy in the Age of AI</h2>
+					<p class="text-sm text-luxury-muted mt-2 mb-0">Prepare your business for the age of AI</p>
+				</div>
+			</a>
+		</div>
+	</div>
+</Layout>

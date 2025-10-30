@@ -1,6 +1,8 @@
 ---
 import '../../styles/global.css';
 import tekniko_white from '../../assets/tekniko_white.svg';
+import Header from '../../components/en/header.astro';
+import Footer from '../../components/footer.astro';
 ---
 
 <!doctype html>
@@ -16,65 +18,10 @@ import tekniko_white from '../../assets/tekniko_white.svg';
 		<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 	</head>
 	<body class="h-full bg-white text-black font-sans leading-relaxed">
-		<header class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-xl border-b border-luxury-border">
-			<div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
-				<a class="flex items-center -ml-8" href="/">
-					<img src={tekniko_white.src} alt="Tekniko Yazılım Çözümleri" class="h-35 w-auto brightness-0 invert transition-all duration-300 hover:brightness-0 hover:invert hover:sepia hover:saturate-[5] hover:hue-rotate-45" />
-				</a>
-				<nav class="flex items -center gap-4 relative">
-					<div class="relative group">
-						<a href="/" class="text-white text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-red-800" aria-label="Switch to Turkish">
-							<span class="text-lg align-middle">🇹🇷</span>
-						</a>
-					</div>
-					<input id="menu-toggle-en" type="checkbox" class="hidden peer" />
-					<label for="menu-toggle-en" class="lg:hidden cursor-pointer text-white p-2" aria-label="Toggle navigation menu">
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-						</svg>
-					</label>
-					<div class="hidden lg:flex gap-10">
-		        		<div class="relative group">
-							<a href="/#about" class="text-white text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-red-800">About</a>
-						</div>
-						<div class="relative group">
-							<a href="/#services" class="text-white text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-red-800">Services</a>
-						</div>
-						<div class="relative group">
-							<a href="/#contact" class="text-white text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-red-800">Contact</a>
-						</div>
-					</div>
-					<div class="absolute right-0 top-full mt-2 w-56 bg-black/95 border border-luxury-border rounded shadow-lg hidden peer-checked:block lg:hidden">
-						<a href="/#about" class="block px-4 py-3 text-white text-sm tracking-wide transition-colors duration-200 hover:text-red-800">About</a>
-						<a href="/#services" class="block px-4 py-3 text-white text-sm tracking-wide transition-colors duration-200 hover:text-red-800">Services</a>
-						<a href="/#contact" class="block px-4 py-3 text-white text-sm tracking-wide transition-colors duration-200 hover:text-red-800">Contact</a>
-					</div>
-				</nav>
-			</div>
-		</header>
+		<Header />
 		<main class="pt-20 min-h-screen">
 			<slot />
 		</main>
-		<footer class="bg-luxury-gray border-t border-luxury-border mt-20">
-			<div class="border-t border-luxury-border py-5">
-				<div class="max-w-7xl mx-auto px-6">
-					<p class="text-luxury-muted text-xs text-center m-0">© Tekniko Yazılım Çözümleri</p>
-					<div class="flex justify-center items-center gap-4 mt-3">
-						<a href="https://www.linkedin.com/company/teknikoyazilimcozumleri" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-white hover:text-red-800 transition-colors duration-200">
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
-								<path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8.34 18.34H5.67V9h2.67v9.34zM7 7.78c-.86 0-1.56-.7-1.56-1.56S6.14 4.67 7 4.67s1.56.7 1.56 1.56S7.86 7.78 7 7.78zM20.33 18.34h-2.67v-4.8c0-1.14-.02-2.6-1.58-2.6-1.58 0-1.82 1.23-1.82 2.5v4.9h-2.67V9h2.56v1.28h.04c.36-.68 1.24-1.4 2.55-1.4 2.73 0 3.24 1.8 3.24 4.13v5.33z"/>
-							</svg>
-						</a>
-						<a href="https://www.instagram.com/teknikoyazilimcozumleri/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-white hover:text-red-800 transition-colors duration-200">
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
-								<path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.97.24 2.43.4.61.24 1.05.52 1.51.98.46.46.74.9.98 1.51.16.46.35 1.26.4 2.43.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.97-.4 2.43-.24.61-.52 1.05-.98 1.51-.46.46-.9.74-1.51.98-.46.16-1.26.35-2.43.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.97-.24-2.43-.4-.61-.24-1.05-.52-1.51-.98-.46-.46-.74-.9-.98-1.51-.16-.46-.35-1.26-.4-2.43C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.24-1.97.4-2.43.24-.61.52-1.05.98-1.51.46-.46.9-.74 1.51-.98.46-.16 1.26-.35 2.43-.4C8.42 2.17 8.8 2.16 12 2.16m0-2.16C8.74 0 8.33.01 7.05.07 5.78.13 4.88.33 4.12.62c-.78.3-1.44.7-2.1 1.36C1.36 2.64.96 3.3.66 4.08c-.29.76-.49 1.66-.55 2.93C.05 8.29 0 8.7 0 12c0 3.3.05 3.71.11 5 .06 1.27.26 2.17.55 2.93.3.78.7 1.44 1.36 2.1.66.66 1.32 1.06 2.1 1.36.76.29 1.66.49 2.93.55C8.29 23.95 8.7 24 12 24s3.71-.05 5-.11c1.27-.06 2.17-.26 2.93-.55.78-.3 1.44-.7 2.1-1.36.66-.66 1.06-1.32 1.36-2.1.29-.76.49-1.66.55-2.93.06-1.29.11-1.7.11-5 0-3.3-.05-3.71-.11-5-.06-1.27-.26-2.17-.55-2.93-.3-.78-.7-1.44-1.36-2.1C21.36 1.36 20.7.96 19.92.66c-.76-.29-1.66-.49-2.93-.55C15.71.05 15.3 0 12 0z"/>
-								<path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/>
-								<circle cx="18.4" cy="5.6" r="1.44"/>
-							</svg>
-						</a>
-					</div>
-				</div>
-			</div>
-		</footer>
+		<Footer />
 	</body>
 </html>

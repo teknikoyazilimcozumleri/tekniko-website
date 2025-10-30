@@ -1,0 +1,41 @@
+---
+import '../styles/global.css';
+
+export interface BlogPostData {
+	title: string;
+	image?: string;
+	tags?: string[];
+	content: string; // HTML or plain text
+}
+
+export interface Props {
+	post: BlogPostData;
+}
+
+const { post } = Astro.props as Props;
+---
+
+<article class="max-w-4xl mx-auto px-6 py-12">
+	{post.image && (
+		<div class="mb-8">
+			<img src={post.image} alt={post.title} class="w-full h-auto rounded border border-luxury-border" />
+		</div>
+	)}
+
+	<div class="mb-6">
+		<h1 class="text-3xl font-semibold leading-tight m-0">{post.title}</h1>
+		{post.tags && post.tags.length > 0 && (
+			<ul class="flex flex-wrap gap-2 mt-4 p-0 list-none">
+				{post.tags.map((tag) => (
+					<li class="m-0"><span class="text-xs px-2 py-1 rounded-full border border-luxury-border text-luxury-muted">{tag}</span></li>
+				))}
+			</ul>
+		)}
+	</div>
+
+	<section class="prose prose-neutral max-w-none leading-relaxed">
+		<div set:html={post.content}></div>
+	</section>
+</article>
+
+
