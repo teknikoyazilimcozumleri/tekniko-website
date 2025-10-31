@@ -1,0 +1,54 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import JobPost from '../../components/JobPost.astro';
+
+const jobPosting = {
+	title: 'Junior Full Stack Yazılım Mühendisi',
+    experience: `<p>Deneyim: 0-2 Yıl</p>`,
+	location: `<p>Konumu: Ankara - Karma</p>`,
+    companyDescription: `
+    <div>
+        <p class="text-sm md:text-base text-black">
+        Tekniko Yazılım Çözümleri, Ankara merkezli bir yazılım geliştirme firmasıdır ve ekibini genişletmeyi hedeflemektedir. Firma, web siteleri, uygulamalar, araçlar, yönetim sistemleri ve platformlar geliştirerek birçok sektördeki müşterilere hizmet vermektedir. Ekibimiz, kullanıcı deneyimi, müşteri memnuniyeti, müşteri desteği ve güçlü yazılım sistemlerine güçlü bir şekilde odaklanmaktadır.
+        </p>
+    </div>
+    `,
+    jobDescription: `
+    <div>
+        <p class="text-sm md:text-base text-black pb-8">
+        Sadece harika ürünler geliştirmekle kalmayıp aynı zamanda şirket içinde öğrenmeyi ve gelişmeyi hedefleyen yarı zamanlı/sözleşmeli bir pozisyon için yetenekli ve motive bir Junior Full Stack Yazılım Mühendisi arıyoruz.
+        Junior Full Stack Yazılım Mühendisi olarak şunları yapacaksınız:
+        </p>
+        <ul class="list-disc list-outside pl-6">
+            <li class="m-0 text-sm md:text-base text-black">React ve Astro çerçevelerini kullanarak JavaScript'te ön yüzlerin yazılması ve bakımı</li>
+            <li class="m-0 text-sm md:text-base text-black">FastAPI ve Django çerçevelerini kullanarak Python'da arka uçların yazılması ve bakımı</li>
+            <li class="m-0 text-sm md:text-base text-black">TailwindCSS gibi ön uç teknolojileriyle çalışmak</li>
+            <li class="m-0 text-sm md:text-base text-black">PostgreSQL, MySQL, MongoDB gibi arka uç teknolojileriyle çalışmak.</li>
+            <li class="m-0 text-sm md:text-base text-black">AWS gibi Bulut hizmetleriyle çalışma</li>
+        </ul>
+    </div>
+    `,
+    requirements: `
+        <div>
+             <ul class="list-disc list-outside pl-6">
+                 <li class="m-0 text-sm md:text-base text-black">Merak, başarma tutumu ve öğrenme ve büyüme arzusu</li>
+                 <li class="m-0 text-sm md:text-base text-black">Kişisel ve paylaşılabilir projeler de dahil olmak üzere web sitesi geliştirmede kanıtlanmış proje deneyimi</li>
+            </ul>
+        </div>
+    `,
+    benefits: `
+        <div>
+             <ul class="list-disc list-outside pl-6">
+                 <li class="m-0 text-sm md:text-base text-black">Rekabetçi saatlik ücret</li>
+                 <li class="m-0 text-sm md:text-base text-black">Yeni beceriler öğrenmek için çevrimiçi kurs kuponları</li>
+                 <li class="m-0 text-sm md:text-base text-black">Esnek Karma Program</li>
+            </ul>
+        </div>
+    `,
+	tags: ['Full Stack', 'Yazılım Mühendislik', 'Ankara'],
+};
+---
+
+<Layout>
+	<JobPost jobPosting={jobPosting} />
+</Layout>

@@ -1,0 +1,25 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import JobBoardEntry from '../../components/JobBoardEntry.astro';
+
+const jobPostings = [
+	{
+		title: 'Junior Full Stack Yazılım Mühendisi',
+		location: 'Ankara',
+        experience: '0-2 Yıl',
+		tags: ['Yazılım', 'Mühendislik', 'Ankara'],
+		slug: 'junior-full-stack-yazilim-muhendisi',
+	},
+];
+---
+
+<Layout>
+	<div class="max-w-7xl mx-auto px-6 py-12 pb-20">
+		<h1 class="text-3xl font-semibold leading-tight pl-10 m-0">İş İlanları</h1>
+		<div class="flex flex-col gap-6">
+			{jobPostings.map((jobPosting) => (
+				<JobBoardEntry jobPosting={jobPosting} href={`/career/${jobPosting.slug}`} />
+			))}
+		</div>
+	</div>
+</Layout>
