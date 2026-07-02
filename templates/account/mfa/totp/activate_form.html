@@ -1,0 +1,44 @@
+{% extends "account/mfa/mfa_base.html" %}
+
+{% block title %}MFA - TOTP Aktifleştir{% endblock %}
+
+{% block mfa_content %}
+  <h1 class="text-2xl font-semibold text-slate-800 mb-4">Zaman Bazlı Kod (TOTP) Aktifleştir</h1>
+  <p class="text-sm text-slate-600 mb-4">
+    Aşağıdaki QR kodu bir doğrulama uygulaması (Google Authenticator, 1Password vb.) ile tarayın
+    ve üretilen kodu girerek kurulumu tamamlayın.
+  </p>
+
+  {% if form.non_field_errors %}
+    <div class="mb-4 rounded-xl border border-red-200 bg-red-50 text-red-700 px-4 py-3 text-sm">
+      {{ form.non_field_errors }}
+    </div>
+  {% endif %}
+
+  {% if qr_code_url %}
+    <div class="mb-6 flex justify-center">
+      <img src="{{ qr_code_url }}" alt="MFA QR Kodu" class="border border-slate-200 rounded-xl shadow-md">
+    </div>
+  {% endif %}
+
+  <form method="post" class="space-y-5">
+    {% csrf_token %}
+
+    <div>
+      <label for="id_code" class="block text-sm font-medium mb-1">Uygulamadaki Kod</label>
+      <input type="text" id="id_code" name="code"
+             class="w-full rounded-xl border border-slate-300 px-4 py-3
+                    focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+             autocomplete="one-time-code" required>
+      {% if form.code.errors %}
+        <p class="mt-1 text-xs text-red-600">{{ form.code.errors|striptags }}</p>
+      {% endif %}
+    </div>
+
+    <button type="submit"
+            class="w-full rounded-xl py-3 font-semibold text-white
+                   bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 transition">
+      Aktifleştir
+    </button>
+  </form>
+{% endblock %}

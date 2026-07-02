@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% load socialaccount %}
+{% block title %}TYC Kayıt{% endblock %}
+
+{% block content %}
+
+<div class="max-w-5xl mx-auto">
+  <div class="grid lg:grid-cols-2 gap-10 items-center">
+
+    <section class="rounded-3xl
+                    bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900
+                    text-dark p-12 shadow-2xl">
+      <h1 class="text-4xl font-bold mb-6">
+        Hesap Oluştur
+      </h1>
+      <p class="text-slate-300 mb-8">
+        TYC platformuna katılın. Birkaç alanla hemen başlayın.
+      </p>
+      <ul class="space-y-3 text-sm text-slate-300">
+        <li>• Güvenli ve hızlı kayıt</li>
+        <li>• E-posta ile doğrulama opsiyonel</li>
+        <li>• Giriş yaptıktan sonra panele erişim</li>
+      </ul>
+    </section>
+
+    <section class="bg-white rounded-3xl p-10 shadow-xl border border-slate-200"
+             x-data="{ show1: false, show2: false }">
+      <h2 class="text-2xl font-semibold mb-2">Kayıt Ol</h2>
+      <p class="text-sm text-slate-500 mb-4">
+        Bilgilerinizi girerek hesap oluşturun.
+      </p>
+
+      {% if form.non_field_errors %}
+        <div class="mb-4 rounded-xl border border-red-200 bg-red-50 text-red-700 px-4 py-3 text-sm">
+          {{ form.non_field_errors }}
+        </div>
+      {% endif %}
+
+      <form method="post" action="{% url 'account_signup' %}" class="space-y-5">
+        {% csrf_token %}
+
+        <div>
+          <label for="id_username" class="block text-sm font-medium mb-1">Kullanıcı Adı</label>
+          <input type="text" id="id_username" name="username"
+                 value="{{ form.username.value|default:'' }}"
+                 class="w-full rounded-xl border border-slate-300 px-4 py-3
+                        focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+                        outline-none transition"
+                 required maxlength="150" autocomplete="username">
+          {% if form.username.errors %}
+            <p class="mt-1 text-xs text-red-600">{{ form.username.errors|striptags }}</p>
+          {% endif %}
+        </div>
+
+        <div>
+          <label for="id_email" class="block text-sm font-medium mb-1">E-posta</label>
+          <input type="email" id="id_email" name="email"
+                 value="{{ form.email.value|default:'' }}"
+                 class="w-full rounded-xl border border-slate-300 px-4 py-3
+                        focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+                        outline-none transition"
+                 required autocomplete="email">
+          {% if form.email.errors %}
+            <p class="mt-1 text-xs text-red-600">{{ form.email.errors|striptags }}</p>
+          {% endif %}
+        </div>
+
+        <div>
+          <label for="id_password1" class="block text-sm font-medium mb-1">Şifre</label>
+          <div class="relative">
+            <input :type="show1 ? 'text' : 'password'" id="id_password1" name="password1"
+                   class="w-full rounded-xl border border-slate-300 px-4 py-3
+                          focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+                          outline-none transition"
+                   required minlength="8" autocomplete="new-password">
+            <button type="button" @click="show1 = !show1"
+                    class="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 focus:outline-none"
+                    :aria-label="show1 ? 'Şifreyi gizle' : 'Şifreyi göster'">
+              <i class="bi bi-eye text-xl" x-show="!show1" x-cloak x-transition></i>
+              <i class="bi bi-eye-slash text-xl" x-show="show1" x-cloak x-transition></i>
+            </button>
+          </div>
+          {% if form.password1.errors %}
+            <p class="mt-1 text-xs text-red-600">{{ form.password1.errors|striptags }}</p>
+          {% endif %}
+          <p class="mt-1 text-xs text-slate-500">En az 8 karakter.</p>
+        </div>
+
+        <div>
+          <label for="id_password2" class="block text-sm font-medium mb-1">Şifre (tekrar)</label>
+          <div class="relative">
+            <input :type="show2 ? 'text' : 'password'" id="id_password2" name="password2"
+                   class="w-full rounded-xl border border-slate-300 px-4 py-3
+                          focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+                          outline-none transition"
+                   required minlength="8" autocomplete="new-password">
+            <button type="button" @click="show2 = !show2"
+                    class="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 focus:outline-none"
+                    :aria-label="show2 ? 'Şifreyi gizle' : 'Şifreyi göster'">
+              <i class="bi bi-eye text-xl" x-show="!show2" x-cloak x-transition></i>
+              <i class="bi bi-eye-slash text-xl" x-show="show2" x-cloak x-transition></i>
+            </button>
+          </div>
+          {% if form.password2.errors %}
+            <p class="mt-1 text-xs text-red-600">{{ form.password2.errors|striptags }}</p>
+          {% endif %}
+        </div>
+
+        {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
+        {% endif %}
+
+        <button type="submit"
+                class="w-full rounded-xl py-3 font-semibold text-white
+                       bg-gradient-to-r from-blue-600 to-indigo-600
+                       hover:opacity-90 shadow-lg transition">
+          Kayıt Ol
+        </button>
+      </form>
+
+      {% if google_oauth_available %}
+      <div class="mt-6">
+        {% providers_media_js %}
+        <div class="mt-4 border-t border-slate-200 pt-4">
+          <p class="text-xs font-medium text-slate-500 mb-3 uppercase tracking-wide">
+            Google ile devam et
+          </p>
+          <a href="{% provider_login_url 'google' process='signup' %}"
+             class="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white py-2.5 px-4 text-sm font-medium text-slate-700 hover:bg-slate-50 shadow-sm transition">
+            <span class="text-xl">G</span>
+            <span>Google ile Kayıt Ol</span>
+          </a>
+        </div>
+      </div>
+      {% endif %}
+
+      <p class="mt-6 text-center text-sm text-slate-600">
+        Zaten hesabınız var mı?
+        <a href="{% url 'account_login' %}" class="font-medium text-blue-600 hover:underline">Giriş yap</a>
+      </p>
+    </section>
+
+  </div>
+</div>
+
+{% endblock %}
+

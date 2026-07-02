@@ -1,0 +1,31 @@
+{% extends "account/mfa/mfa_base.html" %}
+
+{% block title %}MFA - Kurtarma Kodları{% endblock %}
+
+{% block mfa_content %}
+  <h1 class="text-2xl font-semibold text-slate-800 mb-4">Kurtarma Kodları</h1>
+  <p class="text-sm text-slate-600 mb-4">
+    Cihazınıza erişemediğiniz durumlar için bu kodlarla oturum açabilirsiniz.
+    Kodları güvenli bir yerde saklayın ve kimseyle paylaşmayın.
+  </p>
+
+  {% if codes %}
+    <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 mb-4">
+      <ul class="grid grid-cols-2 gap-2 font-mono text-sm text-slate-800">
+        {% for code in codes %}
+          <li>{{ code }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit"
+            class="w-full rounded-xl py-3 font-semibold text-white
+                   bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 transition">
+      Yeni Kodlar Oluştur
+    </button>
+  </form>
+{% endblock %}
+

@@ -1,0 +1,179 @@
+/* Iyzico Django Template – Landing page */
+
+.landing-page {
+  --landing-bg: #f8fafc;
+  --landing-hero-start: #0f172a;
+  --landing-hero-end: #1e293b;
+  --landing-accent: #ea580c;
+  --landing-accent-hover: #c2410c;
+  --landing-muted: #64748b;
+  --landing-card-bg: #ffffff;
+  --landing-border: #e2e8f0;
+}
+
+.landing-page .landing-hero {
+  background: linear-gradient(145deg, var(--landing-hero-start) 0%, var(--landing-hero-end) 100%);
+  color: #f1f5f9;
+  border-radius: 1.25rem;
+  padding: 3.5rem 2.5rem;
+  margin-bottom: 3.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.landing-page .landing-hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 60%;
+  height: 200%;
+  background: radial-gradient(ellipse, rgba(234, 88, 12, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.landing-page .landing-hero .landing-hero-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.15);
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.landing-page .landing-hero h1 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.landing-page .landing-hero h1 .landing-accent-text {
+  color: var(--landing-accent);
+}
+
+.landing-page .landing-hero p {
+  font-size: 1.05rem;
+  color: #94a3b8;
+  max-width: 38rem;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.landing-page .landing-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: 0.75rem;
+  background: var(--landing-accent);
+  color: #fff !important;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.landing-page .landing-cta:hover {
+  background: var(--landing-accent-hover);
+  transform: translateY(-1px);
+}
+
+/* Mavi CTA – Ödemeyi dene */
+.landing-page .landing-cta-blue {
+  background: #2563eb !important;
+}
+
+.landing-page .landing-cta-blue:hover {
+  background: #1d4ed8 !important;
+}
+
+/* Turuncu CTA – Abonelikleri dene */
+.landing-page .landing-cta-orange {
+  background: #ea580c !important;
+}
+
+.landing-page .landing-cta-orange:hover {
+  background: #c2410c !important;
+}
+
+.landing-page .landing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 3.5rem;
+}
+
+.landing-page .landing-card {
+  background: var(--landing-card-bg);
+  border: 1px solid var(--landing-border);
+  border-radius: 1rem;
+  padding: 1.75rem;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.landing-page .landing-card:hover {
+  box-shadow: 0 10px 40px -12px rgba(0, 0, 0, 0.1);
+  border-color: #cbd5e1;
+}
+
+.landing-page .landing-card-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  background: rgba(234, 88, 12, 0.1);
+  color: var(--landing-accent);
+}
+
+.landing-page .landing-card h3 {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 0.35rem;
+}
+
+.landing-page .landing-card p {
+  font-size: 0.875rem;
+  color: var(--landing-muted);
+  line-height: 1.5;
+}
+
+.landing-page .landing-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.landing-page .landing-prose {
+  font-size: 0.9375rem;
+  color: var(--landing-muted);
+  line-height: 1.75;
+  max-width: 42rem;
+}
+
+.landing-page .landing-prose p + p {
+  margin-top: 1rem;
+}
+
+
+.landing-page .landing-cta-blue {
+  --landing-blue: #2563eb;       /* Finans Mavisi */
+  --landing-blue-hover: #1d4ed8;
+  background: var(--landing-blue);
+}
+
+.landing-page .landing-cta-blue:hover {
+  background: var(--landing-blue-hover);
+}

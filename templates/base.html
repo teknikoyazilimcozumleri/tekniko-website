@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Tekniko Yazılım Çözümleri{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'vendor/tailwind/tailwind.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/modal.css' %}">
+  <link rel="stylesheet" href="{% static 'css/site.css' %}">
+  <!-- Bootstrap Icons (self-hosted CSS) -->
+  <link rel="stylesheet" href="{% static 'vendor/bootstrap-icons/bootstrap-icons.min.css' %}">
+  {% block extra_css %}{% endblock %}
+  <style>
+    [x-cloak] { display: none !important; }
+  </style>
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-800 antialiased">
+  {% include "layout/navbar.html" %}
+  <main class="site-container site-main">
+    {% if messages %}
+      <div class="mb-6 space-y-2">
+        {% for message in messages %}
+          <div class="rounded-xl border px-4 py-3 shadow-sm
+            {% if message.tags == 'success' %}border-green-200 bg-green-50 text-green-800
+            {% elif message.tags == 'warning' %}border-amber-200 bg-amber-50 text-amber-800
+            {% else %}border-red-200 bg-red-50 text-red-700{% endif %}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+  </main>
+  {% include "layout/footer.html" %}
+  <script defer src="{% static 'vendor/alpine/alpine.min.js' %}"></script>
+  <script defer src="{% static 'js/modal.js' %}"></script>
+</body>
+</html>

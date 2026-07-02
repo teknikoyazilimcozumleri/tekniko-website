@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% block title %}E-posta Doğrulama Kodu - TYC{% endblock %}
+
+{% block content %}
+
+<div class="max-w-5xl mx-auto" x-data="{
+  expiresAt: {{ otp_expires_at|default:0 }},
+  remainingSeconds: 0,
+  expired: false,
+  init() {
+    if (!this.expiresAt) return;
+    const update = () => {
+      const now = Math.floor(Date.now() / 1000);
+      this.remainingSeconds = Math.max(0, this.expiresAt - now);
+      this.expired = this.remainingSeconds <= 0;
+    };
+    update();
+    const t = setInterval(update, 1000);
+    this.$watch('expired', v => { if (v) clearInterval(t); });
+  },
+  get displayTime() {
+    const m = Math.floor(this.remainingSeconds / 60);
+    const s = this.remainingSeconds % 60;
+    return (m + '').padStart(2, '0') + ':' + (s + '').padStart(2, '0');
+  }
+}">
+  <div class="grid lg:grid-cols-2 gap-10 items-center">
+
+    <section class="rounded-3xl
+                    bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900
+                    text-dark p-12 shadow-2xl">
+      <h1 class="text-4xl font-bold mb-6">
+        İki Adımlı Doğrulama
+      </h1>
+      <p class="text-slate-300 mb-8">
+        E-posta adresinize gönderilen 6 haneli kodu girin.
+      </p>
+      <ul class="space-y-3 text-sm text-slate-300">
+        <li>• Kod 3 dakika içinde geçerliliğini yitirir</li>
+        <li>• Süre dolunca giriş sayfasından tekrar kod isteyin</li>
+      </ul>
+    </section>
+
+    <section class="bg-white rounded-3xl p-10 shadow-xl border border-slate-200">
+      <h2 class="text-2xl font-semibold mb-2">Doğrulama Kodu</h2>
+      <p class="text-sm text-slate-500 mb-4">
+        E-posta ile gönderilen 6 haneli kodu girin.
+      </p>
+
+      {% if otp_expires_at %}
+      <div class="mb-4 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm"
+           x-show="!expired" x-cloak x-transition>
+        <span class="text-slate-600">Kalan süre: </span>
+        <span class="font-mono font-semibold text-slate-800" x-text="displayTime"></span>
+      </div>
+      <div class="mb-4 rounded-xl border border-red-200 bg-red-50 text-red-700 px-4 py-3 text-sm"
+           x-show="expired" x-cloak x-transition>
+        Kodun süresi doldu. Yeni kod almak için giriş sayfasından tekrar giriş yapın.
+      </div>
+      {% endif %}
+
+      {% if form.non_field_errors %}
+        <div class="mb-4 rounded-xl border border-red-200 bg-red-50 text-red-700 px-4 py-3 text-sm">
+          {{ form.non_field_errors }}
+        </div>
+      {% endif %}
+
+      <form method="post" action="{% url 'verify_email_otp' %}" class="space-y-5"
+            x-ref="otpForm"
+            :aria-disabled="expired">
+        {% csrf_token %}
+        <input type="hidden" name="token" value="{{ token }}">
+        {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
+        {% endif %}
+
+        <div>
+          <label for="id_code" class="block text-sm font-medium mb-1">Doğrulama Kodu</label>
+          <input type="text" id="id_code" name="code"
+                 maxlength="6" minlength="6" inputmode="numeric" pattern="[0-9]*"
+                 autocomplete="one-time-code"
+                 placeholder="000000"
+                 :readonly="expired"
+                 :disabled="expired"
+                 class="w-full rounded-xl border border-slate-300 px-4 py-3
+                        focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+                        outline-none transition text-center text-lg tracking-widest
+                        disabled:opacity-50 disabled:bg-slate-100">
+          {% if form.code.errors %}
+            <p class="mt-1 text-xs text-red-600">{{ form.code.errors|striptags }}</p>
+          {% endif %}
+        </div>
+
+        <button type="submit"
+                :disabled="expired"
+                class="w-full rounded-xl py-3 font-semibold text-white
+                       bg-gradient-to-r from-blue-600 to-indigo-600
+                       hover:opacity-90 shadow-lg transition
+                       disabled:opacity-50 disabled:cursor-not-allowed">
+          Doğrula ve Giriş Yap
+        </button>
+      </form>
+
+      <p class="mt-6 text-center text-sm text-slate-600">
+        <a href="{% url 'account_login' %}" class="font-medium text-blue-600 hover:underline">
+          Giriş sayfasına dön
+        </a>
+      </p>
+    </section>
+
+  </div>
+</div>
+
+{% endblock %}

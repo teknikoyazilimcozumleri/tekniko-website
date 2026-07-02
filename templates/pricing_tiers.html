@@ -1,0 +1,104 @@
+{% block content %}
+<section>
+  <div class="text-center mb-12">
+    <h1 class="text-3xl font-bold text-slate-900 tracking-tight">Şablon Fiyatlandırması</h1>
+    <p class="mt-3 text-slate-500 max-w-2xl mx-auto">
+      İşletmenizin ihtiyaçlarına uygun paketi seçin. Tüm planlar aylık yenilenir ve Iyzico güvencesiyle ödeme alınır.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+    <div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm flex flex-col">
+      <h2 class="text-lg font-semibold text-slate-800">Basic</h2>
+      <p class="text-sm text-slate-500 mt-1">Küçük ekipler ve başlangıç projeleri için</p>
+      <p class="mt-6">
+        <span class="text-4xl font-bold text-slate-900">99</span>
+        <span class="text-slate-500"> TRY / ay</span>
+      </p>
+      <ul class="mt-8 space-y-3 text-sm text-slate-600 flex-1">
+        <li class="flex items-start gap-2">
+          <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
+          Temel yazılım danışmanlığı
+        </li>
+        <li class="flex items-start gap-2">
+          <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
+          E-posta desteği
+        </li>
+        <li class="flex items-start gap-2">
+          <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
+          Aylık 5 saat mühendislik
+        </li>
+      </ul>
+      <a href="{% url 'subscriptions:plan_list' %}"
+         class="mt-8 block w-full text-center px-4 py-3 rounded-lg border border-slate-300 text-slate-700 font-medium text-sm hover:bg-slate-50 transition">
+        Başla
+      </a>
+    </div>
+
+    <div class="rounded-2xl border-2 border-blue-600 bg-white p-8 shadow-lg flex flex-col relative">
+      <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-blue-600 text-white text-xs font-semibold uppercase tracking-wide">
+        Popüler
+      </span>
+      <h2 class="text-lg font-semibold text-slate-800">Pro</h2>
+      <p class="text-sm text-slate-500 mt-1">Büyüyen işletmeler için gelişmiş çözümler</p>
+      <p class="mt-6">
+        <span class="text-4xl font-bold text-slate-900">199</span>
+        <span class="text-slate-500"> TRY / ay</span>
+      </p>
+      <ul class="mt-8 space-y-3 text-sm text-slate-600 flex-1">
+        <li class="flex items-start gap-2">
+          <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
+          Basic paketteki tüm özellikler
+        </li>
+        <li class="flex items-start gap-2">
+          <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
+          Öncelikli destek
+        </li>
+        <li class="flex items-start gap-2">
+          <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
+          Aylık 15 saat mühendislik
+        </li>
+        <li class="flex items-start gap-2">
+          <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
+          Yapay zeka entegrasyonu
+        </li>
+      </ul>
+      <a href="{% url 'subscriptions:plan_list' %}"
+         class="mt-8 block w-full text-center px-4 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm transition">
+        Başla
+      </a>
+    </div>
+
+    <div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm flex flex-col">
+      <h2 class="text-lg font-semibold text-slate-800">Enterprise</h2>
+      <p class="text-sm text-slate-500 mt-1">Kurumsal ölçekte özel mühendislik</p>
+      <p class="mt-6">
+        <span class="text-4xl font-bold text-slate-900">399</span>
+        <span class="text-slate-500"> TRY / ay</span>
+      </p>
+      <ul class="mt-8 space-y-3 text-sm text-slate-600 flex-1">
+        <li class="flex items-start gap-2">
+          <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
+          Pro paketteki tüm özellikler
+        </li>
+        <li class="flex items-start gap-2">
+          <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
+          Özel hesap yöneticisi
+        </li>
+        <li class="flex items-start gap-2">
+          <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
+          Sınırsız mühendislik saati
+        </li>
+        <li class="flex items-start gap-2">
+          <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
+          SLA ve özel sözleşme
+        </li>
+      </ul>
+      <a href="{% url 'subscriptions:plan_list' %}"
+         class="mt-8 block w-full text-center px-4 py-3 rounded-lg border border-slate-300 text-slate-700 font-medium text-sm hover:bg-slate-50 transition">
+        İletişime geç
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}

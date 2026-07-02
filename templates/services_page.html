@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Tekniko Yazılım Çözümleri - Hizmetlerimiz{% endblock %}
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+{% endblock %}
+
+{% block content %}
+  <section class="max-w-3xl">
+    <h1 class="text-3xl font-bold text-slate-900 tracking-tight">Hizmetlerimiz</h1>
+    <p class="text-slate-600 mt-4 leading-relaxed">
+      Tekniko Yazılım Çözümleri olarak, müşterilerimize en iyi hizmeti sunmak için çeşitli çözümler sunuyoruz. İşte sunduğumuz hizmetlerden bazıları:
+    </p>
+    <ul class="list-disc list-inside mt-4 text-slate-600 leading-relaxed">
+      <li>Ödeme altyapısı ve entegrasyon çözümleri</li>
+      <li>Abonelik yönetimi ve otomasyon</li>
+      <li>Web ve mobil uygulama geliştirme</li>
+      <li>Danışmanlık ve teknik destek</li>
+    </ul>
+  </section>
+{% endblock %}

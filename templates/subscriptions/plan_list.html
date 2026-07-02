@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Abonelik Planları{% endblock %}
+{% block content %}
+<div>
+  <h1 class="text-2xl font-semibold text-slate-800 mb-2">Abonelik planları</h1>
+  <p class="text-slate-500 text-sm mb-8">Aylık yenilenen paketlerden birini seçin. Ödeme Iyzico güvencesiyle alınır.</p>
+
+  {% if error %}
+  <div class="mb-6 p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm">{{ error }}</div>
+  {% endif %}
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {% for plan in plans %}
+    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm flex flex-col">
+      <h2 class="text-lg font-semibold text-slate-800 mb-1">{{ plan.name }}</h2>
+      <p class="text-slate-500 text-sm mb-4 flex-1">{{ plan.description|default:"" }}</p>
+      <p class="text-2xl font-bold text-slate-900 mb-4">
+        {{ plan.price }} <span class="text-base font-normal text-slate-500">{{ plan.currency }}</span>
+        <span class="text-sm font-normal text-slate-500">/ ay</span>
+      </p>
+      <a href="{% url 'subscriptions:checkout_start' plan.id %}" class="block w-full text-center px-4 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm transition">
+        Abone ol
+      </a>
+    </div>
+    {% empty %}
+    <p class="text-slate-500 col-span-full">Henüz plan tanımlanmamış.</p>
+    {% endfor %}
+  </div>
+
+  <p class="mt-8 text-center">
+    <a href="{% url 'subscriptions:my_subscriptions' %}" class="text-sm text-slate-500 hover:text-blue-600 transition">Aboneliklerime git</a>
+  </p>
+</div>
+{% endblock %}

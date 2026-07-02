@@ -1,24 +1,32 @@
-# build output
-dist/
-# generated types
-# .astro/
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
 
-# dependencies
-node_modules/
+# Virtual environments
+.venv/
+venv/
+env/
 
-# logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
+# Django
+db.sqlite3
+staticfiles/
+media/
 
-
-# environment variables
+# Environment files
 .env
-.env.production
+.env.*
+!.env.example
 
-# macOS-specific files
-.DS_Store
+# Tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
-# jetbrains setting folder
+# IDE / OS
 .idea/
+.vscode/
+.DS_Store
+Thumbs.db

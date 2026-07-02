@@ -1,0 +1,192 @@
+{% extends "base.html" %}
+{% block title %}Test Ödemesi (Iyzico){% endblock %}
+{% block content %}
+<div>
+  <div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm mb-8">
+    <h1 class="text-xl font-semibold text-slate-800 mb-2">Test ödemesi</h1>
+    <p class="text-slate-500 text-sm mb-6">Iyzico Checkout Form ile sandbox ortamında ödeme senaryolarını test edin.</p>
+
+    {% if error %}
+    <div class="mb-4 p-4 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm flex items-start gap-2">
+      <i class="bi bi-exclamation-circle-fill mt-0.5 shrink-0"></i>
+      <span>{{ error }}</span>
+    </div>
+    {% endif %}
+
+    <form method="post" action="{% url 'payment_start' %}" class="space-y-4">
+      {% csrf_token %}
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label for="amount" class="block text-sm font-medium text-slate-700 mb-1">Tutar</label>
+          <input type="number" id="amount" name="amount" value="{{ default_amount|default:'10' }}"
+                 min="0.01" step="0.01" required
+                 class="w-full rounded-lg border border-slate-300 px-4 py-2.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                 placeholder="10">
+        </div>
+        <div>
+          <label for="currency" class="block text-sm font-medium text-slate-700 mb-1">Para birimi</label>
+          <select id="currency" name="currency" required
+                  class="w-full rounded-lg border border-slate-300 px-4 py-2.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white">
+            <option value="TRY" {% if default_currency == 'TRY' or not default_currency %}selected{% endif %}>TRY — Türk Lirası</option>
+            <option value="USD" {% if default_currency == 'USD' %}selected{% endif %}>USD — Amerikan Doları</option>
+            <option value="EUR" {% if default_currency == 'EUR' %}selected{% endif %}>EUR — Euro</option>
+            <option value="GBP" {% if default_currency == 'GBP' %}selected{% endif %}>GBP — İngiliz Sterlini</option>
+            <option value="CHF" {% if default_currency == 'CHF' %}selected{% endif %}>CHF — İsviçre Frangı</option>
+            <option value="NOK" {% if default_currency == 'NOK' %}selected{% endif %}>NOK — Norveç Kronu</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="w-full sm:w-auto px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm transition shadow-sm">
+        Ödeme sayfasına git
+      </button>
+    </form>
+  </div>
+
+  <div class="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm mb-8" x-data="{ open: true }">
+    <button type="button" @click="open = !open"
+            class="w-full flex items-center justify-between p-4 text-left text-sm font-semibold text-slate-800 hover:bg-slate-50 transition focus:outline-none border-b border-slate-100">
+      <span class="flex items-center gap-2">
+        <i class="bi bi-credit-card-2-front text-slate-500"></i>
+        Test senaryoları (Iyzico sandbox kartları)
+      </span>
+      <svg class="w-4 h-4 text-slate-500 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </button>
+    <div x-show="open"
+         x-transition:enter="transition ease-out duration-200"
+         x-transition:enter-start="opacity-0 -translate-y-2"
+         x-transition:enter-end="opacity-100 translate-y-0"
+         x-transition:leave="transition ease-in duration-150"
+         x-transition:leave-start="opacity-100 translate-y-0"
+         x-transition:leave-end="opacity-0 -translate-y-2"
+         x-cloak
+         class="p-4 sm:p-6">
+      <p class="text-slate-600 text-sm mb-4">
+        Iyzico ödeme sayfasına gittikten sonra aşağıdaki kart numaralarından birini girin. <strong>SKT:</strong> 12/30, <strong>CVC:</strong> 123 (veya 000) kullanın.
+      </p>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="border-b border-slate-200">
+              <th class="text-left py-2 px-3 font-semibold text-slate-700">Senaryo</th>
+              <th class="text-left py-2 px-3 font-semibold text-slate-700">Kart numarası</th>
+              <th class="text-left py-2 px-3 font-semibold text-slate-700 hidden sm:table-cell">Açıklama</th>
+            </tr>
+          </thead>
+          <tbody class="text-slate-600">
+            <tr class="border-b border-slate-100 hover:bg-slate-50">
+              <td class="py-2.5 px-3"><span class="inline-flex items-center gap-1 text-green-700 font-medium"><i class="bi bi-check-circle"></i> Başarılı</span></td>
+              <td class="py-2.5 px-3 font-mono text-xs">5528790000000008</td>
+              <td class="py-2.5 px-3 hidden sm:table-cell">Halkbank Master Card (kredi)</td>
+            </tr>
+            <tr class="border-b border-slate-100 hover:bg-slate-50">
+              <td class="py-2.5 px-3"><span class="inline-flex items-center gap-1 text-green-700 font-medium"><i class="bi bi-check-circle"></i> Başarılı</span></td>
+              <td class="py-2.5 px-3 font-mono text-xs">5890040000000016</td>
+              <td class="py-2.5 px-3 hidden sm:table-cell">Akbank Master Card (banka kartı)</td>
+            </tr>
+            <tr class="border-b border-slate-100 hover:bg-slate-50">
+              <td class="py-2.5 px-3"><span class="inline-flex items-center gap-1 text-green-700 font-medium"><i class="bi bi-check-circle"></i> Başarılı</span></td>
+              <td class="py-2.5 px-3 font-mono text-xs">4603450000000000</td>
+              <td class="py-2.5 px-3 hidden sm:table-cell">Denizbank Visa (kredi)</td>
+            </tr>
+            <tr class="border-b border-slate-100 hover:bg-red-50">
+              <td class="py-2.5 px-3"><span class="inline-flex items-center gap-1 text-red-700 font-medium"><i class="bi bi-x-circle"></i> Yetersiz bakiye</span></td>
+              <td class="py-2.5 px-3 font-mono text-xs">4111111111111129</td>
+              <td class="py-2.5 px-3 hidden sm:table-cell">Not sufficient funds</td>
+            </tr>
+            <tr class="border-b border-slate-100 hover:bg-red-50">
+              <td class="py-2.5 px-3"><span class="inline-flex items-center gap-1 text-red-700 font-medium"><i class="bi bi-x-circle"></i> İşlem reddedildi</span></td>
+              <td class="py-2.5 px-3 font-mono text-xs">4129111111111111</td>
+              <td class="py-2.5 px-3 hidden sm:table-cell">Do not honour</td>
+            </tr>
+            <tr class="border-b border-slate-100 hover:bg-red-50">
+              <td class="py-2.5 px-3"><span class="inline-flex items-center gap-1 text-red-700 font-medium"><i class="bi bi-x-circle"></i> Geçersiz işlem</span></td>
+              <td class="py-2.5 px-3 font-mono text-xs">4128111111111112</td>
+              <td class="py-2.5 px-3 hidden sm:table-cell">Invalid transaction</td>
+            </tr>
+            <tr class="border-b border-slate-100 hover:bg-red-50">
+              <td class="py-2.5 px-3"><span class="inline-flex items-center gap-1 text-red-700 font-medium"><i class="bi bi-x-circle"></i> Kayıp kart</span></td>
+              <td class="py-2.5 px-3 font-mono text-xs">4127111111111113</td>
+              <td class="py-2.5 px-3 hidden sm:table-cell">Lost card</td>
+            </tr>
+            <tr class="border-b border-slate-100 hover:bg-red-50">
+              <td class="py-2.5 px-3"><span class="inline-flex items-center gap-1 text-red-700 font-medium"><i class="bi bi-x-circle"></i> Çalıntı kart</span></td>
+              <td class="py-2.5 px-3 font-mono text-xs">4126111111111114</td>
+              <td class="py-2.5 px-3 hidden sm:table-cell">Stolen card</td>
+            </tr>
+            <tr class="border-b border-slate-100 hover:bg-red-50">
+              <td class="py-2.5 px-3"><span class="inline-flex items-center gap-1 text-red-700 font-medium"><i class="bi bi-x-circle"></i> Süresi dolmuş kart</span></td>
+              <td class="py-2.5 px-3 font-mono text-xs">4125111111111115</td>
+              <td class="py-2.5 px-3 hidden sm:table-cell">Expired card</td>
+            </tr>
+            <tr class="border-b border-slate-100 hover:bg-red-50">
+              <td class="py-2.5 px-3"><span class="inline-flex items-center gap-1 text-red-700 font-medium"><i class="bi bi-x-circle"></i> Geçersiz CVC</span></td>
+              <td class="py-2.5 px-3 font-mono text-xs">4124111111111116</td>
+              <td class="py-2.5 px-3 hidden sm:table-cell">Invalid CVC2</td>
+            </tr>
+            <tr class="border-b border-slate-100 hover:bg-red-50">
+              <td class="py-2.5 px-3"><span class="inline-flex items-center gap-1 text-red-700 font-medium"><i class="bi bi-x-circle"></i> Dolandırıcılık şüphesi</span></td>
+              <td class="py-2.5 px-3 font-mono text-xs">4121111111111119</td>
+              <td class="py-2.5 px-3 hidden sm:table-cell">Fraud suspect</td>
+            </tr>
+            <tr class="border-b border-slate-100 hover:bg-red-50">
+              <td class="py-2.5 px-3"><span class="inline-flex items-center gap-1 text-red-700 font-medium"><i class="bi bi-x-circle"></i> Genel hata</span></td>
+              <td class="py-2.5 px-3 font-mono text-xs">4130111111111118</td>
+              <td class="py-2.5 px-3 hidden sm:table-cell">General error</td>
+            </tr>
+            <tr class="border-b border-slate-100 hover:bg-red-50">
+              <td class="py-2.5 px-3"><span class="inline-flex items-center gap-1 text-red-700 font-medium"><i class="bi bi-x-circle"></i> 3D Secure hata</span></td>
+              <td class="py-2.5 px-3 font-mono text-xs">4151111111111112</td>
+              <td class="py-2.5 px-3 hidden sm:table-cell">3D Secure initialize failed</td>
+            </tr>
+            <tr class="border-b border-slate-100 hover:bg-slate-50">
+              <td class="py-2.5 px-3"><span class="inline-flex items-center gap-1 text-slate-700 font-medium"><i class="bi bi-globe"></i> Yabancı kart (kredi)</span></td>
+              <td class="py-2.5 px-3 font-mono text-xs">5400010000000004</td>
+              <td class="py-2.5 px-3 hidden sm:table-cell">Non-Turkish credit</td>
+            </tr>
+            <tr class="border-b border-slate-100 hover:bg-slate-50">
+              <td class="py-2.5 px-3"><span class="inline-flex items-center gap-1 text-slate-700 font-medium"><i class="bi bi-globe"></i> Yabancı kart (banka)</span></td>
+              <td class="py-2.5 px-3 font-mono text-xs">4054180000000007</td>
+              <td class="py-2.5 px-3 hidden sm:table-cell">Non-Turkish debit</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 text-xs text-slate-400">
+        Kaynak: <a href="https://docs.iyzico.com/ek-bilgiler/test-kartlari" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Iyzico Test Kartları</a>. Sonuç sayfasında başarı/başarısızlık ve Iyzico hata mesajı gösterilir.
+      </p>
+    </div>
+  </div>
+
+  <div class="rounded-2xl border border-slate-200 bg-slate-50 overflow-hidden" x-data="{ open: false }">
+    <button type="button" @click="open = !open"
+            class="w-full flex items-center justify-between p-4 text-left text-sm font-semibold text-slate-800 hover:bg-slate-100 transition focus:outline-none">
+      <span>Nasıl kullanılır?</span>
+      <svg class="w-4 h-4 text-slate-500 transition-transform duration-200" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </button>
+    <div x-show="open"
+         x-transition:enter="transition ease-out duration-200"
+         x-transition:enter-start="opacity-0 -translate-y-2"
+         x-transition:enter-end="opacity-100 translate-y-0"
+         x-transition:leave="transition ease-in duration-150"
+         x-transition:leave-start="opacity-100 translate-y-0"
+         x-transition:leave-end="opacity-0 -translate-y-2"
+         x-cloak
+         class="border-t border-slate-200 p-6 pt-4 text-sm text-slate-700">
+      <ol class="list-decimal list-inside space-y-3">
+        <li><strong>Iyzico sandbox hesabı:</strong> <a href="https://sandbox-merchant.iyzipay.com" target="_blank" rel="noopener" class="text-blue-600 hover:underline">sandbox-merchant.iyzipay.com</a> üzerinden üye olun veya giriş yapın.</li>
+        <li><strong>API anahtarları:</strong> Panelde <strong>Ayarlar → API Anahtarları</strong> bölümünden <code class="bg-slate-200 px-1 rounded text-red-600">API Key</code> ve <code class="bg-slate-200 px-1 rounded text-red-600">Secret Key</code> alın.</li>
+        <li><strong>.env dosyası:</strong> Proje kökündeki <code class="bg-slate-200 px-1 rounded">.env</code> içine <code class="bg-slate-200 px-1 rounded">IYZICO_API_KEY</code>, <code class="bg-slate-200 px-1 rounded">IYZICO_SECRET_KEY</code>, <code class="bg-slate-200 px-1 rounded">IYZICO_BASE_URL=sandbox-api.iyzipay.com</code> yazın.</li>
+        <li><strong>Ödeme başlat:</strong> Yukarıdaki formda tutar ve para birimi girip &quot;Ödeme sayfasına git&quot; butonuna tıklayın.</li>
+        <li><strong>Test kartı:</strong> Iyzico sayfasında yukarıdaki tablodan seçtiğiniz senaryoya ait kart numarasını girin; SKT: 12/30, CVC: 123 kullanın.</li>
+      </ol>
+      <div class="mt-4 p-3 bg-blue-50 border-l-4 border-blue-400 text-xs text-blue-700 rounded-r">
+        <strong>Not:</strong> Callback için yerelde <code class="bg-blue-100 px-1 rounded">PAYMENT_CALLBACK_HOST</code> veya ngrok kullanıyorsanız <code class="bg-blue-100 px-1 rounded">NGROK_PUBLIC_URL</code> tanımlayın.
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+django
+django-cors-headers
+django-environ
+psycopg2-binary
+gunicorn
+whitenoise
+django-ninja
+django-ninja-jwt
+pyjwt
+google-auth
+django-allauth[socialaccount,mfa]
+fido2
+pytest
+pytest-django
+iyzipay
+requests
+djangorestframework

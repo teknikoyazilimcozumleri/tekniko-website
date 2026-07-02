@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}Aboneliklerim{% endblock %}
+{% block content %}
+<div class="max-w-2xl mx-auto">
+  <h1 class="text-2xl font-semibold text-slate-800 mb-2">Aboneliklerim</h1>
+  <p class="text-slate-500 text-sm mb-8">Aynı anda yalnızca bir abonelik aktiftir. Yeni plan seçtiğinizde önceki abonelik iptal edilir.</p>
+
+  {% if active_subscription %}
+  <div class="mb-6">
+    <p class="text-xs font-medium text-slate-500 uppercase tracking-wide mb-2">Aktif abonelik</p>
+    <div class="rounded-2xl border-2 border-green-200 bg-green-50/50 p-6 shadow-sm">
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <h2 class="text-lg font-semibold text-slate-800">{{ active_subscription.plan.name }}</h2>
+          <p class="text-slate-600 text-sm">{{ active_subscription.plan.price }} {{ active_subscription.plan.currency }} / ay</p>
+          <p class="text-xs text-slate-500 mt-1">
+            {% if active_subscription.current_period_end %}Dönem bitişi: {{ active_subscription.current_period_end|date:"d.m.Y" }}{% else %}—{% endif %}
+          </p>
+        </div>
+        <span class="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">Aktif</span>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  {% if past_subscriptions %}
+  <div>
+    <p class="text-xs font-medium text-slate-500 uppercase tracking-wide mb-2">Diğer abonelikler</p>
+    <div class="space-y-4">
+      {% for sub in past_subscriptions %}
+      <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <h2 class="text-base font-medium text-slate-700">{{ sub.plan.name }}</h2>
+            <p class="text-slate-500 text-sm">{{ sub.plan.price }} {{ sub.plan.currency }} / ay</p>
+            <p class="text-xs text-slate-400 mt-1">
+              {% if sub.current_period_end %}Dönem bitişi: {{ sub.current_period_end|date:"d.m.Y" }}{% else %}—{% endif %}
+            </p>
+          </div>
+          <span class="px-3 py-1 rounded-full text-xs font-medium
+            {% if sub.status == 'pending' %}bg-amber-100 text-amber-700
+            {% elif sub.status == 'cancelled' %}bg-slate-100 text-slate-600
+            {% else %}bg-red-100 text-red-700{% endif %}">
+            {{ sub.get_status_display }}
+          </span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if not active_subscription and not past_subscriptions %}
+  <p class="text-slate-500">Henüz aboneliğiniz yok.</p>
+  <a href="{% url 'subscriptions:plan_list' %}" class="inline-block mt-4 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium">Planlara git</a>
+  {% endif %}
+
+  <p class="mt-8">
+    <a href="{% url 'subscriptions:plan_list' %}" class="text-sm text-slate-500 hover:text-blue-600 transition">Abonelik planları</a>
+  </p>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "account/mfa/mfa_base.html" %}
+
+{% block title %}MFA - TOTP Kapat{% endblock %}
+
+{% block mfa_content %}
+  <h1 class="text-2xl font-semibold text-slate-800 mb-4">Zaman Bazlı Kod (TOTP) Kapat</h1>
+  <p class="text-sm text-slate-600 mb-6">
+    Hesabınız için TOTP tabanlı çok faktörlü kimlik doğrulamayı kapatmak üzeresiniz.
+  </p>
+
+  {% if form.non_field_errors %}
+    <div class="mb-4 rounded-xl border border-red-200 bg-red-50 text-red-700 px-4 py-3 text-sm">
+      {{ form.non_field_errors }}
+    </div>
+  {% endif %}
+
+  <form method="post" class="space-y-5">
+    {% csrf_token %}
+
+    <button type="submit"
+            class="w-full rounded-xl py-3 font-semibold text-white
+                   bg-red-600 hover:bg-red-500 transition">
+      TOTP'yi Kapat
+    </button>
+  </form>
+{% endblock %}
+

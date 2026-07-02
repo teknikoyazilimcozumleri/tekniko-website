@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Tekniko Yazılım Çözümleri - Hakkımızda{% endblock %}
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+{% endblock %}
+
+{% block content %}
+  <section class="max-w-3xl">
+    <h1 class="text-3xl font-bold text-slate-900 tracking-tight">Hakkımızda</h1>
+    <p class="text-slate-600 mt-4 leading-relaxed">
+      Biz, teknolojiye inanan ve müşteri memnuniyetini ön planda tutan bir ekip olarak, en iyi çözümleri sunmak için çalışıyoruz.
+    </p>
+  </section>
+{% endblock %}

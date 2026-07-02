@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Çıkış - TYC{% endblock %}
+
+{% block content %}
+<div class="max-w-md mx-auto">
+  <section class="bg-white rounded-3xl p-8 shadow-xl border border-slate-200">
+    <h1 class="text-2xl font-semibold text-slate-800 mb-4">Oturumu Kapat</h1>
+    <p class="text-sm text-slate-600 mb-6">
+      Hesabınızdan çıkış yapmak üzeresiniz. Emin misiniz?
+    </p>
+
+    <form method="post" action="{% url 'account_logout' %}" class="space-y-4">
+      {% csrf_token %}
+      {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
+      {% endif %}
+      <button type="submit"
+              class="w-full rounded-xl py-3 font-semibold text-white
+                     bg-slate-900 hover:bg-slate-800 transition">
+        Çıkış Yap
+      </button>
+    </form>
+
+    <p class="mt-6 text-center text-sm">
+      <a href="{% url 'home' %}" class="text-blue-600 hover:underline">Vazgeç ve geri dön</a>
+    </p>
+  </section>
+</div>
+{% endblock %}
+
