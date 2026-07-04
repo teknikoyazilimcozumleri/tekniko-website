@@ -8,44 +8,41 @@
 {% block content %}
 <div class="landing-page">
   <section class="landing-hero">
-    <h1><span class="landing-accent-text">Fikirlerinizi büyütür, işinizi güçlendiririz</span></h1>
-    <p>Kart bilgisi sunucunuza gelmez. Initialize, callback ve retrieve akışı hazır; audit log ve JWT ile güvenli başlangıç şablonu.</p>
-    <div class="flex flex-wrap gap-3">
-      <a href="{% url 'payment_start' %}" class="landing-cta landing-cta-blue">
-        <i class="bi bi-credit-card-2-front"></i>
-        Ödemeyi dene
-      </a>
-    
-      <a href="{% url 'subscriptions:plan_list' %}" class="landing-cta landing-cta-orange">
-        <i class="bi bi-arrow-repeat"></i> Abonelikleri dene
-      </a>
-    
-      {% if not request.user.is_authenticated %}
-        <a href="{% url 'account_login' %}" class="landing-cta landing-cta-secondary">Giriş yap</a>
-      {% endif %}
-    </div>  
+    <div class="landing-hero-grid">
+      <div class="landing-hero-content">
+        <h1><span class="">Fikirlerinizi büyütür, işinizi güçlendiririz</span></h1>
+        <p>Girişiminizi bir sonraki seviyeye taşımak ve operasyonlarınızı sorunsuz ölçeklemek için ihtiyacınız olan güçlü yazılım altyapısı.</p>
+        <div class="landing-hero-actions">
+          <a href="{% url 'products' %}" class="landing-cta landing-cta-blue">
+            <i class="bi bi-box-seam"></i>
+            Ürünlerimiz
+          </a>
+        </div>
+      </div>
+      <div class="landing-hero-media">
+        <img src="{% static 'img/desk.svg' %}"
+             class="landing-hero-image"
+             alt="Modern çalışma masası illüstrasyonu">
+      </div>
+    </div>
   </section>
 
   <div class="landing-cards">
-    <div class="landing-card">
+    <a href="{% url 'products' %}" class="landing-card">
       <div class="landing-card-icon"><i class="bi bi-shield-check"></i></div>
-      <h3>Checkout Form</h3>
-      <p>Iyzico sayfasında ödeme; PCI yükü sizde değil. Initialize → Callback → Retrieve akışı dokümante.</p>
-    </div>
-    <div class="landing-card">
+      <h3>Kullanıma Hazır Ürünler</h3>
+      <p>Kullanıma hazır ürünlerimize hemen üye olun ve çalışmaya başlayın.</p>
+    </a>
+    <a href="{% url 'software_templates' %}" class="landing-card">
       <div class="landing-card-icon"><i class="bi bi-journal-text"></i></div>
-      <h3>Audit log</h3>
-      <p>Her ödeme adımı PAYMENT_INITIALIZE ve PAYMENT_CALLBACK ile kayıt altına alınır.</p>
-    </div>
-    <div class="landing-card">
+      <h3>Yazılım Şablonları</h3>
+      <p>KVKK uyumlu, yazılım şablonlarımızla startup'ınızı veya bir sonraki projenizi hızla hayata geçirin.</p>
+    </a>
+    <a href="{% url 'services' %}" class="landing-card">
       <div class="landing-card-icon"><i class="bi bi-key"></i></div>
-      <h3>JWT & RBAC</h3>
-      <p>Token tabanlı API ve rol bazlı erişim. Session ile web girişi desteklenir.</p>
-    </div>
+      <h3>Geliştirme ve Teknoloji</h3>
+      <p>Bizimle ulaşın ve beraber projenizi hayata geçireceğiz.</p>
+    </a>
   </div>
-
-  <section class="mt-16 pt-16 border-t border-slate-200">
-    {% include "pricing_tiers.html" %}
-  </section>
 </div>
 {% endblock %}

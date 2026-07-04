@@ -198,12 +198,12 @@
 }
 
 .modal__btn--primary {
-  background: #2563eb;
+  background: #f97316;
   color: #fff;
 }
 
 .modal__btn--primary:hover {
-  background: #1d4ed8;
+  background: #ea580c;
 }
 
 .modal__btn:focus {

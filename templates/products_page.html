@@ -1,21 +1,32 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}Tekniko Yazılım Çözümleri - Ürünler{% endblock %}
-{% block extra_css %}
-  <link rel="stylesheet" href="{% static 'css/landing.css' %}">
-{% endblock %}
 
 {% block content %}
-  <section class="max-w-3xl">
-    <h1 class="text-3xl font-bold text-slate-900 tracking-tight">Ürünlerimiz</h1>
-    <p class="text-slate-600 mt-4 leading-relaxed">
-      Tekniko Yazılım Çözümleri olarak, müşterilerimize en iyi hizmeti sunmak için çeşitli çözümler sunuyoruz. İşte sunduğumuz ürünlerden bazıları:
+  <header class="page-header">
+    <h1 class="page-title">Ürünlerimiz</h1>
+    <p class="page-lead">
+      Kullanıma hazır yazılım çözümlerimiz ve şablonlarımızla altyapı kaygılarına son verin; tüm enerjinizi işinizi büyütmeye ayırın. İşte sunduğumuz ürünlerden bazıları:
     </p>
-    <ul class="list-disc list-inside mt-4 text-slate-600 leading-relaxed">
-      <li>Ödeme altyapısı ve entegrasyon çözümleri</li>
-      <li>Abonelik yönetimi ve otomasyon</li>
-      <li>Web ve mobil uygulama geliştirme</li>
-      <li>Danışmanlık ve teknik destek</li>
-    </ul>
-  </section>
+  </header>
+
+  <div class="card-grid">
+    <a href="{% url 'esentre' %}" class="feature-card">
+      <div class="feature-card__icon"><i class="bi bi-shield-check"></i></div>
+      <h2 class="feature-card__title">Esentre</h2>
+      <p class="feature-card__text">Kullanıma hazır ürünlerimize hemen üye olun ve çalışmaya başlayın.</p>
+    </a>
+
+    <a href="{% url 'software_templates' %}" class="feature-card">
+      <div class="feature-card__icon"><i class="bi bi-journal-text"></i></div>
+      <h2 class="feature-card__title">Yazılım Şablonları</h2>
+      <p class="feature-card__text">KVKK uyumlu yazılım şablonlarımızla startup'ınızı veya bir sonraki projenizi hızla hayata geçirin.</p>
+    </a>
+
+    <a href="{% url 'konutarsiv' %}" class="feature-card">
+      <div class="feature-card__icon"><i class="bi bi-key"></i></div>
+      <h2 class="feature-card__title">KonutArşiv</h2>
+      <p class="feature-card__text">Bizimle ulaşın ve beraber projenizi hayata geçirelim.</p>
+    </a>
+  </div>
 {% endblock %}

@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+
+{% block title %}Yazılım Şablonları - Tekniko Yazılım Çözümleri{% endblock %}
+
+{% block content %}
+  <header class="product-hero">
+    <span class="product-hero__eyebrow">Yazılım Şablonları</span>
+    <h1 class="product-hero__title">Startup'ınızı hızla hayata geçirin</h1>
+    <p class="product-hero__lead">
+      Zor işleri bize bırakın. KVKK uyumlu yazılım şablonlarımızla altyapı kaygılarına son verin.
+      Kimlik doğrulama, İyzico ödemeleri, abonelik yönetimi ve denetim katmanları hazır gelir;
+      siz ürününüze odaklanın.
+    </p>
+    <div class="product-hero__actions">
+      <a href="{% url 'subscriptions:plan_list' %}" class="btn-accent">
+        Hemen Başla
+        <i class="bi bi-arrow-up-right"></i>
+      </a>
+    </div>
+  </header>
+
+  <section class="product-section" id="features">
+    <h2 class="product-section__title">Özellikler</h2>
+    <p class="product-section__subtitle">
+      Django tabanlı şablonumuz; auth, RBAC, audit ve Iyzico ödeme altyapısıyla üretime hazır bir başlangıç sunar.
+    </p>
+
+    <div class="product-card-grid">
+      <article class="feature-card">
+        <div class="feature-card__icon"><i class="bi bi-shield-check"></i></div>
+        <h3 class="feature-card__title">KVKK uyumlu altyapı</h3>
+        <p class="feature-card__text">
+          Veri koruma ve gizlilik gereksinimlerini göz önünde bulundurarak tasarlanmış, güvenli bir temel.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-card__icon"><i class="bi bi-key"></i></div>
+        <h3 class="feature-card__title">Kimlik doğrulama ve RBAC</h3>
+        <p class="feature-card__text">
+          Kullanıcı girişi, sosyal hesap desteği ve rol tabanlı erişim kontrolü hazır yapılandırılmış olarak gelir.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-card__icon"><i class="bi bi-credit-card-2-front"></i></div>
+        <h3 class="feature-card__title">Iyzico ödeme entegrasyonu</h3>
+        <p class="feature-card__text">
+          Checkout Form ile tek seferlik ödemeleri güvenle alın; sandbox ve production ortamlarına hazır.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-card__icon"><i class="bi bi-receipt"></i></div>
+        <h3 class="feature-card__title">Abonelik yönetimi</h3>
+        <p class="feature-card__text">
+          Aylık yenilenen abonelik planları, checkout akışı ve webhook desteğiyle tam entegre.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-card__icon"><i class="bi bi-journal-text"></i></div>
+        <h3 class="feature-card__title">Denetim kayıtları</h3>
+        <p class="feature-card__text">
+          Kritik işlemler otomatik olarak kayıt altına alınır; izlenebilirlik ve uyumluluk için hazır.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-card__icon"><i class="bi bi-box-seam"></i></div>
+        <h3 class="feature-card__title">Docker ile hazır dağıtım</h3>
+        <p class="feature-card__text">
+          PostgreSQL, Nginx ve Gunicorn ile container tabanlı kurulum; dakikalar içinde çalışır hale gelin.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="product-section" id="pricing">
+    <h2 class="product-section__title">Fiyatlandırma</h2>
+    <p class="product-section__subtitle">
+      İşletmenizin ihtiyaçlarına uygun paketi seçin.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+      <div class="pricing-tier">
+        <h2>Basit </h2>
+        <p class="pricing-tier-desc">Küçük ekipler ve başlangıç projeleri için</p>
+        <p class="pricing-tier-price">10.000<span>TL</span></p>
+        <ul class="pricing-tier-features">
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            1 yıllık güncelleme dahil
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            İyzico ödemeleri
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            E-posta desteği
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Kimlik Doğrulama ve RBAC
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            HTMX ile dinamik sayfa yükleme
+          </li>
+        </ul>
+        <a href="{% url 'register_page' %}" class="btn-outline">Başla</a>
+      </div>
+
+      <div class="pricing-tier pricing-tier--featured">
+        <span class="pricing-tier-badge">Pro</span>
+        <h2>Pro</h2>
+        <p class="pricing-tier-desc">Büyüyen işletmeler için gelişmiş çözümler</p>
+        <p class="pricing-tier-price">15.000<span>TL</span></p>
+        <ul class="pricing-tier-features">
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Basic paketteki tüm özellikler
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Öncelikli destek
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Multi-tenancy desteği
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            İsteğe baġlı yapay zeka entegrasyonu
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            React desteği ve API entegrasyonu
+          </li>
+        </ul>
+        <a href="{% url 'register_page' %}" class="btn-accent">Başla</a>
+      </div>
+
+      <div class="pricing-tier">
+        <h2>Enterprise</h2>
+        <p class="pricing-tier-desc">Kurumsal ölçekte özel mühendislik</p>
+        <p class="pricing-tier-price">Bize Ulaşın<span></span></p>
+        <ul class="pricing-tier-features">
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Pro paketteki tüm özellikler
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Özel çözümler ve entegrasyonlar
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Mühendislik saati
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            SLA ve özel sözleşme
+          </li>
+        </ul>
+        <a href="{% url 'contact' %}" class="btn-outline">İletişime geç</a>
+      </div>
+    </div>
+  </section>
+{% endblock %}

@@ -15,3 +15,4 @@ pytest-django
 iyzipay
 requests
 djangorestframework
+django-htmx

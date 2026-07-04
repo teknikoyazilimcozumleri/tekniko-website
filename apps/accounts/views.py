@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.contrib.auth import login
 from django.contrib.messages import success
+from django.core.mail import EmailMessage
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.views.generic import FormView
@@ -8,6 +9,7 @@ from django.views.generic import FormView
 from allauth.account.views import LoginView as AllauthLoginView
 from allauth.socialaccount.views import SignupView as SocialSignupViewBase
 
+from .forms import ContactForm
 from .otp import create_and_send_otp, get_otp_expires_at, verify_otp
 
 
@@ -29,6 +31,49 @@ def services_page(request):
 
 def products_page(request):
     return render(request, "products_page.html")
+
+
+def contact_page(request):
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            data = form.cleaned_data
+            service_label = dict(ContactForm.SERVICE_CHOICES).get(
+                data["service_type"], "Belirtilmedi"
+            )
+            body = (
+                f"Ad Soyad: {data['full_name']}\n"
+                f"E-posta: {data['email']}\n"
+                f"Şirket: {data['company'] or '—'}\n"
+                f"Telefon: {data['phone'] or '—'}\n"
+                f"Hizmet Türü: {service_label}\n\n"
+                f"Mesaj:\n{data['message']}"
+            )
+            recipient = settings.CONTACT_EMAIL or settings.DEFAULT_FROM_EMAIL
+            EmailMessage(
+                subject=f"İletişim formu: {data['full_name']}",
+                body=body,
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                to=[recipient],
+                reply_to=[data["email"]],
+            ).send(fail_silently=False)
+            success(request, "Mesajınız alındı. En kısa sürede size dönüş yapacağız.")
+            return redirect("contact")
+    else:
+        form = ContactForm()
+
+    return render(request, "contact_page.html", {"form": form})
+
+def esentre_page(request):
+    return render(request, "esentre.html")
+
+
+def konutarsiv_page(request):
+    return render(request, "konutarsiv.html")
+
+
+def software_templates_page(request):
+    return render(request, "software_templates.html")
 
 
 class LoginViewWithEmailOtp(AllauthLoginView):

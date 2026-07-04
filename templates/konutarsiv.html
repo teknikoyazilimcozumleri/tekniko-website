@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block title %}KonutArşiv - Tekniko Yazılım Çözümleri{% endblock %}
+
+{% block content %}
+  <header class="product-hero">
+    <span class="product-hero__eyebrow">KonutArşiv</span>
+    <h1 class="product-hero__title">Tek bir uygulama. Tüm mülkleriniz.</h1>
+    <p class="product-hero__lead">
+      Kiracılarınızı yönetmek için ihtiyacınız olan her şey tek bir uygulamada.
+      KonutArşiv, gayrimenkul portföyünüzü, kiracılarınızı ve finansal süreçlerinizi
+      tek platformda birleştirir.
+    </p>
+    <div class="product-hero__actions">
+      <a href="https://konutarsiv.com/" class="btn-accent" target="_blank" rel="noopener noreferrer">
+        Uygulamayı İndir
+        <i class="bi bi-arrow-up-right"></i>
+      </a>
+    </div>
+  </header>
+
+  <section class="product-section" id="features">
+    <h2 class="product-section__title">Özellikler</h2>
+    <p class="product-section__subtitle">
+      Mülk sahipleri ve kiracılar için tasarlanmış kapsamlı gayrimenkul yönetim araçları.
+    </p>
+
+    <div class="product-card-grid">
+      <article class="feature-card">
+        <div class="feature-card__icon"><i class="bi bi-buildings"></i></div>
+        <h3 class="feature-card__title">Çoklu mülk yönetimi</h3>
+        <p class="feature-card__text">
+          Tüm mülklerinizi tek bir uygulama üzerinden yönetme olanağı.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-card__icon"><i class="bi bi-key"></i></div>
+        <h3 class="feature-card__title">Kiracı yönetimi</h3>
+        <p class="feature-card__text">
+          Kiracılarınızı etkili bir şekilde yönetme imkanı.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-card__icon"><i class="bi bi-receipt"></i></div>
+        <h3 class="feature-card__title">Kira takibi</h3>
+        <p class="feature-card__text">
+          Kiracılardan gelen kira ödemelerinin otomatik olarak bildirilmesi ve takibi.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-card__icon"><i class="bi bi-journal-text"></i></div>
+        <h3 class="feature-card__title">Bakım ve onarım yönetimi</h3>
+        <p class="feature-card__text">
+          Kiracılardan gelen onarım taleplerini yönetme yeteneği.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-card__icon"><i class="bi bi-shield-check"></i></div>
+        <h3 class="feature-card__title">Finansal raporlama</h3>
+        <p class="feature-card__text">
+          Finansal durumunuzu detaylı raporlarla takip edin.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-card__icon"><i class="bi bi-envelope"></i></div>
+        <h3 class="feature-card__title">Kiracılarla iletişim</h3>
+        <p class="feature-card__text">
+          Kiracılarla kolay ve etkili bir şekilde iletişim kurun.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="product-section" id="pricing">
+    <h2 class="product-section__title">Fiyatlandırma</h2>
+    <p class="product-section__subtitle">
+      İhtiyacınıza uygun, net ve şeffaf fiyatlandırma ile başlayın.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+      <div class="pricing-tier pricing-tier--featured">
+        <span class="pricing-tier-badge">Mülk Sahipleri</span>
+        <h2>Mülk Sahipleri</h2>
+        <p class="pricing-tier-desc">
+          Portföyünüzü profesyonel şekilde yönetmek isteyen mülk sahipleri için tüm temel özellikler tek pakette.
+        </p>
+        <p class="pricing-tier-price">700 <span>TL / ay</span></p>
+        <ul class="pricing-tier-features">
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Tüm mülklerinizi ve kiracılarınızı tek uygulamada yönetin
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Kira takibi ve finansal raporlama
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Bakım ve onarım taleplerini yönetin
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Premium abonelik ile tam erişim
+          </li>
+        </ul>
+        <a href="https://konutarsiv.com/" class="btn-accent" target="_blank" rel="noopener noreferrer">
+          Abone Ol
+        </a>
+      </div>
+
+      <div class="pricing-tier">
+        <h2>Kiracılar</h2>
+        <p class="pricing-tier-desc">
+          Kiracılar uygulamayı tamamen ücretsiz kullanabilir; iletişim ve takip süreçlerini kolayca yönetebilir.
+        </p>
+        <p class="pricing-tier-price">Ücretsiz</p>
+        <ul class="pricing-tier-features">
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Uygulamaya tamamen ücretsiz erişim
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Mülk sahibiyle kolay iletişim
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Kira ve bakım süreçlerini takip edin
+          </li>
+        </ul>
+        <a href="https://konutarsiv.com/" class="btn-outline" target="_blank" rel="noopener noreferrer">
+          Uygulamayı İndir
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="product-cta">
+    <h2 class="product-cta__title">Gayrimenkul yönetiminizi basitleştirmeye hazır mısınız?</h2>
+    <p class="product-cta__text">
+      Uygulamayı indirin ve başlayın.
+    </p>
+    <a href="https://konutarsiv.com/" class="btn-accent" target="_blank" rel="noopener noreferrer">
+      Uygulamayı İndir
+      <i class="bi bi-arrow-up-right"></i>
+    </a>
+  </section>
+{% endblock %}

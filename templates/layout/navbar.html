@@ -1,73 +1,90 @@
 {% load static %}
-<nav x-data="{ open:false, profile:false }"
-     class="sticky top-0 z-50 backdrop-blur-xl bg-black border-b border-black shadow-sm">
+<nav x-data="{ open:false, profile:false, productsMobile:false }" class="site-nav">
   <div class="site-container">
-    <div class="flex h-24 items-center justify-between">
+    <div class="flex h-20 items-center justify-between">
       <a href="{% url 'home' %}" class="flex items-center gap-3 group shrink-0">
         <img src="{% static 'img/TeknikoWhiteLettersTransparentBackground.svg' %}"
-             class="h-40 w-auto transition-transform duration-300 group-hover:scale-105"
+             class="h-36 w-auto transition-transform duration-300 group-hover:scale-105"
              alt="Tekniko Yazilim Cozumleri">
-        <span class="hidden sm:inline font-semibold text-white tracking-wide">Tekniko Yazılım Çözümleri</span>
       </a>
 
-      <div class="hidden md:flex items-center gap-6">
+      <div class="hidden md:flex items-center gap-2">
         {% if request.user.is_authenticated %}
-          <a href="{% url 'payment_start' %}" class="text-sm font-medium text-white hover:text-white/80 transition">Ödeme</a>
-          <a href="{% url 'subscriptions:plan_list' %}" class="text-sm font-medium text-white hover:text-white/80 transition">Abonelik</a>
+          <a href="{% url 'payment_start' %}" class="nav-link">Ödeme</a>
+          <a href="{% url 'subscriptions:plan_list' %}" class="nav-link">Abonelik</a>
           <div class="relative">
             <button @click="profile = !profile"
-                    class="flex items-center gap-2 bg-slate-100 px-3 py-2 rounded-lg hover:bg-slate-200 transition">
-              <div class="h-8 w-8 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600"></div>
-              <span class="text-sm font-medium">{{ request.user.username }}</span>
+                    class="nav-link gap-2 border-0 cursor-pointer">
+              <div class="nav-avatar"></div>
+              <span>{{ request.user.username }}</span>
             </button>
             <div x-show="profile"
                  x-transition
                  @click.outside="profile=false"
-                 class="absolute right-0 mt-2 w-40 bg-white border border-slate-200 rounded-xl shadow-xl p-2">
-              <a href="{% url 'account_logout' %}" class="block px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded-lg">
+                 class="absolute right-0 mt-2 w-44 bg-white border border-slate-200 rounded-xl shadow-xl p-2">
+              <a href="{% url 'account_logout' %}" class="nav-dropdown-link">
                 Çıkış
               </a>
             </div>
           </div>
         {% else %}
-          <!-- <a href="{% url 'home' %}" class="text-sm font-medium text-white hover:text-white/80 transition">Ana Sayfa</a> -->
-          <a href="{% url 'about' %}" class="text-sm font-medium text-white hover:text-white/80 transition">
-            Hakkımızda
-          </a>
-          <a href="{% url 'products' %}" class="text-white px-3 py-2 rounded-lg hover:bg-white/10">Ürünler</a>
-          <a href="{% url 'services' %}" class="text-white px-3 py-2 rounded-lg hover:bg-white/10">Hizmetlerimiz</a>
-          <a href="{% url 'account_signup' %}" class="text-sm font-medium text-white hover:text-white/80 transition">
-            Kayıt
-          </a>
-          <a href="{% url 'account_login' %}"
-             class="px-4 py-2 rounded-lg bg-white hover:opacity-90 text-black text-sm font-medium shadow-md transition">
-            Giriş
-          </a>
+          <a href="{% url 'about' %}" class="nav-link">Hakkımızda</a>
+          <div class="nav-dropdown">
+            <a href="{% url 'products' %}" class="nav-link nav-dropdown-trigger">
+              Ürünler
+              <i class="bi bi-chevron-down nav-dropdown-chevron"></i>
+            </a>
+            <div class="nav-dropdown-menu">
+              <a href="{% url 'esentre' %}" class="nav-dropdown-link">Esentre</a>
+              <a href="{% url 'software_templates' %}" class="nav-dropdown-link">Yazılım Şablonları</a>
+              <a href="{% url 'konutarsiv' %}" class="nav-dropdown-link">KonutArşiv</a>
+            </div>
+          </div>
+          <a href="{% url 'services' %}" class="nav-link">Hizmetler</a>
+          <a href="{% url 'contact' %}" class="nav-link">İletişim</a>
+          <a href="{% url 'account_signup' %}" class="nav-link">Kayıt</a>
+          <a href="{% url 'account_login' %}" class="nav-btn-primary">Giriş</a>
         {% endif %}
       </div>
 
-      <button class="md:hidden p-2 rounded-lg border border-white" @click="open = !open">
-        <span class="block w-5 h-0.5 bg-white mb-1"></span>
-        <span class="block w-5 h-0.5 bg-white mb-1"></span>
-        <span class="block w-5 h-0.5 bg-white"></span>
+      <button class="nav-menu-toggle md:hidden" @click="open = !open" aria-label="Menü">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
 
     <div x-show="open" x-transition x-cloak class="md:hidden pb-4">
-      <div class="flex flex-col gap-2">
-        <!-- <a href="{% url 'home' %}" class="text-white px-3 py-2 rounded-lg hover:bg-white/10">Ana Sayfa</a> -->
-        <a href="{% url 'about' %}" class="text-white px-3 py-2 rounded-lg hover:bg-white/10">Hakkımızda</a>
+      <div class="flex flex-col gap-1">
         {% if request.user.is_authenticated %}
-          <a href="{% url 'payment_start' %}" class="text-white px-3 py-2 rounded-lg hover:bg-white/10">Ödeme</a>
-          <a href="{% url 'subscriptions:plan_list' %}" class="text-white px-3 py-2 rounded-lg hover:bg-white/10">Abonelik</a>
-          <a href="{% url 'account_logout' %}" class="px-3 py-2 rounded-lg bg-slate-900 text-white">Çıkış</a>
+          <a href="{% url 'payment_start' %}" class="nav-link">Ödeme</a>
+          <a href="{% url 'subscriptions:plan_list' %}" class="nav-link">Abonelik</a>
+          <a href="{% url 'account_logout' %}" class="nav-link">Çıkış</a>
         {% else %}
-          <a href="{% url 'account_signup' %}" class="text-white px-3 py-2 rounded-lg hover:bg-white/10">Kayıt</a>
-          <a href="{% url 'account_login' %}" class="px-3 py-2 rounded-lg bg-blue-600 text-white">Giriş</a>
-          <a href="{% url 'about' %}" class="text-white px-3 py-2 rounded-lg hover:bg-white/10">Hakkımızda</a>
-          <a href="{% url 'products' %}" class="text-white px-3 py-2 rounded-lg hover:bg-white/10">Ürünler</a>
-          <a href="{% url 'services' %}" class="text-white px-3 py-2 rounded-lg hover:bg-white/10">Hizmetlerimiz</a>
-          {% endif %}
+          <a href="{% url 'about' %}" class="nav-link">Hakkımızda</a>
+          <div class="nav-mobile-dropdown">
+            <div class="nav-mobile-dropdown-row">
+              <a href="{% url 'products' %}" class="nav-link flex-1">Ürünler</a>
+              <button type="button"
+                      @click="productsMobile = !productsMobile"
+                      class="nav-link nav-dropdown-toggle"
+                      :aria-expanded="productsMobile"
+                      aria-label="Ürün alt menüsü">
+                <i class="bi bi-chevron-down nav-dropdown-chevron"
+                   :class="{ 'nav-dropdown-chevron--open': productsMobile }"></i>
+              </button>
+            </div>
+            <div x-show="productsMobile" x-transition x-cloak class="nav-submenu">
+              <a href="{% url 'esentre' %}" class="nav-link">Esentre</a>
+              <a href="{% url 'software_templates' %}" class="nav-link">Yazılım Şablonları</a>
+              <a href="{% url 'konutarsiv' %}" class="nav-link">KonutArşiv</a>
+            </div>
+          </div>
+          <a href="{% url 'services' %}" class="nav-link">Hizmetler</a>
+          <a href="{% url 'contact' %}" class="nav-link">İletişim</a>
+          <a href="{% url 'account_signup' %}" class="nav-link">Kayıt</a>
+          <a href="{% url 'account_login' %}" class="nav-btn-primary nav-btn-primary--block mt-2">Giriş</a>
+        {% endif %}
       </div>
     </div>
   </div>

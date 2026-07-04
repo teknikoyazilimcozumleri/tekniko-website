@@ -140,6 +140,7 @@ EMAIL_BACKEND = env(
     default="django.core.mail.backends.console.EmailBackend",
 )
 DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL", default="noreply@tyc.local")
+CONTACT_EMAIL = env("CONTACT_EMAIL", default="")
 
 NINJA_JWT = {
     "ACCESS_TOKEN_LIFETIME_MINUTES": 1,

@@ -26,9 +26,7 @@
 }">
   <div class="grid lg:grid-cols-2 gap-10 items-center">
 
-    <section class="rounded-3xl
-                    bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900
-                    text-dark p-12 shadow-2xl">
+    <section class="auth-panel">
       <h1 class="text-4xl font-bold mb-6">
         İki Adımlı Doğrulama
       </h1>
@@ -93,10 +91,7 @@
 
         <button type="submit"
                 :disabled="expired"
-                class="w-full rounded-xl py-3 font-semibold text-white
-                       bg-gradient-to-r from-blue-600 to-indigo-600
-                       hover:opacity-90 shadow-lg transition
-                       disabled:opacity-50 disabled:cursor-not-allowed">
+                class="btn-submit">
           Doğrula ve Giriş Yap
         </button>
       </form>
