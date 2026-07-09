@@ -1,22 +1,29 @@
-/* Tekniko design tokens – Bold Challenger (60-30-10) */
+/* Tekniko design tokens – 60-30-10 (Light / Cobalt / Tangerine) */
 :root {
-  --color-primary: #18181b;
-  --color-primary-light: #27272a;
-  --color-secondary: #faf5ff;
-  --color-secondary-muted: rgba(250, 245, 255, 0.72);
+  /* 60% – base surfaces (Clean Light Mode) */
+  --color-surface: #ffffff;
+  --color-surface-muted: #f8fafc;
+  --color-border: #e2e8f0;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+
+  /* 30% – Royal Cobalt Blue (headers, branding, sub-sections) */
+  --color-primary: #2563eb;
+  --color-primary-light: #1d4ed8;
+  --color-primary-subtle: rgba(37, 99, 235, 0.12);
+  --color-secondary: #ffffff;
+  --color-secondary-muted: rgba(255, 255, 255, 0.75);
+  --color-text-on-primary: #ffffff;
+  --color-on-primary-border: rgba(255, 255, 255, 0.12);
+
+  /* 10% – Vibrant Tangerine (high-value CTAs) */
   --color-accent: #f97316;
   --color-accent-hover: #ea580c;
-  --color-accent-alt: #f43f5e;
   --color-accent-subtle: rgba(249, 115, 22, 0.14);
-  --color-surface: #faf5ff;
-  --color-surface-muted: #f4f4f5;
-  --color-border: #e4e4e7;
-  --color-text: #18181b;
-  --color-text-muted: #71717a;
-  --color-text-on-primary: #faf5ff;
-  --shadow-sm: 0 1px 2px rgba(24, 24, 27, 0.06);
-  --shadow-md: 0 4px 12px rgba(24, 24, 27, 0.08);
-  --shadow-lg: 0 12px 32px rgba(24, 24, 27, 0.12);
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.12);
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
@@ -51,8 +58,15 @@
   max-width: 80rem;
 }
 
+html {
+  height: 100%;
+}
+
 .site-body {
   min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
   background-color: var(--color-surface-muted);
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
@@ -60,6 +74,7 @@
 }
 
 .site-main {
+  flex: 1 0 auto;
   padding-top: 2.5rem;
   padding-bottom: 3rem;
 }
@@ -78,7 +93,7 @@
   top: 0;
   z-index: 50;
   background-color: var(--color-primary);
-  border-bottom: 1px solid rgba(250, 245, 255, 0.08);
+  border-bottom: 1px solid var(--color-on-primary-border);
   box-shadow: var(--shadow-sm);
 }
 
@@ -97,7 +112,7 @@
 
 .nav-link:hover {
   color: #ffffff;
-  background-color: rgba(250, 245, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .nav-btn-primary {
@@ -129,14 +144,14 @@
   width: 1.75rem;
   height: 1.75rem;
   border-radius: 9999px;
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-alt) 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
   flex-shrink: 0;
 }
 
 .nav-menu-toggle {
   padding: 0.5rem;
   border-radius: var(--radius-md);
-  border: 1px solid rgba(250, 245, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   background: transparent;
   cursor: pointer;
 }
@@ -154,14 +169,14 @@
   padding: 0.5rem 0.75rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--color-accent);
+  color: var(--color-primary);
   border-radius: var(--radius-md);
   text-decoration: none;
   transition: background-color 0.15s ease;
 }
 
 .nav-dropdown-link:hover {
-  background-color: var(--color-accent-subtle);
+  background-color: var(--color-primary-subtle);
 }
 
 .nav-dropdown {
@@ -227,7 +242,7 @@
 
 .nav-dropdown-menu .nav-dropdown-link:hover {
   background-color: var(--color-surface-muted);
-  color: var(--color-accent);
+  color: var(--color-primary);
 }
 
 .nav-submenu {
@@ -250,9 +265,10 @@
 
 
 .site-footer {
+  flex-shrink: 0;
   margin-top: 4rem;
   background-color: var(--color-primary);
-  border-top: 1px solid rgba(250, 245, 255, 0.08);
+  border-top: 1px solid var(--color-on-primary-border);
 }
 
 .site-footer p {
@@ -401,7 +417,7 @@
 }
 
 .pricing-tier--featured {
-  border: 2px solid var(--color-accent);
+  border: 2px solid var(--color-primary);
   box-shadow: var(--shadow-lg);
   position: relative;
 }
@@ -413,7 +429,7 @@
   transform: translateX(-50%);
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
-  background-color: var(--color-accent);
+  background-color: var(--color-primary);
   color: #ffffff;
   font-size: 0.75rem;
   font-weight: 600;
@@ -468,7 +484,7 @@
 }
 
 .pricing-tier-features i {
-  color: var(--color-accent);
+  color: var(--color-primary);
   margin-top: 0.125rem;
   flex-shrink: 0;
 }
@@ -535,7 +551,7 @@
 
 .feature-card:hover {
   box-shadow: var(--shadow-md);
-  border-color: rgba(249, 115, 22, 0.35);
+  border-color: rgba(37, 99, 235, 0.35);
   transform: translateY(-2px);
 }
 
@@ -548,8 +564,8 @@
   justify-content: center;
   font-size: 1.25rem;
   margin-bottom: 1rem;
-  background: var(--color-accent-subtle);
-  color: var(--color-accent);
+  background: var(--color-primary-subtle);
+  color: var(--color-primary);
   flex-shrink: 0;
 }
 
@@ -576,18 +592,100 @@ a.feature-card {
 /* Product pages */
 
 .product-hero {
+  padding-top: 1.5rem;
+  margin-bottom: 5rem;
+}
+
+@media (min-width: 1024px) {
+  .product-hero {
+    padding-top: 2.5rem;
+    margin-bottom: 6.5rem;
+  }
+}
+
+.product-hero__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .product-hero__grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 2.5rem;
+  }
+}
+
+.product-hero__content {
   max-width: 42rem;
-  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.product-hero__media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .product-hero__media {
+    justify-content: flex-end;
+    padding-left: 1rem;
+  }
+}
+
+.product-hero__image {
+  width: 100%;
+  max-width: 22rem;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .product-hero__image {
+    max-width: 26rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-hero__image {
+    max-width: none;
+    width: 100%;
+    max-height: 24rem;
+  }
+}
+
+.product-hero__image--lg {
+  max-width: 28rem;
+}
+
+@media (min-width: 768px) {
+  .product-hero__image--lg {
+    max-width: 34rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-hero__image--lg {
+    width: 115%;
+    max-width: none;
+    max-height: 32rem;
+    transform: scale(1.15);
+    transform-origin: center right;
+  }
 }
 
 .product-hero__eyebrow {
-  display: inline-block;
+  display: block;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: 0.75rem;
+  color: var(--color-primary);
+  margin: 0 0 0.75rem;
 }
 
 .product-hero__title {
@@ -613,7 +711,17 @@ a.feature-card {
 }
 
 .product-section {
-  margin-top: 3rem;
+  margin-top: 5rem;
+}
+
+@media (min-width: 1024px) {
+  .product-section {
+    margin-top: 6.5rem;
+  }
+}
+
+.product-hero + .product-section {
+  margin-top: 0;
 }
 
 .product-section__title {
@@ -651,8 +759,8 @@ a.feature-card {
 }
 
 .product-cta {
-  margin-top: 3rem;
-  padding: 2rem;
+  margin-top: 5rem;
+  padding: 2.5rem;
   background: var(--color-primary);
   border-radius: var(--radius-xl);
   text-align: center;
@@ -803,8 +911,8 @@ select.form-input {
   width: 2.25rem;
   height: 2.25rem;
   border-radius: var(--radius-md);
-  background: rgba(249, 115, 22, 0.15);
-  color: var(--color-accent);
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
   flex-shrink: 0;
 }
 
@@ -837,7 +945,7 @@ select.form-input {
   font-size: 0.875rem;
   color: var(--color-secondary-muted);
   padding: 0.375rem 0;
-  border-bottom: 1px solid rgba(250, 245, 255, 0.08);
+  border-bottom: 1px solid var(--color-on-primary-border);
 }
 
 .contact-info__services li:last-child {
@@ -847,7 +955,7 @@ select.form-input {
 .contact-info__social {
   margin-top: 0.25rem;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(250, 245, 255, 0.08);
+  border-top: 1px solid var(--color-on-primary-border);
 }
 
 .contact-info__social-links {
@@ -864,7 +972,7 @@ select.form-input {
   gap: 0.625rem;
   padding: 0.5rem 0.875rem;
   border-radius: var(--radius-md);
-  background: rgba(250, 245, 255, 0.06);
+  background: rgba(255, 255, 255, 0.08);
   color: var(--color-secondary);
   font-size: 0.9375rem;
   font-weight: 500;
@@ -873,7 +981,7 @@ select.form-input {
 }
 
 .contact-social-link:hover {
-  background: rgba(249, 115, 22, 0.15);
+  background: rgba(255, 255, 255, 0.15);
   color: #ffffff;
 }
 

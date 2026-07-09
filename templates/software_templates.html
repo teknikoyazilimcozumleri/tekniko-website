@@ -1,30 +1,35 @@
 {% extends "base.html" %}
+{% load static %}
 
-{% block title %}Yazılım Şablonları - Tekniko Yazılım Çözümleri{% endblock %}
+{% block title %}TYÇ Yazılım Şablonları - Tekniko Yazılım Çözümleri{% endblock %}
 
 {% block content %}
   <header class="product-hero">
-    <span class="product-hero__eyebrow">Yazılım Şablonları</span>
-    <h1 class="product-hero__title">Startup'ınızı hızla hayata geçirin</h1>
-    <p class="product-hero__lead">
-      Zor işleri bize bırakın. KVKK uyumlu yazılım şablonlarımızla altyapı kaygılarına son verin.
-      Kimlik doğrulama, İyzico ödemeleri, abonelik yönetimi ve denetim katmanları hazır gelir;
-      siz ürününüze odaklanın.
-    </p>
-    <div class="product-hero__actions">
-      <a href="{% url 'subscriptions:plan_list' %}" class="btn-accent">
-        Hemen Başla
-        <i class="bi bi-arrow-up-right"></i>
-      </a>
+    <div class="product-hero__grid">
+      <div class="product-hero__content">
+        <span class="product-hero__eyebrow">TYÇ Yazılım Şablonları</span>
+        <h1 class="product-hero__title">Fikirlerinizi hızla hayata geçirin</h1>
+        <p class="product-hero__lead">
+          Zor işleri bize bırakın. KVKK uyumlu yazılım şablonlarımızla altyapı kaygılarına son verin.
+          Kimlik doğrulama, İyzico ödemeleri, abonelik yönetimi ve denetim katmanları hazır gelir;
+          siz ürününüze odaklanın.
+        </p>
+        <div class="product-hero__actions">
+          <a href="{% url 'register_page' %}" class="btn-accent">
+            Hemen Başla
+            <i class="bi bi-arrow-up-right"></i>
+          </a>
+        </div>
+      </div>
+      <div class="product-hero__media">
+        <img src="{% static 'img/jet_no_background.svg' %}"
+             class="product-hero__image product-hero__image--md"
+             alt="Yazılım şablonları illüstrasyonu">
+      </div>
     </div>
   </header>
 
   <section class="product-section" id="features">
-    <h2 class="product-section__title">Özellikler</h2>
-    <p class="product-section__subtitle">
-      Django tabanlı şablonumuz; auth, RBAC, audit ve Iyzico ödeme altyapısıyla üretime hazır bir başlangıç sunar.
-    </p>
-
     <div class="product-card-grid">
       <article class="feature-card">
         <div class="feature-card__icon"><i class="bi bi-shield-check"></i></div>
@@ -107,6 +112,10 @@
           <li>
             <i class="bi bi-check-circle-fill"></i>
             HTMX ile dinamik sayfa yükleme
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Redis ve Celery Desteği
           </li>
         </ul>
         <a href="{% url 'register_page' %}" class="btn-outline">Başla</a>

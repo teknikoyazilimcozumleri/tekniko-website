@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="landing-hero-media">
-        <img src="{% static 'img/desk.svg' %}"
+        <img src="{% static 'img/landing-page-hero-2.png' %}"
              class="landing-hero-image"
              alt="Modern çalışma masası illüstrasyonu">
       </div>
@@ -29,20 +29,70 @@
 
   <div class="landing-cards">
     <a href="{% url 'products' %}" class="landing-card">
-      <div class="landing-card-icon"><i class="bi bi-shield-check"></i></div>
+      <div class="landing-product-grid">
+        <div class="landing-card-icon"><img src="{% static 'img/esentre-white.svg' %}" alt="Esentre"></img></div>
+        <div class="landing-card-icon"><img src="{% static 'img/konutarsiv.svg' %}" alt="KonutArşiv"></img></div>
+      </div>
       <h3>Kullanıma Hazır Ürünler</h3>
       <p>Kullanıma hazır ürünlerimize hemen üye olun ve çalışmaya başlayın.</p>
     </a>
     <a href="{% url 'software_templates' %}" class="landing-card">
-      <div class="landing-card-icon"><i class="bi bi-journal-text"></i></div>
-      <h3>Yazılım Şablonları</h3>
+      <div class="landing-card-icon"><img src="{% static 'img/TeknikoWhiteLettersTransparentBackground.svg' %}" alt="TYÇ Yazılım Şablonları"></img></div>
+      <h3>TYÇ Yazılım Şablonları</h3>
       <p>KVKK uyumlu, yazılım şablonlarımızla startup'ınızı veya bir sonraki projenizi hızla hayata geçirin.</p>
     </a>
     <a href="{% url 'services' %}" class="landing-card">
-      <div class="landing-card-icon"><i class="bi bi-key"></i></div>
+      <div class="landing-card-icon"><img src="{% static 'img/cloud-computing.svg' %}" alt="Geliştirme ve Teknoloji"></img></div>
       <h3>Geliştirme ve Teknoloji</h3>
       <p>Bizimle ulaşın ve beraber projenizi hayata geçireceğiz.</p>
     </a>
   </div>
+
+  <section class="product-section landing-offerings-section" id="offerings">
+    <h2 class="product-section__title">Neler Sunuyoruz?</h2>
+    <p class="product-section__subtitle">
+      Tekniko Yazılım Çözümleri olarak, girişimciler ve işletmeler için güçlü yazılım altyapısı sunuyoruz. İşte sunduğumuz ürünlerden bazıları:
+    </p>
+
+    <div class="landing-offerings">
+      <article class="landing-offering">
+        <a href="{% url 'esentre' %}" class="landing-offering__panel">
+          <span class="landing-offering__eyebrow">Esentre</span>
+          <p class="landing-offering__text">KOBİ'niz için tek platform.</p>
+        </a>
+        <div class="landing-offering__media">
+          <img src="{% static 'img/esentre-paneli.png' %}"
+               class="landing-offering__image"
+               alt="Esentre panel ekran görüntüsü">
+        </div>
+      </article>
+
+      <article class="landing-offering landing-offering--reverse">
+        <a href="{% url 'software_templates' %}" class="landing-offering__panel">
+          <span class="landing-offering__eyebrow">TYÇ Yazılım Şablonları</span>
+          <p class="landing-offering__text">
+            KVKK uyumlu yazılım şablonlarımızla startup'ınızı veya bir sonraki projenizi hızla hayata geçirin.
+          </p>
+        </a>
+        <div class="landing-offering__media">
+          <img src="{% static 'img/software-template.jpeg' %}"
+               class="landing-offering__image"
+               alt="TYÇ Yazılım Şablonları ekran görüntüsü">
+        </div>
+      </article>
+
+      <article class="landing-offering">
+        <a href="{% url 'konutarsiv' %}" class="landing-offering__panel">
+          <span class="landing-offering__eyebrow">KonutArşiv</span>
+          <p class="landing-offering__text">Gayrimenkul portföyünüzü tek uygulamada yönetin.</p>
+        </a>
+        <div class="landing-offering__media">
+          <img src="{% static 'img/mulkyonetimi.png' %}"
+               class="landing-offering__image"
+               alt="KonutArşiv ekran görüntüsü">
+        </div>
+      </article>
+    </div>
+  </section>
 </div>
 {% endblock %}

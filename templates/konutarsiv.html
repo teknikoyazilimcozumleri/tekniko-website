@@ -1,30 +1,35 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}KonutArşiv - Tekniko Yazılım Çözümleri{% endblock %}
 
 {% block content %}
   <header class="product-hero">
-    <span class="product-hero__eyebrow">KonutArşiv</span>
-    <h1 class="product-hero__title">Tek bir uygulama. Tüm mülkleriniz.</h1>
-    <p class="product-hero__lead">
-      Kiracılarınızı yönetmek için ihtiyacınız olan her şey tek bir uygulamada.
-      KonutArşiv, gayrimenkul portföyünüzü, kiracılarınızı ve finansal süreçlerinizi
-      tek platformda birleştirir.
-    </p>
-    <div class="product-hero__actions">
-      <a href="https://konutarsiv.com/" class="btn-accent" target="_blank" rel="noopener noreferrer">
-        Uygulamayı İndir
-        <i class="bi bi-arrow-up-right"></i>
-      </a>
+    <div class="product-hero__grid">
+      <div class="product-hero__content">
+        <span class="product-hero__eyebrow">KonutArşiv</span>
+        <h1 class="product-hero__title">Tek bir uygulama.<br>Tüm mülkleriniz.</h1>
+        <p class="product-hero__lead">
+          Kiracılarınızı yönetmek için ihtiyacınız olan her şey tek bir uygulamada.
+          KonutArşiv, gayrimenkul portföyünüzü, kiracılarınızı ve finansal süreçlerinizi
+          tek platformda birleştirir.
+        </p>
+        <div class="product-hero__actions">
+          <a href="https://konutarsiv.com/" class="btn-accent" target="_blank" rel="noopener noreferrer">
+            Uygulamayı İndir
+            <i class="bi bi-arrow-up-right"></i>
+          </a>
+        </div>
+      </div>
+      <div class="product-hero__media">
+        <img src="{% static 'img/konutarsiv.svg' %}"
+             class="product-hero__image"
+             alt="KonutArşiv uygulama illüstrasyonu">
+      </div>
     </div>
   </header>
 
   <section class="product-section" id="features">
-    <h2 class="product-section__title">Özellikler</h2>
-    <p class="product-section__subtitle">
-      Mülk sahipleri ve kiracılar için tasarlanmış kapsamlı gayrimenkul yönetim araçları.
-    </p>
-
     <div class="product-card-grid">
       <article class="feature-card">
         <div class="feature-card__icon"><i class="bi bi-buildings"></i></div>
