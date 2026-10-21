@@ -1,22 +1,45 @@
 ---
 import Layout from '../../layouts/en/Layout.astro';
-import idea2 from '../../assets/idea2.jpg';
+import teknikohero from '../../assets/teknikohero.svg';
 import motherboard from '../../assets/motherboard.svg';
 import desk from '../../assets/desk.svg';
 ---
 
 <Layout>
 	<!-- Hero Section -->
-	<section id="hero"class="relative h-screen flex items-center justify-center overflow-hidden">
-		<div class="absolute inset-0 z-10">
-			<div class="w-full h-full bg-cover bg-center bg-no-repeat" style={`background-image: url(${idea2.src})`}>
-				<div class="absolute inset-0 "></div>
+	<section id="hero" class="relative overflow-hidden bg-slate text-ice">
+		<div class="pointer-events-none absolute inset-0 bg-[linear-gradient(148deg,#243444_0%,#3c5162_36%,#4A5D6E_64%,#8b9faf_100%)]" aria-hidden="true"></div>
+		<div class="pointer-events-none absolute right-[4%] top-[64%] h-[28rem] w-[34rem] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(248,250,252,0.22)_0%,rgba(16,185,129,0.12)_42%,transparent_72%)]" aria-hidden="true"></div>
+		<div class="relative mx-auto w-full max-w-[96rem] px-6 py-14 sm:px-10 lg:px-16 lg:py-20">
+			<div class="flex flex-col gap-12 lg:flex-row lg:items-center lg:gap-6">
+				<div class="w-full min-w-0 lg:flex-1">
+					<h1 class="font-serif text-5xl font-bold tracking-tight leading-[1.05] lg:text-6xl">FinTech. InsurTech. <br>We bring the Solutions.</h1>
+					<p class="mt-6 max-w-md text-base leading-relaxed text-ice/75">Underwriting automation, autonomous ERP pipelines, and financial data systems for insurers, fintechs, and finance teams.</p>
+					<div class="mt-8 flex flex-wrap gap-3">
+						<a href="/en/#contact" class="inline-flex items-center gap-2 rounded-full bg-mint px-6 py-3 text-sm font-semibold text-navy transition-all duration-300 hover:brightness-110">Book a Technical Call <span aria-hidden="true">→</span></a>
+						<a href="/en/#services" class="inline-flex items-center rounded-full border border-ice/40 px-6 py-3 text-sm font-semibold text-ice transition-all duration-300 hover:border-ice">Our Services</a>
+					</div>
+					<ul class="m-0 mt-12 flex list-none flex-col gap-5 p-0 sm:flex-row sm:items-center">
+						<li class="flex items-center gap-3">
+							<svg class="h-5 w-5 shrink-0 text-ice" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 012-2h2a2 2 0 012 2M9 14l2 2 4-4"></path></svg>
+							<span class="text-sm leading-snug text-ice/90">Underwriting<br>Automation</span>
+						</li>
+						<li class="hidden h-8 w-px bg-ice/25 sm:block" aria-hidden="true"></li>
+						<li class="flex items-center gap-3">
+							<svg class="h-5 w-5 shrink-0 text-ice" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7h6v4H4zM14 13h6v4h-6zM10 9h2a3 3 0 010 6h-2"></path></svg>
+							<span class="text-sm leading-snug text-ice/90">Autonomous ERP<br>Pipelines</span>
+						</li>
+						<li class="hidden h-8 w-px bg-ice/25 sm:block" aria-hidden="true"></li>
+						<li class="flex items-center gap-3">
+							<svg class="h-5 w-5 shrink-0 text-ice" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 19V5M4 19h16M8 15l3-4 3 2 5-7"></path></svg>
+							<span class="text-sm leading-snug text-ice/90">Financial AI<br>&amp; Data</span>
+						</li>
+					</ul>
+				</div>
+				<div class="w-full shrink-0 lg:w-[min(40rem,48%)] lg:translate-x-6 lg:translate-y-7">
+					<img src={teknikohero.src} alt="Policy files, invoices, and loss runs flowing into a verified financial ledger" class="block h-auto w-full" />
+				</div>
 			</div>
-		</div>
-		<div class="relative z-20 text-center max-w-4xl">
-			<h1 class="font-serif text-4xl font-bold mb-6 tracking-tight leading-tight">Step into the <strong class="text-red-800">future</strong> with AI</h1>
-			<!-- <p class="text-xl mb-8 text-luxury-muted leading-relaxed">At Watches & Wonders 2025, we presented fifteen new models brimming with creativity and <em class="italic text-luxury-gold">savoir-faire</em>.</p> -->
-			<a href="/en/#services" class="inline-block px-8 py-4 bg-black text-white font-semibold text-sm tracking-widest uppercase rounded-full transition-all duration-300 hover:bg-red-800 hover:-translate-y-0.5">Our Services</a>
 		</div>
 	</section>
 
@@ -26,13 +49,10 @@ import desk from '../../assets/desk.svg';
 			<div class="max-w-7xl mx-auto px-6">
 				<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 					<div>
-						<h2 class="font-serif text-3xl font-bold mb-6 tracking-tight leading-tight">Engineering can be overwhelming</h2>
-						<p class="text-lg mb-8 text-gray-400 leading-relaxed">
-							We understand that AI and software can be overwhelming.
-							Tekniko Software Solutions offers a variety of solutions to help you grow your business. 
-							Do you want to harness the power of AI and data for your business but don't know how? 
-							Or do you lack the time and team for such a project? Then we're here. 
-							We'll create a solution specifically for your needs.
+						<h2 class="font-serif text-4xl font-bold mb-6 tracking-tight leading-tight">Engineering that already lives in finance and insurance</h2>
+						<p class="text-lg mb-8 text-slate leading-relaxed">
+							Tekniko Software Solutions builds software for insurers, fintechs, and finance teams.
+							We automate underwriting decisions, run ERP pipelines through close and reconciliation, and engineer the financial AI and data infrastructure behind pricing, risk, and reporting.
 						</p>
 					</div>
 					<div class="relative">
@@ -47,72 +67,70 @@ import desk from '../../assets/desk.svg';
 			<div class="max-w-7xl mx-auto px-6">
 				<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 					<div class="lg:order-2">
-						<h2 class="font-serif text-4xl font-bold mb-6 tracking-tight leading-tight">Exceptional Customer Service</h2>
-						<p class="text-lg mb-8 text-gray-400 leading-relaxed">
-							We work with our customers to ensure they get the best experience and satisfaction from our services.
+						<h2 class="font-serif text-4xl font-bold mb-6 tracking-tight leading-tight">Systems shaped around how you operate</h2>
+						<p class="text-lg mb-8 text-slate leading-relaxed">
+							We design around policy data, application files, reconciliation, and the finance close: the way your teams price risk, move money, and report on it.
+							Then we ship the software that keeps those processes running.
 						</p>
 					</div>
 					<div class="relative">
-						<img src={desk.src} alt="Olağanüstü Müşteri Deneyimi" class="w-full h-96 object-cover rounded-lg" />
+						<img src={desk.src} alt="Software for finance and insurance operations" class="w-full h-96 object-cover rounded-lg" />
 					</div>
 				</div>
 			</div>
 		</section>
 	</div>
-	<div id="services" class="bg-black">
+	<div id="services" class="bg-navy">
 		<section class="pt-36 pb-8 text-center">
 			<div class="max-w-7xl mx-auto px-6">
-				<h2 class="font-serif text-5xl text-white font-bold mb-4 tracking-tight">The best<strong class="text-white"> engineering solution</strong>  for your business</h2>
-				<p class="text-lg mb-4 text-gray-400 leading-relaxed max-w-4xl mx-auto">Your own engineering team when you need it. Quickly integrate the power of software, data, and AI into your business and grow.</p>
+				<h2 class="font-serif text-4xl md:text-5xl text-ice font-bold mb-4 tracking-tight">FinTech and InsurTech, engineered end to end</h2>
+				<p class="text-lg mb-4 text-ice/75 leading-relaxed max-w-4xl mx-auto">Underwriting automation, autonomous ERP pipelines, financial AI and data engineering, and the production software around them.</p>
 			</div>
 		</section>
 
 		<!-- Services Cards -->
 		<section class="pb-32">
 			<div class="max-w-7xl mx-auto px-6">
-				<div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-8">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 					<div class="text-center p-6 rounded-lg">
-						<div class="w-16 h-16 bg-red-800 rounded-lg flex items-center justify-center mx-auto mb-6">
+						<div class="w-16 h-16 bg-slate rounded-lg flex items-center justify-center mx-auto mb-6">
 							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 5h12c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2z"></path>
-								<circle cx="9" cy="10" r="1.2" fill="currentColor"></circle>
-								<circle cx="15" cy="10" r="1.2" fill="currentColor"></circle>
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 15h6"></path>
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v2"></path>
-								<circle cx="12" cy="2" r="0.8" fill="currentColor"></circle>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"></path>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5a2 2 0 012-2h2a2 2 0 012 2v0a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 14l2 2 4-4"></path>
 							</svg>
 						</div>
-						<h3 class="text-xl font-semibold mb-4 text-white">Artificial Intelligence Engineering</h3>
-						<p class="text-medium text-gray-400 leading-relaxed">We develop smart solutions that increase the efficiency of your business with artificial intelligence technologies.</p>
+						<h3 class="text-xl font-semibold mb-4 text-ice">InsurTech Underwriting Automation</h3>
+						<p class="text-medium text-ice/75 leading-relaxed">We automate intake, risk scoring, and decisioning so underwriters spend their time on exceptions. We build the workflows, models, and integrations between applications, policy data, and the decision.</p>
 					</div>
 					<div class="text-center p-6 rounded-lg">
-						<div class="w-16 h-16 bg-red-800 rounded-lg flex items-center justify-center mx-auto mb-6">
+						<div class="w-16 h-16 bg-slate rounded-lg flex items-center justify-center mx-auto mb-6">
+							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7h6v4H4zM14 13h6v4h-6z"></path>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 9h2a3 3 0 010 6h-2"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold mb-4 text-ice">Autonomous ERP Pipelines</h3>
+						<p class="text-medium text-ice/75 leading-relaxed">Close, reconciliation, and operational data should move without someone pushing each step. We design pipelines that pull from your systems of record, apply the rules your finance team already uses, and land clean entries where the ERP expects them.</p>
+					</div>
+					<div class="text-center p-6 rounded-lg">
+						<div class="w-16 h-16 bg-slate rounded-lg flex items-center justify-center mx-auto mb-6">
+							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 19V5M4 19h16"></path>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 15l3-4 3 2 5-7"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold mb-4 text-ice">Financial AI &amp; Data Engineering</h3>
+						<p class="text-medium text-ice/75 leading-relaxed">Models are only as good as the financial data underneath them. We engineer pipelines, features, and AI systems for pricing, risk, fraud, and reporting, with the audit trail finance and compliance teams expect.</p>
+					</div>
+					<div class="text-center p-6 rounded-lg">
+						<div class="w-16 h-16 bg-slate rounded-lg flex items-center justify-center mx-auto mb-6">
 							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
 							</svg>
 						</div>
-						<h3 class="text-xl font-semibold mb-4 text-white">Software Engineering</h3>
-						<p class="text-medium text-gray-400 leading-relaxed">We develop scalable, secure and high-performance applications using modern software development methodologies and technologies.</p>
-					</div>
-
-					<div class="text-center p-6 rounded-lg">
-						<div class="w-16 h-16 bg-red-800 rounded-lg flex items-center justify-center mx-auto mb-6">
-							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-							</svg>
-						</div>
-						<h3 class="text-xl font-semibold mb-4 text-white">Automation, Tools and Support</h3>
-						<p class="text-medium text-gray-400 leading-relaxed">We automate repetitive and difficult tasks so that you can focus on providing value for your business. We provide development tools, libraries and technical support to help you successfully complete your projects.</p>
-					</div>
-					<div class="text-center p-6 rounded-lg">
-						<div class="w-16 h-16 bg-red-800 rounded-lg flex items-center justify-center mx-auto mb-6">
-							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-							</svg>
-						</div>
-						<h3 class="text-xl font-semibold mb-4 text-white">Consulting</h3>
-						<p class="text-medium text-gray-400 leading-relaxed">Not sure where to start with AI or software? We can help. We offer expert consulting services on technology strategy, digital transformation, and system architecture.</p>
+						<h3 class="text-xl font-semibold mb-4 text-ice">FinTech &amp; InsurTech Software</h3>
+						<p class="text-medium text-ice/75 leading-relaxed">The platforms around those systems still have to ship: APIs, internal tools, integrations with core insurance and finance systems, and the interfaces operators use every day. We build that software with the same domain context.</p>
 					</div>
 				</div>
 			</div>
@@ -123,7 +141,7 @@ import desk from '../../assets/desk.svg';
 		<div class="max-w-7xl mx-auto px-6">
 			<div class="text-center mb-16">
 				<h2 class="font-serif text-5xl font-bold mb-8 tracking-tight">Contact Us</h2>
-				<p class="text-lg mb-8 text-gray-400 leading-relaxed max-w-4xl mx-auto">If you have any questions about our engineering solutions, please contact us. We're here to help you find the best engineering solution for your project.</p>
+				<p class="text-lg mb-8 text-slate leading-relaxed max-w-4xl mx-auto">If underwriting, ERP, or financial data still depends on manual work, tell us where. We will scope the system with you.</p>
 			</div>
 			
 			<div class="max-w-4xl mx-auto">
@@ -142,24 +160,24 @@ import desk from '../../assets/desk.svg';
 						<input type="hidden" name="redirect" value="www.teknikoyazilimcozumleri.com">
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 						<div>
-							<label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name *</label>
+							<label for="name" class="block text-sm font-medium text-slate mb-2">Name *</label>
 							<input 
 								type="text" 
 								id="name" 
 								name="name" 
 								required 
-								class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent transition-all duration-200"
+								class="w-full px-4 py-3 bg-white border border-slate/40 text-navy rounded-lg focus:ring-2 focus:ring-cyber focus:border-transparent transition-all duration-200"
 								placeholder="Name and Surname"
 							/>
 						</div>
 						<div>
-							<label for="email" class="block text-sm font-medium text-gray-700 mb-2">E-mail *</label>
+							<label for="email" class="block text-sm font-medium text-slate mb-2">E-mail *</label>
 							<input 
 								type="email" 
 								id="email" 
 								name="email" 
 								required 
-								class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent transition-all duration-200"
+								class="w-full px-4 py-3 bg-white border border-slate/40 text-navy rounded-lg focus:ring-2 focus:ring-cyber focus:border-transparent transition-all duration-200"
 								placeholder="example@email.com"
 							/>
 						</div>
@@ -167,59 +185,59 @@ import desk from '../../assets/desk.svg';
 					
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 						<div>
-							<label for="company" class="block text-sm font-medium text-gray-700 mb-2">Business</label>
+							<label for="company" class="block text-sm font-medium text-slate mb-2">Business</label>
 							<input 
 								type="text" 
 								id="company" 
 								name="company" 
-								class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent transition-all duration-200"
+								class="w-full px-4 py-3 bg-white border border-slate/40 text-navy rounded-lg focus:ring-2 focus:ring-cyber focus:border-transparent transition-all duration-200"
 								placeholder="Your business name"
 							/>
 						</div>
 						<div>
-							<label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+							<label for="phone" class="block text-sm font-medium text-slate mb-2">Phone</label>
 							<input 
 								type="tel" 
 								id="phone" 
 								name="phone" 
-								class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent transition-all duration-200"
+								class="w-full px-4 py-3 bg-white border border-slate/40 text-navy rounded-lg focus:ring-2 focus:ring-cyber focus:border-transparent transition-all duration-200"
 								placeholder="+1XXXXXXXXXX" 
 							/>
 						</div>
 					</div>
 					
 					<div>
-						<label for="service" class="block text-sm font-medium text-gray-700 mb-2">Service Type</label>
+						<label for="service" class="block text-sm font-medium text-slate mb-2">Service Type</label>
 						<select 
 							id="service" 
 							name="service" 
-							class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent transition-all duration-200"
+							class="w-full px-4 py-3 bg-white border border-slate/40 text-navy rounded-lg focus:ring-2 focus:ring-cyber focus:border-transparent transition-all duration-200"
 						>
-							<option value="">Select Service Type</option>
-							<option value="ai-engineering">Artificial Intelligence Engineering</option>
-							<option value="software-development">Software Engineering</option>
-							<option value="data-analysis">Data Analysis</option>
-							<option value="consulting">Consulting</option>
+							<option value="">Select a service</option>
+							<option value="underwriting-automation">InsurTech Underwriting Automation</option>
+							<option value="erp-pipelines">Autonomous ERP Pipelines</option>
+							<option value="financial-ai-data">Financial AI &amp; Data Engineering</option>
+							<option value="fintech-insurtech-software">FinTech &amp; InsurTech Software</option>
 							<option value="other">Other</option>
 						</select>
 					</div>
 					
 					<div>
-						<label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+						<label for="message" class="block text-sm font-medium text-slate mb-2">Message *</label>
 						<textarea 
 							id="message" 
 							name="message" 
 							rows="6" 
 							required 
-							class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent transition-all duration-200 resize-none"
-							placeholder="Enter some details about your project..."
+							class="w-full px-4 py-3 bg-white border border-slate/40 text-navy rounded-lg focus:ring-2 focus:ring-cyber focus:border-transparent transition-all duration-200 resize-none"
+							placeholder="Tell us about the underwriting, ERP, or financial data process..."
 						></textarea>
 					</div>
 					
 					<div class="text-center">
 						<button 
 							type="submit" 
-							class="inline-block px-12 py-4 bg-red-800 text-white font-semibold text-sm tracking-widest uppercase rounded-lg transition-all duration-300 hover:bg-red-900 hover:-translate-y-0.5 focus:ring-2 focus:ring-red-800 focus:ring-offset-2"
+							class="inline-block px-12 py-4 bg-cyber text-navy font-semibold text-sm tracking-widest uppercase rounded-lg transition-all duration-300 hover:bg-cyber-hover hover:-translate-y-0.5 focus:ring-2 focus:ring-cyber focus:ring-offset-2"
 						>
 							Send Message
 						</button>

@@ -2,42 +2,42 @@
 import tekniko_white from '../../assets/tekniko_white.svg';
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-xl border-b border-luxury-border">
+<header class="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-xl border-b border-ice/10">
     <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
         <a class="flex items-center -ml-8" href="/en/">
-            <img src={tekniko_white.src} alt="Tekniko Yazılım Çözümleri" class="h-35 w-auto brightness-0 invert transition-all duration-300 hover:brightness-0 hover:invert hover:sepia hover:saturate-[5] hover:hue-rotate-45" />
+            <img src={tekniko_white.src} alt="Tekniko Yazılım Çözümleri" class="h-35 w-auto brightness-0 invert transition-all duration-300 hover:drop-shadow-[0_0_10px_#00E5FF]" />
         </a>
         <nav class="flex items -center gap-4 relative">
             <div class="relative group">
-                <a href="/" class="text-white text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-red-800" aria-label="Switch to Turkish">
+                <a href="/" class="text-ice text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-cyber" aria-label="Switch to Turkish">
                     <span class="text-lg align-middle">🇹🇷</span>
                 </a>
             </div>
             <input id="menu-toggle-en" type="checkbox" class="hidden peer" />
-            <label for="menu-toggle-en" class="lg:hidden cursor-pointer text-white p-2" aria-label="Toggle navigation menu">
+            <label for="menu-toggle-en" class="lg:hidden cursor-pointer text-ice p-2" aria-label="Toggle navigation menu">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </label>
             <div class="hidden lg:flex gap-10">
                 <div class="relative group">
-                    <a href="/en/#about" class="text-white text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-red-800">About</a>
+                    <a href="/en/#about" class="text-ice text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-cyber">About</a>
                 </div>
                 <div class="relative group">
-                    <a href="/en/#services" class="text-white text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-red-800">Services</a>
+                    <a href="/en/#services" class="text-ice text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-cyber">Services</a>
                 </div>
                 <div class="relative group">
-                    <a href="/blog/en" class="text-white text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-red-800">Blog</a>
+                    <a href="/blog/en" class="text-ice text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-cyber">Blog</a>
                 </div>
                 <div class="relative group">
-                    <a href="/en/#contact" class="text-white text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-red-800">Contact</a>
+                    <a href="/en/#contact" class="text-ice text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-cyber">Contact</a>
                 </div>
             </div>
-            <div class="absolute right-0 top-full mt-2 w-56 bg-black/95 border border-luxury-border rounded shadow-lg hidden peer-checked:block lg:hidden">
-                <a href="/en/#about" class="block px-4 py-3 text-white text-sm tracking-wide transition-colors duration-200 hover:text-red-800">About</a>
-                <a href="/en/#services" class="block px-4 py-3 text-white text-sm tracking-wide transition-colors duration-200 hover:text-red-800">Services</a>
-                <a href="/blog/posts/en" class="block px-4 py-3 text-white text-sm tracking-wide transition-colors duration-200 hover:text-red-800">Blog</a>
-                <a href="/en/#contact" class="block px-4 py-3 text-white text-sm tracking-wide transition-colors duration-200 hover:text-red-800">Contact</a>
+            <div class="absolute right-0 top-full mt-2 w-56 bg-navy/95 border border-ice/10 rounded shadow-lg hidden peer-checked:block lg:hidden">
+                <a href="/en/#about" class="block px-4 py-3 text-ice text-sm tracking-wide transition-colors duration-200 hover:text-cyber">About</a>
+                <a href="/en/#services" class="block px-4 py-3 text-ice text-sm tracking-wide transition-colors duration-200 hover:text-cyber">Services</a>
+                <a href="/blog/posts/en" class="block px-4 py-3 text-ice text-sm tracking-wide transition-colors duration-200 hover:text-cyber">Blog</a>
+                <a href="/en/#contact" class="block px-4 py-3 text-ice text-sm tracking-wide transition-colors duration-200 hover:text-cyber">Contact</a>
             </div>
         </nav>
     </div>

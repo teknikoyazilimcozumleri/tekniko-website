@@ -1,12 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-luxury-gold: #d4af37;
-  --color-luxury-black: #000000;
-  --color-luxury-gray: #111111;
-  --color-luxury-muted: #cccccc;
-  --color-luxury-border: rgba(255, 255, 255, 0.1);
-  
+  /* 60% canvas: ice. 30% structure: navy text and slate. 10% accent: cyber, with mint only as a second focal mark. */
+  --color-navy: #0A192F;
+  --color-slate: #4A5D6E;
+  --color-cyber: #00E5FF;
+  --color-cyber-hover: #00b3cc;
+  --color-mint: #10B981;
+  --color-ice: #F8FAFC;
+
   --font-family-serif: "Libre Baskerville", serif;
   --font-family-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
