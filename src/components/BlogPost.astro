@@ -18,7 +18,7 @@ const { post } = Astro.props as Props;
 <article class="max-w-4xl mx-auto px-6 py-12">
 	{post.image && (
 		<div class="mb-8">
-			<img src={post.image} alt={post.title} class="w-full h-auto rounded border border-luxury-border" />
+			<img src={post.image} alt={post.title} class="w-full h-auto rounded border border-slate/30" />
 		</div>
 	)}
 
@@ -27,7 +27,7 @@ const { post } = Astro.props as Props;
 		{post.tags && post.tags.length > 0 && (
 			<ul class="flex flex-wrap gap-2 mt-4 p-0 list-none">
 				{post.tags.map((tag) => (
-					<li class="m-0"><span class="text-xs px-2 py-1 rounded-full border border-luxury-border text-luxury-muted">{tag}</span></li>
+					<li class="m-0"><span class="text-xs px-2 py-1 rounded-full border border-slate/30 text-slate">{tag}</span></li>
 				))}
 			</ul>
 		)}

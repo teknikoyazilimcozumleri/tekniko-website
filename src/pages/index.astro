@@ -1,22 +1,45 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import idea2 from '../assets/idea2.jpg';
-import motherboard from '../assets/motherboard.svg';
-import desk from '../assets/desk.svg';
+import teknikohero from '../assets/teknikohero.svg';
+import teknikoinsurance from '../assets/teknikoinsurance.png';
+import teknikodashboards from '../assets/teknikodashboards.png';
 ---
 
 <Layout>
 	<!-- Hero Section -->
-	<section id="hero"class="relative h-screen flex items-center justify-center overflow-hidden">
-		<div class="absolute inset-0 z-10">
-			<div class="w-full h-full bg-cover bg-center bg-no-repeat" style={`background-image: url(${idea2.src})`}>
-				<div class="absolute inset-0 "></div>
+	<section id="hero" class="relative overflow-hidden bg-slate text-ice">
+		<div class="pointer-events-none absolute inset-0 bg-[linear-gradient(148deg,#243444_0%,#3c5162_36%,#4A5D6E_64%,#8b9faf_100%)]" aria-hidden="true"></div>
+		<div class="pointer-events-none absolute right-[4%] top-[64%] h-[28rem] w-[34rem] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(248,250,252,0.22)_0%,rgba(16,185,129,0.12)_42%,transparent_72%)]" aria-hidden="true"></div>
+		<div class="relative mx-auto w-full max-w-[96rem] px-6 py-14 sm:px-10 lg:px-32 lg:py-36">
+			<div class="flex flex-col gap-12 lg:flex-row lg:items-center lg:gap-6">
+				<div class="w-full min-w-0 lg:flex-1">
+					<h1 class="font-serif text-5xl font-bold tracking-tight leading-[1.05] lg:text-5xl">FinTech ve InsurTech için yazılım</h1>
+					<p class="mt-6 max-w-md text-base leading-relaxed text-ice/75">Underwriting otomasyonu, otonom ERP hatları ve finansal veri sistemleri. Sigortacılar, fintech’ler ve finans ekipleri için.</p>
+					<div class="mt-8 flex flex-wrap gap-3">
+						<a href="/#contact" class="inline-flex items-center gap-2 rounded-full bg-mint px-6 py-3 text-sm font-semibold text-navy transition-all duration-300 hover:brightness-110">Teknik Görüşme <span aria-hidden="true">→</span></a>
+						<a href="/#services" class="inline-flex items-center rounded-full border border-ice/40 px-6 py-3 text-sm font-semibold text-ice transition-all duration-300 hover:border-ice">Hizmetlerimiz</a>
+					</div>
+					<ul class="m-0 mt-12 flex list-none flex-col gap-5 p-0 sm:flex-row sm:items-center">
+						<li class="flex items-center gap-3">
+							<svg class="h-5 w-5 shrink-0 text-ice" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 012-2h2a2 2 0 012 2M9 14l2 2 4-4"></path></svg>
+							<span class="text-sm leading-snug text-ice/90">Underwriting<br>Otomasyonu</span>
+						</li>
+						<li class="hidden h-8 w-px bg-ice/25 sm:block" aria-hidden="true"></li>
+						<li class="flex items-center gap-3">
+							<svg class="h-5 w-5 shrink-0 text-ice" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7h6v4H4zM14 13h6v4h-6zM10 9h2a3 3 0 010 6h-2"></path></svg>
+							<span class="text-sm leading-snug text-ice/90">Otonom ERP<br>Hatları</span>
+						</li>
+						<li class="hidden h-8 w-px bg-ice/25 sm:block" aria-hidden="true"></li>
+						<li class="flex items-center gap-3">
+							<svg class="h-5 w-5 shrink-0 text-ice" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 19V5M4 19h16M8 15l3-4 3 2 5-7"></path></svg>
+							<span class="text-sm leading-snug text-ice/90">Finansal Yapay<br>Zeka</span>
+						</li>
+					</ul>
+				</div>
+				<div class="w-full shrink-0 lg:w-[min(40rem,48%)] lg:translate-x-6 lg:translate-y-7">
+					<img src={teknikohero.src} alt="Poliçe dosyaları, faturalar ve hasar kayıtlarının doğrulanmış bir finans defterine aktarımı" class="block h-auto w-full" />
+				</div>
 			</div>
-		</div>
-		<div class="relative z-20 text-center max-w-4xl">
-			<h1 class="font-serif text-4xl font-bold mb-6 tracking-tight leading-tight">Yapay Zeka ile <strong class="text-red-800">geleceğe</strong> adım <strong class="text-red-800">atın</strong></h1>
-			<!-- <p class="text-xl mb-8 text-luxury-muted leading-relaxed">At Watches & Wonders 2025, we presented fifteen new models brimming with creativity and <em class="italic text-luxury-gold">savoir-faire</em>.</p> -->
-			<a href="/#services" class="inline-block px-8 py-4 bg-black text-white font-semibold text-sm tracking-widest uppercase rounded-full transition-all duration-300 hover:bg-red-800 hover:-translate-y-0.5">HİZMETLERİMİZ</a>
 		</div>
 	</section>
 
@@ -26,17 +49,15 @@ import desk from '../assets/desk.svg';
 			<div class="max-w-7xl mx-auto px-6">
 				<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 					<div>
-						<h2 class="font-serif text-4xl font-bold mb-6 tracking-tight leading-tight">Mühendislik bunaltıcıdır</h2>
-						<p class="text-lg mb-8 text-gray-400 leading-relaxed">
-							Yapay zeka ve yazılımın bunaltıcı olabileceğinin farkındayız. 
-							Tekniko Yazılım Çözümleri, işletmenizi büyütmenize yardımcı olacak çeşitli çözümler sunar. 
-							İşletmeniz için yapay zeka ve verilerin gücünden yararlanmak istiyor ama nasıl yapacağınızı bilmiyor musunuz? 
-							Yoksa böyle bir proje için zamanınız ve ekibiniz mi yok? Öyleyse biz buradayız. 
-							İhtiyaçlarınıza özel bir çözüm oluşturacağız.
+						<h2 class="font-serif text-4xl font-bold mb-6 tracking-tight leading-tight">Finans ve sigortanın içinde çalışan mühendislik</h2>
+						<p class="text-lg mb-8 text-slate leading-relaxed">
+							Tekniko Yazılım Çözümleri, sigorta şirketleri, fintech’ler ve finans ekipleri için yazılım üretir.
+							Underwriting kararlarını otomatikleştirir, kapanış ve mutabakatı otonom ERP hatlarına bağlar.
+							Fiyatlama, risk ve raporlama için finansal yapay zeka ile veri altyapısını kurar.
 						</p>
 					</div>
 					<div class="relative">
-						<img src={motherboard.src} alt="Motherboard" class="w-full h-96 object-cover rounded-lg" />
+						<img src={teknikoinsurance.src} alt="Tekniko Yazılım Çözümleri InsurTech çözümleri" class="w-full h-96 object-cover rounded-4xl" />
 					</div>
 				</div>
 			</div>
@@ -47,71 +68,71 @@ import desk from '../assets/desk.svg';
 			<div class="max-w-7xl mx-auto px-6">
 				<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 					<div class="lg:order-2">
-						<h2 class="font-serif text-4xl font-bold mb-6 tracking-tight leading-tight">Olağanüstü Müşteri Deneyimi</h2>
-						<p class="text-lg mb-8 text-gray-400 leading-relaxed">
-							Müşterilerimizin hizmetlerimizden en iyi deneyimi ve memnuniyeti elde etmelerini sağlamak için onlarla birlikte çalışıyoruz
+						<h2 class="font-serif text-4xl font-bold mb-6 tracking-tight leading-tight">Operasyonunuzun ritmine göre</h2>
+						<p class="text-lg mb-8 text-slate leading-relaxed">
+							Poliçe verisi, başvuru dosyaları, mutabakat ve finans kapanışı etrafında tasarlarız.
+							Ekibinizin riski nasıl fiyatladığını, parayı nasıl hareket ettirdiğini ve bunu nasıl raporladığını esas alırız.
+							Ardından bu süreçleri her gün ayakta tutan yazılımı teslim ederiz.
 						</p>
 					</div>
 					<div class="relative">
-						<img src={desk.src} alt="Olağanüstü Müşteri Deneyimi" class="w-full h-96 object-cover rounded-lg" />
+						<img src={teknikodashboards.src} alt="Finans ve sigorta operasyonları için yazılım" class="w-full h-96 object-cover rounded-lg" />
 					</div>
 				</div>
 			</div>
 		</section>
 	</div>
-	<div id="services" class="bg-black">
+	<div id="services" class="bg-navy">
 		<section class="pt-36 pb-8 text-center">
 			<div class="max-w-7xl mx-auto px-6">
-				<h2 class="font-serif text-5xl text-white font-bold mb-4 tracking-tight">İşletmeniz için en iyi <strong class="text-white">mühendislik çözümü</strong></h2>
-				<p class="text-lg mb-4 text-gray-400 leading-relaxed max-w-4xl mx-auto">İhtiyacınız olduğunda kendi mühendislik ekibiniz. Yazılımın, verilerin ve yapay zekanın gücünü işinize hızla entegre edin ve büyüyün.</p>
+				<h2 class="font-serif text-4xl md:text-5xl text-ice font-bold mb-4 tracking-tight">FinTech ve InsurTech sistemleri, uçtan uca</h2>
+				<p class="text-lg mb-4 text-ice/75 leading-relaxed max-w-4xl mx-auto">Underwriting otomasyonu, otonom ERP hatları, finansal yapay zeka ve veri mühendisliği. Ve bunların etrafındaki üretim yazılımı.</p>
 			</div>
 		</section>
 
 		<!-- Services Cards -->
 		<section class="pb-32">
 			<div class="max-w-7xl mx-auto px-6">
-				<div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-8">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 					<div class="text-center p-6 rounded-lg">
-						<div class="w-16 h-16 bg-red-800 rounded-lg flex items-center justify-center mx-auto mb-6">
+						<div class="w-16 h-16 bg-slate rounded-lg flex items-center justify-center mx-auto mb-6">
 							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 5h12c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2z"></path>
-								<circle cx="9" cy="10" r="1.2" fill="currentColor"></circle>
-								<circle cx="15" cy="10" r="1.2" fill="currentColor"></circle>
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 15h6"></path>
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v2"></path>
-								<circle cx="12" cy="2" r="0.8" fill="currentColor"></circle>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"></path>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5a2 2 0 012-2h2a2 2 0 012 2v0a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 14l2 2 4-4"></path>
 							</svg>
 						</div>
-						<h3 class="text-xl font-semibold mb-4 text-white">Yapay Zeka Mühendisliği</h3>
-						<p class="text-medium text-gray-400 leading-relaxed">Makine öğrenmesi, derin öğrenme ve yapay zeka teknolojileri ile işletmenizin verimliliğini artıran akıllı çözümler geliştiriyoruz.</p>
+						<h3 class="text-xl font-semibold mb-4 text-ice">InsurTech Underwriting Otomasyonu</h3>
+						<p class="text-medium text-ice/75 leading-relaxed">Başvuru, risk skorlama ve karar adımlarını otomatikleştiririz. Underwriter’lar zamanlarını istisnalara ayırır. Başvuru, poliçe verisi ve karar arasındaki iş akışlarını, modelleri ve entegrasyonları kurarız.</p>
 					</div>
 					<div class="text-center p-6 rounded-lg">
-						<div class="w-16 h-16 bg-red-800 rounded-lg flex items-center justify-center mx-auto mb-6">
+						<div class="w-16 h-16 bg-slate rounded-lg flex items-center justify-center mx-auto mb-6">
+							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7h6v4H4zM14 13h6v4h-6z"></path>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 9h2a3 3 0 010 6h-2"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold mb-4 text-ice">Otonom ERP Hatları</h3>
+						<p class="text-medium text-ice/75 leading-relaxed">Kapanış, mutabakat ve operasyonel veri, her adımı birinin itmesi gerekmeden akar. Kayıt sistemlerinizden veri çeken, finans ekibinizin kurallarını uygulayan ve kayıtları ERP’nin beklediği yere bırakan hatlar tasarlarız.</p>
+					</div>
+					<div class="text-center p-6 rounded-lg">
+						<div class="w-16 h-16 bg-slate rounded-lg flex items-center justify-center mx-auto mb-6">
+							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 19V5M4 19h16"></path>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 15l3-4 3 2 5-7"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold mb-4 text-ice">Finansal Yapay Zeka ve Veri Mühendisliği</h3>
+						<p class="text-medium text-ice/75 leading-relaxed">Modeller, altındaki finansal veri kadar iyidir. Fiyatlama, risk, suistimal ve raporlama için veri hatları, özellikler ve yapay zeka sistemleri kurarız. Finans ve uyum ekiplerinin beklediği izlenebilirlikle.</p>
+					</div>
+					<div class="text-center p-6 rounded-lg">
+						<div class="w-16 h-16 bg-slate rounded-lg flex items-center justify-center mx-auto mb-6">
 							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
 							</svg>
 						</div>
-						<h3 class="text-xl font-semibold mb-4 text-white">Yazılım Mühendisliği</h3>
-						<p class="text-medium text-gray-400 leading-relaxed">Modern yazılım geliştirme metodolojileri ve teknolojileri kullanarak ölçeklenebilir, güvenli ve performanslı uygulamalar geliştiriyoruz.</p>
-					</div>
-					<div class="text-center p-6 rounded-lg">
-						<div class="w-16 h-16 bg-red-800 rounded-lg flex items-center justify-center mx-auto mb-6">
-							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-							</svg>
-						</div>
-						<h3 class="text-xl font-semibold mb-4 text-white">Otomasyon, Araçlar ve Destek</h3>
-						<p class="text-medium text-gray-400 leading-relaxed">Sıkıcı, tekrarlayan ve zor işleri otomatikleştiriyoruz, böylece işiniz için değer sağlamaya geri dönebilirsiniz. Geliştirme araçları, kütüphaneler ve teknik destek ile projelerinizin başarıyla tamamlanmasını sağlıyoruz.</p>
-					</div>
-					<div class="text-center p-6 rounded-lg">
-						<div class="w-16 h-16 bg-red-800 rounded-lg flex items-center justify-center mx-auto mb-6">
-							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-							</svg>
-						</div>
-						<h3 class="text-xl font-semibold mb-4 text-white">Danışmanlık</h3>
-						<p class="text-medium text-gray-400 leading-relaxed">Yapay zeka veya yazılım konusunda nereden başlayacağınızdan emin değil misiniz? Yardımcı olabiliriz. Teknoloji stratejisi, dijital dönüşüm ve sistem mimarisi konularında uzman danışmanlık hizmetleri sunuyoruz.</p>
+						<h3 class="text-xl font-semibold mb-4 text-ice">FinTech ve InsurTech Yazılımı</h3>
+						<p class="text-medium text-ice/75 leading-relaxed">Bu sistemlerin etrafındaki platformlar da üretime çıkar: API’ler, iç araçlar, çekirdek sigorta ve finans sistemleriyle entegrasyonlar ve operasyon ekiplerinin her gün kullandığı arayüzler. Aynı alan bilgisiyle geliştiririz.</p>
 					</div>
 
 				</div>
@@ -123,7 +144,7 @@ import desk from '../assets/desk.svg';
 		<div class="max-w-7xl mx-auto px-6">
 			<div class="text-center mb-16">
 				<h2 class="font-serif text-5xl font-bold mb-8 tracking-tight">İletişim</h2>
-				<p class="text-lg mb-8 text-gray-400 leading-relaxed max-w-4xl mx-auto">Projeniz için mühendisliği çözümleri hakkında bilgi almak istiyorsanız bizimle iletişime geçin. Size en uygun mühendislik çözümünü sunmak için buradayız.</p>
+				<p class="text-lg mb-8 text-slate leading-relaxed max-w-4xl mx-auto">Underwriting, ERP veya finansal veride hâlâ elle yürüyen bir süreç varsa yazın. Kapsamı birlikte netleştiririz.</p>
 			</div>
 			
 			<div class="max-w-4xl mx-auto">
@@ -142,24 +163,24 @@ import desk from '../assets/desk.svg';
 						<input type="hidden" name="redirect" value="www.teknikoyazilimcozumleri.com">
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 						<div>
-							<label for="name" class="block text-sm font-medium text-gray-700 mb-2">Ad Soyad *</label>
+							<label for="name" class="block text-sm font-medium text-slate mb-2">Ad Soyad *</label>
 							<input 
 								type="text" 
 								id="name" 
 								name="name" 
 								required 
-								class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent transition-all duration-200"
+								class="w-full px-4 py-3 bg-white border border-slate/40 text-navy rounded-lg focus:ring-2 focus:ring-cyber focus:border-transparent transition-all duration-200"
 								placeholder="Adınız ve soyadınız"
 							/>
 						</div>
 						<div>
-							<label for="email" class="block text-sm font-medium text-gray-700 mb-2">E-posta *</label>
+							<label for="email" class="block text-sm font-medium text-slate mb-2">E-posta *</label>
 							<input 
 								type="email" 
 								id="email" 
 								name="email" 
 								required 
-								class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent transition-all duration-200"
+								class="w-full px-4 py-3 bg-white border border-slate/40 text-navy rounded-lg focus:ring-2 focus:ring-cyber focus:border-transparent transition-all duration-200"
 								placeholder="ornek@email.com"
 							/>
 						</div>
@@ -167,59 +188,59 @@ import desk from '../assets/desk.svg';
 					
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 						<div>
-							<label for="company" class="block text-sm font-medium text-gray-700 mb-2">Şirket</label>
+							<label for="company" class="block text-sm font-medium text-slate mb-2">Şirket</label>
 							<input 
 								type="text" 
 								id="company" 
 								name="company" 
-								class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent transition-all duration-200"
+								class="w-full px-4 py-3 bg-white border border-slate/40 text-navy rounded-lg focus:ring-2 focus:ring-cyber focus:border-transparent transition-all duration-200"
 								placeholder="Şirket adınız"
 							/>
 						</div>
 						<div>
-							<label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Telefon</label>
+							<label for="phone" class="block text-sm font-medium text-slate mb-2">Telefon</label>
 							<input 
 								type="tel" 
 								id="phone" 
 								name="phone" 
-								class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent transition-all duration-200"
+								class="w-full px-4 py-3 bg-white border border-slate/40 text-navy rounded-lg focus:ring-2 focus:ring-cyber focus:border-transparent transition-all duration-200"
 								placeholder="+90 5XX XXX XX XX"
 							/>
 						</div>
 					</div>
 					
 					<div>
-						<label for="service" class="block text-sm font-medium text-gray-700 mb-2">Hizmet Türü</label>
+						<label for="service" class="block text-sm font-medium text-slate mb-2">Hizmet Türü</label>
 						<select 
 							id="service" 
 							name="service" 
-							class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent transition-all duration-200"
+							class="w-full px-4 py-3 bg-white border border-slate/40 text-navy rounded-lg focus:ring-2 focus:ring-cyber focus:border-transparent transition-all duration-200"
 						>
 							<option value="">Hizmet türünü seçin</option>
-							<option value="ai-engineering">Yapay Zeka Mühendisliği</option>
-							<option value="software-development">Yazılım Geliştirme</option>
-							<option value="data-analysis">Veri Analizi</option>
-							<option value="consulting">Danışmanlık</option>
+							<option value="underwriting-automation">InsurTech Underwriting Otomasyonu</option>
+							<option value="erp-pipelines">Otonom ERP Hatları</option>
+							<option value="financial-ai-data">Finansal Yapay Zeka ve Veri Mühendisliği</option>
+							<option value="fintech-insurtech-software">FinTech ve InsurTech Yazılımı</option>
 							<option value="other">Diğer</option>
 						</select>
 					</div>
 					
 					<div>
-						<label for="message" class="block text-sm font-medium text-gray-700 mb-2">Mesaj *</label>
+						<label for="message" class="block text-sm font-medium text-slate mb-2">Mesaj *</label>
 						<textarea 
 							id="message" 
 							name="message" 
 							rows="6" 
 							required 
-							class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent transition-all duration-200 resize-none"
-							placeholder="Projeniz hakkında detaylı bilgi verin..."
+							class="w-full px-4 py-3 bg-white border border-slate/40 text-navy rounded-lg focus:ring-2 focus:ring-cyber focus:border-transparent transition-all duration-200 resize-none"
+							placeholder="Underwriting, ERP veya finansal veri sürecinizi kısaca anlatın..."
 						></textarea>
 					</div>
 					
 					<div class="text-center">
 						<button 
 							type="submit" 
-							class="inline-block px-12 py-4 bg-red-800 text-white font-semibold text-sm tracking-widest uppercase rounded-lg transition-all duration-300 hover:bg-red-900 hover:-translate-y-0.5 focus:ring-2 focus:ring-red-800 focus:ring-offset-2"
+							class="inline-block px-12 py-4 bg-cyber text-navy font-semibold text-sm tracking-widest uppercase rounded-lg transition-all duration-300 hover:bg-cyber-hover hover:-translate-y-0.5 focus:ring-2 focus:ring-cyber focus:ring-offset-2"
 						>
 							Mesaj Gönder
 						</button>

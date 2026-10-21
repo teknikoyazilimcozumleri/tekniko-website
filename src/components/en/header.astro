@@ -2,43 +2,39 @@
 import tekniko_white from '../../assets/tekniko_white.svg';
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-xl border-b border-luxury-border">
-    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
-        <a class="flex items-center -ml-8" href="/en/">
-            <img src={tekniko_white.src} alt="Tekniko Yazılım Çözümleri" class="h-35 w-auto brightness-0 invert transition-all duration-300 hover:brightness-0 hover:invert hover:sepia hover:saturate-[5] hover:hue-rotate-45" />
-        </a>
-        <nav class="flex items -center gap-4 relative">
-            <div class="relative group">
-                <a href="/" class="text-white text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-red-800" aria-label="Switch to Turkish">
-                    <span class="text-lg align-middle">🇹🇷</span>
-                </a>
-            </div>
-            <input id="menu-toggle-en" type="checkbox" class="hidden peer" />
-            <label for="menu-toggle-en" class="lg:hidden cursor-pointer text-white p-2" aria-label="Toggle navigation menu">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </label>
-            <div class="hidden lg:flex gap-10">
-                <div class="relative group">
-                    <a href="/en/#about" class="text-white text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-red-800">About</a>
-                </div>
-                <div class="relative group">
-                    <a href="/en/#services" class="text-white text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-red-800">Services</a>
-                </div>
-                <div class="relative group">
-                    <a href="/blog/en" class="text-white text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-red-800">Blog</a>
-                </div>
-                <div class="relative group">
-                    <a href="/en/#contact" class="text-white text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-red-800">Contact</a>
-                </div>
-            </div>
-            <div class="absolute right-0 top-full mt-2 w-56 bg-black/95 border border-luxury-border rounded shadow-lg hidden peer-checked:block lg:hidden">
-                <a href="/en/#about" class="block px-4 py-3 text-white text-sm tracking-wide transition-colors duration-200 hover:text-red-800">About</a>
-                <a href="/en/#services" class="block px-4 py-3 text-white text-sm tracking-wide transition-colors duration-200 hover:text-red-800">Services</a>
-                <a href="/blog/posts/en" class="block px-4 py-3 text-white text-sm tracking-wide transition-colors duration-200 hover:text-red-800">Blog</a>
-                <a href="/en/#contact" class="block px-4 py-3 text-white text-sm tracking-wide transition-colors duration-200 hover:text-red-800">Contact</a>
-            </div>
-        </nav>
-    </div>
+<header class="fixed top-0 left-0 right-0 z-50 border-b border-ice/10 bg-navy/95 backdrop-blur-xl">
+	<input id="menu-toggle-en" type="checkbox" class="peer hidden" />
+	<div class="mx-auto grid h-20 max-w-[96rem] grid-cols-[auto_1fr_auto] items-center gap-6 px-6 lg:grid-cols-[1fr_auto_1fr] lg:px-10">
+		<a href="/en/" class="relative block h-12 w-40 shrink-0 overflow-hidden justify-self-start" aria-label="Tekniko Software Solutions">
+			<img src={tekniko_white.src} alt="" class="pointer-events-none absolute left-0 top-1/2 h-44 w-auto max-w-none -translate-y-1/2 brightness-0 invert" />
+		</a>
+
+		<nav class="hidden items-center justify-center gap-8 lg:flex xl:gap-12" aria-label="Main">
+			<a href="/en/#about" class="text-base font-medium text-ice transition-colors duration-200 hover:text-cyber xl:text-lg">About</a>
+			<a href="/en/#services" class="text-base font-medium text-ice transition-colors duration-200 hover:text-cyber xl:text-lg">Services</a>
+			<a href="/blog/en" class="text-base font-medium text-ice transition-colors duration-200 hover:text-cyber xl:text-lg">Blog</a>
+			<a href="/en/#contact" class="text-base font-medium text-ice transition-colors duration-200 hover:text-cyber xl:text-lg">Contact</a>
+		</nav>
+
+		<div class="flex items-center justify-self-end gap-4">
+			<div class="flex items-center gap-3 border-l border-ice/30 pl-5 text-base xl:text-lg">
+				<a href="/" class="font-medium text-ice/45 transition-colors duration-200 hover:text-ice" lang="tr">TR</a>
+				<a href="/en/" class="font-semibold text-ice" aria-current="page" lang="en">EN</a>
+			</div>
+			<label for="menu-toggle-en" class="cursor-pointer p-1 text-ice lg:hidden" aria-label="Open menu">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+				</svg>
+			</label>
+		</div>
+	</div>
+
+	<div class="hidden border-t border-ice/10 bg-navy peer-checked:block lg:hidden">
+		<nav class="mx-auto flex max-w-[96rem] flex-col px-6 py-3" aria-label="Main">
+			<a href="/en/#about" class="py-3 text-base font-medium text-ice transition-colors duration-200 hover:text-cyber">About</a>
+			<a href="/en/#services" class="py-3 text-base font-medium text-ice transition-colors duration-200 hover:text-cyber">Services</a>
+			<a href="/blog/en" class="py-3 text-base font-medium text-ice transition-colors duration-200 hover:text-cyber">Blog</a>
+			<a href="/en/#contact" class="py-3 text-base font-medium text-ice transition-colors duration-200 hover:text-cyber">Contact</a>
+		</nav>
+	</div>
 </header>
