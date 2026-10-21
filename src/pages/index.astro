@@ -1,8 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import teknikohero from '../assets/teknikohero.svg';
-import motherboard from '../assets/motherboard.svg';
-import desk from '../assets/desk.svg';
+import teknikoinsurance from '../assets/teknikoinsurance.png';
+import teknikodashboards from '../assets/teknikodashboards.png';
 ---
 
 <Layout>
@@ -10,10 +10,10 @@ import desk from '../assets/desk.svg';
 	<section id="hero" class="relative overflow-hidden bg-slate text-ice">
 		<div class="pointer-events-none absolute inset-0 bg-[linear-gradient(148deg,#243444_0%,#3c5162_36%,#4A5D6E_64%,#8b9faf_100%)]" aria-hidden="true"></div>
 		<div class="pointer-events-none absolute right-[4%] top-[64%] h-[28rem] w-[34rem] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(248,250,252,0.22)_0%,rgba(16,185,129,0.12)_42%,transparent_72%)]" aria-hidden="true"></div>
-		<div class="relative mx-auto w-full max-w-[96rem] px-6 py-14 sm:px-10 lg:px-16 lg:py-20">
+		<div class="relative mx-auto w-full max-w-[96rem] px-6 py-14 sm:px-10 lg:px-32 lg:py-36">
 			<div class="flex flex-col gap-12 lg:flex-row lg:items-center lg:gap-6">
 				<div class="w-full min-w-0 lg:flex-1">
-					<h1 class="font-serif text-4xl font-bold tracking-tight leading-[1.05] md:text-5xl lg:text-6xl"><span class="underline decoration-cyber decoration-2 underline-offset-[10px]">FinTech</span> ve <span class="underline decoration-mint decoration-2 underline-offset-[10px]">InsurTech</span> için yazılım</h1>
+					<h1 class="font-serif text-5xl font-bold tracking-tight leading-[1.05] lg:text-5xl">FinTech ve InsurTech için yazılım</h1>
 					<p class="mt-6 max-w-md text-base leading-relaxed text-ice/75">Underwriting otomasyonu, otonom ERP hatları ve finansal veri sistemleri. Sigortacılar, fintech’ler ve finans ekipleri için.</p>
 					<div class="mt-8 flex flex-wrap gap-3">
 						<a href="/#contact" class="inline-flex items-center gap-2 rounded-full bg-mint px-6 py-3 text-sm font-semibold text-navy transition-all duration-300 hover:brightness-110">Teknik Görüşme <span aria-hidden="true">→</span></a>
@@ -57,7 +57,7 @@ import desk from '../assets/desk.svg';
 						</p>
 					</div>
 					<div class="relative">
-						<img src={motherboard.src} alt="Motherboard" class="w-full h-96 object-cover rounded-lg" />
+						<img src={teknikoinsurance.src} alt="Tekniko Yazılım Çözümleri InsurTech çözümleri" class="w-full h-96 object-cover rounded-4xl" />
 					</div>
 				</div>
 			</div>
@@ -76,7 +76,7 @@ import desk from '../assets/desk.svg';
 						</p>
 					</div>
 					<div class="relative">
-						<img src={desk.src} alt="Finans ve sigorta operasyonları için yazılım" class="w-full h-96 object-cover rounded-lg" />
+						<img src={teknikodashboards.src} alt="Finans ve sigorta operasyonları için yazılım" class="w-full h-96 object-cover rounded-lg" />
 					</div>
 				</div>
 			</div>

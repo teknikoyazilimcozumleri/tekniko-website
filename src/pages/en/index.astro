@@ -1,7 +1,8 @@
 ---
 import Layout from '../../layouts/en/Layout.astro';
 import teknikohero from '../../assets/teknikohero.svg';
-import motherboard from '../../assets/motherboard.svg';
+import teknikoinsurance from "../../assets/teknikoinsurance.png"
+import teknikodashboards from "../../assets/teknikodashboards.png"
 import desk from '../../assets/desk.svg';
 ---
 
@@ -10,10 +11,10 @@ import desk from '../../assets/desk.svg';
 	<section id="hero" class="relative overflow-hidden bg-slate text-ice">
 		<div class="pointer-events-none absolute inset-0 bg-[linear-gradient(148deg,#243444_0%,#3c5162_36%,#4A5D6E_64%,#8b9faf_100%)]" aria-hidden="true"></div>
 		<div class="pointer-events-none absolute right-[4%] top-[64%] h-[28rem] w-[34rem] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(248,250,252,0.22)_0%,rgba(16,185,129,0.12)_42%,transparent_72%)]" aria-hidden="true"></div>
-		<div class="relative mx-auto w-full max-w-[96rem] px-6 py-14 sm:px-10 lg:px-16 lg:py-20">
+		<div class="relative mx-auto w-full max-w-[96rem] px-6 py-14 sm:px-10 lg:px-32 lg:py-36">
 			<div class="flex flex-col gap-12 lg:flex-row lg:items-center lg:gap-6">
 				<div class="w-full min-w-0 lg:flex-1">
-					<h1 class="font-serif text-5xl font-bold tracking-tight leading-[1.05] lg:text-6xl">FinTech. InsurTech. <br>We bring the Solutions.</h1>
+					<h1 class="font-serif text-5xl font-bold tracking-tight leading-[1.05] lg:text-5xl">FinTech. InsurTech. <br>We bring the Solutions.</h1>
 					<p class="mt-6 max-w-md text-base leading-relaxed text-ice/75">Underwriting automation, autonomous ERP pipelines, and financial data systems for insurers, fintechs, and finance teams.</p>
 					<div class="mt-8 flex flex-wrap gap-3">
 						<a href="/en/#contact" class="inline-flex items-center gap-2 rounded-full bg-mint px-6 py-3 text-sm font-semibold text-navy transition-all duration-300 hover:brightness-110">Book a Technical Call <span aria-hidden="true">→</span></a>
@@ -56,7 +57,7 @@ import desk from '../../assets/desk.svg';
 						</p>
 					</div>
 					<div class="relative">
-						<img src={motherboard.src} alt="Motherboard" class="w-full h-96 object-cover rounded-lg" />
+						<img src={teknikoinsurance.src} alt="Tekniko Software Solutions Insurtech Solutions" class="w-full h-96 object-cover rounded-4xl" />
 					</div>
 				</div>
 			</div>
@@ -74,7 +75,7 @@ import desk from '../../assets/desk.svg';
 						</p>
 					</div>
 					<div class="relative">
-						<img src={desk.src} alt="Software for finance and insurance operations" class="w-full h-96 object-cover rounded-lg" />
+						<img src={teknikodashboards.src} alt="Software for finance and insurance operations" class="w-full h-96 object-cover rounded-lg" />
 					</div>
 				</div>
 			</div>

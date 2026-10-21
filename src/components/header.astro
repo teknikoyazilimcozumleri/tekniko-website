@@ -2,47 +2,41 @@
 import tekniko_white from '../assets/tekniko_white.svg';
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-xl border-b border-ice/10">
-    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
-        <a class="flex items-center -ml-8" href="/">
-            <img src={tekniko_white.src} alt="Tekniko Yazılım Çözümleri" class="h-35 w-auto brightness-0 invert transition-all duration-300 hover:drop-shadow-[0_0_10px_#00E5FF]" />
-        </a>
-        <nav class="flex items -center gap-4 relative">
-            <div class="relative group">
-                <a href="/en" class="text-ice text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-cyber" aria-label="Switch to English">
-                    <span class="text-lg align-middle">🇬🇧</span>
-                </a>
-            </div>
-            <input id="menu-toggle" type="checkbox" class="hidden peer" />
-            <label for="menu-toggle" class="lg:hidden cursor-pointer text-ice p-2" aria-label="Toggle navigation menu">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </label>
-            <div class="hidden lg:flex gap-10">
-                <div class="relative group">
-                    <a href="/#about" class="text-ice text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-cyber">Hakkımızda</a>
-                </div>
-                <div class="relative group">
-                    <a href="/#services" class="text-ice text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-cyber">Hizmetlerimiz</a>
-                </div>
-                <div class="relative group">
-                    <a href="/blog" class="text-ice text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-cyber">Blog</a>
-                </div>
-                <div class="relative group">
-                    <a href="/career" class="text-ice text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-cyber">Kariyer</a>
-                </div>
-                <div class="relative group">
-                    <a href="/#contact" class="text-ice text-sm font-normal tracking-wide py-2 transition-colors duration-200 hover:text-cyber">İletişim</a>
-                </div>
-            </div>
-            <div class="absolute right-0 top-full mt-2 w-56 bg-navy/95 border border-ice/10 rounded shadow-lg hidden peer-checked:block lg:hidden">
-                <a href="/#about" class="block px-4 py-3 text-ice text-sm tracking-wide transition-colors duration-200 hover:text-cyber">Hakkımızda</a>
-                <a href="/#services" class="block px-4 py-3 text-ice text-sm tracking-wide transition-colors duration-200 hover:text-cyber">Hizmetlerimiz</a>
-                <a href="/blog" class="block px-4 py-3 text-ice text-sm tracking-wide transition-colors duration-200 hover:text-cyber">Blog</a>
-                <a href="/career" class="block px-4 py-3 text-ice text-sm tracking-wide transition-colors duration-200 hover:text-cyber">Kariyer</a>
-                <a href="/#contact" class="block px-4 py-3 text-ice text-sm tracking-wide transition-colors duration-200 hover:text-cyber">İletişim</a>
-            </div>
-        </nav>
-    </div>
+<header class="fixed top-0 left-0 right-0 z-50 border-b border-ice/10 bg-navy/95 backdrop-blur-xl">
+	<input id="menu-toggle" type="checkbox" class="peer hidden" />
+	<div class="mx-auto grid h-20 max-w-[96rem] grid-cols-[auto_1fr_auto] items-center gap-6 px-6 lg:grid-cols-[1fr_auto_1fr] lg:px-10">
+		<a href="/" class="relative block h-12 w-40 shrink-0 overflow-hidden justify-self-start" aria-label="Tekniko Yazılım Çözümleri">
+			<img src={tekniko_white.src} alt="" class="pointer-events-none absolute left-0 top-1/2 h-44 w-auto max-w-none -translate-y-1/2 brightness-0 invert" />
+		</a>
+
+		<nav class="hidden items-center justify-center gap-8 lg:flex xl:gap-12" aria-label="Ana menü">
+			<a href="/#about" class="text-base font-medium text-ice transition-colors duration-200 hover:text-cyber xl:text-lg">Hakkımızda</a>
+			<a href="/#services" class="text-base font-medium text-ice transition-colors duration-200 hover:text-cyber xl:text-lg">Hizmetlerimiz</a>
+			<a href="/blog" class="text-base font-medium text-ice transition-colors duration-200 hover:text-cyber xl:text-lg">Blog</a>
+			<a href="/career" class="text-base font-medium text-ice transition-colors duration-200 hover:text-cyber xl:text-lg">Kariyer</a>
+			<a href="/#contact" class="text-base font-medium text-ice transition-colors duration-200 hover:text-cyber xl:text-lg">İletişim</a>
+		</nav>
+
+		<div class="flex items-center justify-self-end gap-4">
+			<div class="flex items-center gap-3 border-l border-ice/30 pl-5 text-base xl:text-lg">
+				<a href="/" class="font-semibold text-ice" aria-current="page" lang="tr">TR</a>
+				<a href="/en" class="font-medium text-ice/45 transition-colors duration-200 hover:text-ice" lang="en">EN</a>
+			</div>
+			<label for="menu-toggle" class="cursor-pointer p-1 text-ice lg:hidden" aria-label="Menüyü aç">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+				</svg>
+			</label>
+		</div>
+	</div>
+
+	<div class="hidden border-t border-ice/10 bg-navy peer-checked:block lg:hidden">
+		<nav class="mx-auto flex max-w-[96rem] flex-col px-6 py-3" aria-label="Ana menü">
+			<a href="/#about" class="py-3 text-base font-medium text-ice transition-colors duration-200 hover:text-cyber">Hakkımızda</a>
+			<a href="/#services" class="py-3 text-base font-medium text-ice transition-colors duration-200 hover:text-cyber">Hizmetlerimiz</a>
+			<a href="/blog" class="py-3 text-base font-medium text-ice transition-colors duration-200 hover:text-cyber">Blog</a>
+			<a href="/career" class="py-3 text-base font-medium text-ice transition-colors duration-200 hover:text-cyber">Kariyer</a>
+			<a href="/#contact" class="py-3 text-base font-medium text-ice transition-colors duration-200 hover:text-cyber">İletişim</a>
+		</nav>
+	</div>
 </header>
